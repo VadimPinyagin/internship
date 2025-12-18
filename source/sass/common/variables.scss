@@ -3,21 +3,20 @@ $tablet-width: 768px;
 $desktop-width: 1440px;
 
 :root {
-  --dark-gray: #2d383f;
-  --soft-gray: #d9d9d9;
-  --base-white: #ffffff;
-  --transparent-white: rgb(255, 255, 255, 0.5);
-  --nuvy-blue: #1c3374;
-  --dark-blue: #0266c1;
-  --disabled: #999999;
+  --brand: #316dc2;
+  --active: #275699;
 
-  // Переопределённые свойства для свайпера
-  --swiper-pagination-bottom: 40px;
-  --swiper-pagination-top: auto;
-  --swiper-pagination-bullet-inactive-opacity: 1;
-  --action-points-gap: 25px;
+  --white: #ffffff;
+  --beige:#f0efe9;
+  --gray: #484848;
+  --light-gray: #a9afb7;
+  --orange-dawn: #ff5e66;
 
-  @media (min-width: $desktop-width) {
-     --swiper-pagination-bottom: 92px;
-  }
+  --bg:var(--beige) ; // Запасной #ffffff;
+  --text:var(--gray); // Запасной #333333;
+  --attention: var(--orange-dawn); // Запасной #ff0000;
+  --disabled: var(--light-gray); // Запасной #a0a0a0;
+
+  --color-overlay: color-mix(in sRGB, var(--brand) 20%, transparent);
+  // Для серого оверлея просто переопределять в media --color-overlay: rgba(13, 29, 51, 0.4);
 }
