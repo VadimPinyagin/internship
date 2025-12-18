@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding-block-start: 20px;
+}
+
+.header__toggle {
+  justify-self: end;
+}
+
+.header__toggle--opened {
+  background: var(--brand, #316dc2);
+  border-color: var(--white, #ffffff);
+}
+
+.header__menu--is-close {
+  .header__nav-list {
+    display: none;
+  }
+}
+
+.header__menu--is-open {
+
+  .header__nav-list {
+    display: block;
+  }
+}
