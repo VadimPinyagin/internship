@@ -5,7 +5,7 @@
 
 .header__container {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, auto);
   padding-block-start: 20px;
 }
 
@@ -13,9 +13,8 @@
   justify-self: end;
 }
 
-.header__toggle--opened {
-  background: var(--brand, #316dc2);
-  border-color: var(--white, #ffffff);
+.header__menu:has(.header__toggle--opened) {
+  width: 290px;
 }
 
 .header__menu--is-close {

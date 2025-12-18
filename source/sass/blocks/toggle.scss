@@ -71,3 +71,7 @@
 .toggle:has(.toggle__icon--close) span {
   color: var(--white, #ffffff);
 }
+
+.header__toggle--opened {
+  width: 100%;
+}
