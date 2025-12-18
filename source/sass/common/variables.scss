@@ -7,14 +7,14 @@ $desktop-width: 1440px;
   --active: #275699;
 
   --white: #ffffff;
-  --beige:#f0efe9;
+  --light-accent:#f0efe9;
   --gray: #484848;
   --light-gray: #a9afb7;
-  --orange-dawn: #ff5e66;
+  --accent: #ff5e66;
 
-  --bg:var(--beige) ; // Запасной #ffffff;
+  --bg:var(--light-accent) ; // Запасной #ffffff;
   --text:var(--gray); // Запасной #333333;
-  --attention: var(--orange-dawn); // Запасной #ff0000;
+  --attention: var(--accent); // Запасной #ff0000;
   --disabled: var(--light-gray); // Запасной #a0a0a0;
 
   --color-overlay: color-mix(in sRGB, var(--brand) 20%, transparent);

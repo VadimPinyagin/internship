@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="page" lang="ru" data-validate="html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стажировка</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/apple-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="sass/style.scss">
+    <link rel="preload" href="fonts/manrope-light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/manrope-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/manrope-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  </head>
+  <body class="page__body">
+    <header class="header">
+      <div class="header__container container">
+        <img class="logo" src="/__spritemap#sprite-logotype-view" width="52" height="52" alt="Логотип проекта Стажировка">
+        <div class="header__menu">
+          <button class="header__toggle toggle" type="button" aria-label="Показать/спрятать меню">
+            <span>Меню</span>
+            <span class="toggle__icon"></span>
+          </button>
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#">О проекте</a>
+              </li>
+              <li class="nav__item">
+                <details class="accordion">
+                  <summary class="accordion__header">Программы</summary>
+                  <a class="accordion__item" href="#">Стажировки</a>
+                  <a class="accordion__item" href="#">Волонтёрство</a>
+                  <a class="accordion__item" href="#">Учеба</a>
+                  <a class="accordion__item" href="#">Религия</a>
+                </details>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#">Как поехать</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#">Отзывы</a>
+              </li>
+              <li class="nav__item">
+                <details class="accordion">
+                  <summary class="accordion__header">Новости</summary>
+                  <a class="accordion__item" href="#">Стажировки</a>
+                  <a class="accordion__item" href="#">Волонтёрство</a>
+                  <a class="accordion__item" href="#">Учеба</a>
+                  <a class="accordion__item" href="#">Религия</a>
+                </details>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section data-test="hero"></section>
+      <!-- <section data-test="about">about</section> -->
+      <!-- <section data-test="programs">programs</section> -->
+      <!-- <section data-test="grant">grant</section> -->
+      <!-- <section data-test="news">news</section> -->
+      <!-- <section data-test="FAQ">FAQ</section> -->
+      <!-- <section data-test="reviews">reviews</section> -->
+      <!-- <section data-test="contacts">contacts</section> -->
+      <!-- <section data-test="form">form</section> -->
+    </main>
+    <footer class="footer" data-test="footer">footer</footer>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
