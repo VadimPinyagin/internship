@@ -4,6 +4,7 @@
 
 .nav__list {
   @include list-reset;
+
   padding-inline: 25px 135px;
   padding-block: 35px;
   display: flex;

@@ -64,10 +64,6 @@
   background: var(--brand, #316dc2);
 }
 
-.toggle:has(.toggle__icon--close) {
-  background: var(--brand, #316dc2);
-}
-
 .toggle:has(.toggle__icon--close) span {
   color: var(--white, #ffffff);
 }

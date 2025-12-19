@@ -13,7 +13,7 @@
   display: none;
 }
 
-.nav-accordion__header{
+.nav-accordion__header {
   position: relative;
   opacity: 0.7;
   display: flex;
@@ -33,7 +33,7 @@
   right: 0;
   width: 12px;
   height: 16px;
-  mask-image: url('/__spritemap#sprite-check-mark-view');
+  mask-image: url("/__spritemap#sprite-check-mark-view");
   mask-repeat: no-repeat;
   mask-size: 100%;
   mask-position: 50% 50%;
@@ -43,7 +43,7 @@
 .nav-accordion[open] .nav-accordion__header {
   opacity: 1;
 
-    &::after {
+  &::after {
     transform: rotate(180deg);
   }
 }
