@@ -20,4 +20,11 @@
   opacity: 0.7;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+  }
 }
