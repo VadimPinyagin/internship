@@ -1,0 +1,40 @@
+.hero {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero__slides-list {
+  @include list-reset;
+}
+
+.hero__slide {
+  display: flex;
+  align-items: center;
+  background: var(--hero-slide-background) no-repeat;
+  text-align: center;
+  min-height: 568px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 1024px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 800px;
+  }
+}
+.hero__slide--professional {
+
+  --hero-slide-background: image-set("../img/hero-slider/professional/professional-experience-mobile@1x.webp" 1x,
+   "../img/hero-slider/professional/professional-experience-mobile@2x.webp" 2x,
+   "../img/hero-slider/professional/professional-experience-mobile@1x.jpg" 1x,
+   "../img/hero-slider/professional/professional-experience-mobile@2x.jpg" 2x);
+
+  @media (min-width: $tablet-width) {
+    --hero-slide-background: image-set("../img/hero-slider/professional/professional-experience-tablet@1x.webp" 1x, "../img/hero-slider/professional/professional-experience-tablet@2x.webp" 2x, "../img/hero-slider/professional/professional-experience-tablet@1x.jpg" 1x, "../img/hero-slider/professional/professional-experience-tablet@2x.jpg" 2x);
+  }
+
+  @media (min-width: $desktop-width) {
+    --hero-slide-background: image-set("../img/hero-slider/professional/professional-experience-desktop@1x.webp" 1x, "../img/hero-slider/professional/professional-experience-desktop@2x.webp" 2x, "../img/hero-slider/professional/professional-experience-desktop.jpg" 1x, "../img/hero-slider/professional/professional-experience-desktop@2x.jpg" 2x);
+  }
+}
