@@ -3,7 +3,7 @@ const toggle = document.querySelector('.toggle');
 const toggleIcon = document.querySelector('.toggle__icon');
 mainNav.classList.add('header__menu--is-close');
 
-export function menuOpenClose(){
+export function toggleMenu(){
 
   if (toggle) {
     toggle.addEventListener('click', () => {

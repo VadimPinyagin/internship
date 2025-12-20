@@ -16,7 +16,7 @@
   <body class="page__body">
     <header class="header">
       <div class="header__container container">
-        <img class="logo" src="/__spritemap#sprite-logotype-view" width="52" height="52" alt="Логотип проекта Стажировка">
+        <img class="logo" src="./img/logotype.svg" width="52" height="52" alt="Логотип проекта Стажировка">
         <div class="header__menu">
           <button class="toggle header__toggle" type="button" aria-label="Показать/спрятать меню">
             <span>Меню</span>
@@ -77,7 +77,52 @@
       <!-- <section data-test="contacts">contacts</section> -->
       <!-- <section data-test="form">form</section> -->
     </main>
-    <footer class="footer" data-test="footer">footer</footer>
+    <footer class="footer" data-test="footer">
+      <div class="container footer__container">
+        <img class="logo footer__logo" src="./img/logotype.svg" width="52" height="52" alt="Логотип проекта Стажировка">
+        <ul class="footer__nav-list footer-nav">
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#about">О&nbsp;проекте</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#programs">Программы</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#grant">Как&nbsp;поехать</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#news">Новости</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+        <ul class="footer__social social">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#">
+              <span class="visually-hidden">Мы в Вконтакте</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--ok" href="#">
+              <span class="visually-hidden">Мы в Одноклассниках</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--reddit" href="#">
+              <span class="visually-hidden">Мы в Reddit</span>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">Стажировка © 2023 Все права защищены</p>
+          <a class="footer__copyright-link" href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

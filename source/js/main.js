@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import {Pagination} from 'swiper/modules';
 import 'swiper/css';
-import {menuOpenClose} from './open-close-nav.js';
+import {toggleMenu} from './open-close-nav.js';
 
 const initSwiperHero = () => {
   new Swiper('.hero', {
@@ -15,5 +15,5 @@ const initSwiperHero = () => {
   });
 };
 
-menuOpenClose();
+toggleMenu();
 initSwiperHero();
