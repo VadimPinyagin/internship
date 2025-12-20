@@ -10,12 +10,13 @@
   @media (min-width:$tablet-width) {
     justify-content: end;
     column-gap: 15px;
-    padding-block: 40px;
+    padding-block: 41px 40px;
   }
 
   @media (min-width:$desktop-width) {
     justify-content: start;
     margin-inline-start: 52px;
+    column-gap: 30px;
   }
 }
 

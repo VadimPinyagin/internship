@@ -9,10 +9,12 @@
     display: grid;
     grid-template-columns: repeat(4,auto);
     grid-template-rows: repeat(2,auto);
+    padding-block-start: 15px;
   }
 
   @media (min-width:$desktop-width) {
     grid-template-columns: 52px auto;
+    padding-block-start: 32px;
   }
 }
 
@@ -73,6 +75,8 @@
 .footer__copyright-text {
   opacity: 0.6;
   margin-block: 10px 15px;
+  font-size: 12px;
+  line-height: 14px;
 
   @media (min-width:$tablet-width) {
     line-height: 12px;
@@ -88,8 +92,11 @@
 
 .footer__copyright-link {
   @include link-reset;
+  font-size: 12px;
+  line-height: 14px;
   margin: 0 auto;
   border-bottom: 1px solid;
+  padding-block-end: 3px;
 
   @media (min-width:$tablet-width) {
     margin-inline-start: 0;

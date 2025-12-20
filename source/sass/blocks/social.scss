@@ -13,6 +13,11 @@
     justify-content: end;
     --link-w: 36px;
     --link-h: 36px;
+    column-gap: 20px;
+  }
+
+  @media (min-width:$desktop-width) {
+    column-gap: 20px;
   }
 }
 
