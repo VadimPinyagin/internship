@@ -1,0 +1,10 @@
+.about__title {
+  @include title;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.about__text {
+  font-size: 16px;
+  line-height: 22px;
+}

@@ -10,3 +10,8 @@
   text-decoration: none;
   margin: 0;
 }
+
+@mixin title {
+  font-weight: 400;
+  color: var(--brand, #333333);
+}

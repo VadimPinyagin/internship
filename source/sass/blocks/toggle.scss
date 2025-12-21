@@ -7,13 +7,13 @@
   min-height: 54px;
   position: relative;
   background: var(--white, #ffffff);
-  border: 1px solid var(--brand, #316dc2);
+  border: 1px solid var(--brand, #0000ff);
   border-radius: 30px;
   padding: 0 4px 0 20px;
   cursor: pointer;
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--brand, #316dc2);
+  color: var(--brand, #333333);
 }
 
 .toggle__icon {

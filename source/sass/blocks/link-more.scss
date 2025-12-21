@@ -1,0 +1,21 @@
+.link-more {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--brand, #333333);
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 223px;
+  min-height: 44px;
+}
+
+.link-more::before {
+
+}
+
+.link-more::after {
+  content: "";
+  display: block;
+  mask-image: url("/__spritemap#sprite-arrow-link-view");
+  background-color: var(--white, #ffffff);
+}
