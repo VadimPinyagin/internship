@@ -15,3 +15,10 @@
   font-weight: 400;
   color: var(--brand, #333333);
 }
+
+@mixin link-disabled {
+  pointer-events: none;
+  color: var(--disable, #a0a0a0);
+  background-color: var(--disable, #a0a0a0);
+  cursor: not-allowed;
+}
