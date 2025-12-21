@@ -1,20 +1,20 @@
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+@import "common/mixins";
+@import "common/fonts";
+@import "common/variables";
+@import "common/base";
+@import "common/global";
 
-@import "vendor/normalize.scss";
-@import "common/base.scss";
-@import "common/fonts.scss";
-@import "common/global.scss";
-@import "common/mixins.scss";
-@import "common/variables.scss";
-@import "blocks/page.scss";
-@import "blocks/header.scss";
-@import "blocks/container.scss";
-@import "blocks/nav.scss";
-@import "blocks/toggle.scss";
-@import "blocks/nav-accordion.scss";
-@import "blocks/hero.scss";
-@import "blocks/footer.scss";
-@import "blocks/footer-nav.scss";
-@import "blocks/social.scss";
+@import "swiper/css";
+@import "swiper/css/pagination";
+
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/container";
+@import "blocks/nav";
+@import "blocks/toggle";
+@import "blocks/nav-accordion";
+@import "blocks/hero";
+@import "blocks/footer";
+@import "blocks/footer-nav";
+@import "blocks/social";
 

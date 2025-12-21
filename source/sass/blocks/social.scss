@@ -1,22 +1,24 @@
 .social {
   @include list-reset;
-  --icon-bg: #316dc2;
-  --icon-fill: #ffffff;
-  --active: #275699;
-  --link-w: 26px;
-  --link-h: 26px;
+
+  --icon-bg: var(--brand, #0000ff);
+  --icon-fill: var(--white, #ffffff);
+  --link-active: var(--active, #0000ff);
+  --link-size: 26px;
+
   display: flex;
   justify-content: center;
   column-gap: 10px;
 
-  @media (min-width:$tablet-width) {
+  @media (min-width: $tablet-width) {
     justify-content: end;
+    column-gap: 20px;
+
     --link-w: 36px;
     --link-h: 36px;
-    column-gap: 20px;
   }
 
-  @media (min-width:$desktop-width) {
+  @media (min-width: $desktop-width) {
     column-gap: 20px;
   }
 }
@@ -25,8 +27,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: var(--link-w);
-  height: var(--link-h);
+  width: var(--link-size);
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--icon-bg);
 }
@@ -82,19 +84,19 @@
 
 .social__link:focus,
 .social__link:focus-visible {
-  background-color:var(--icon-fill);
+  background-color: var(--icon-fill);
   outline: none;
 
-  &:before {
+  &::before {
     background-color: var(--icon-bg);
     opacity: 1;
   }
 }
 
 .social__link:active {
-  background-color: var(--active);
+  background-color: var(--link-active);
 
-  &:before {
+  &::before {
     background-color: var(--icon-fill);
   }
 }

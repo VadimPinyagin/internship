@@ -16,13 +16,13 @@
   min-height: 568px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-overlay);
+    background-color: var(--color-overlay, transparent);
   }
 
   @media (min-width: $tablet-width) {
@@ -35,83 +35,89 @@
 }
 
 .hero__slide--professional {
-
-  --hero-slide-background: image-set(
-  "../img/hero-slider/professional/professional-experience-mobile@1x.webp" 1x,
-  "../img/hero-slider/professional/professional-experience-mobile@2x.webp" 2x,
-  "../img/hero-slider/professional/professional-experience-mobile@1x.jpg" 1x,
-  "../img/hero-slider/professional/professional-experience-mobile@2x.jpg" 2x
+  --hero-slide-background:
+    image-set(
+      "../img/hero-slider/professional/professional-experience-mobile@1x.webp" 1x,
+      "../img/hero-slider/professional/professional-experience-mobile@2x.webp" 2x,
+      "../img/hero-slider/professional/professional-experience-mobile@1x.jpg" 1x,
+      "../img/hero-slider/professional/professional-experience-mobile@2x.jpg" 2x
     );
 
   @media (min-width: $tablet-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/professional/professional-experience-tablet@1x.webp" 1x,
-    "../img/hero-slider/professional/professional-experience-tablet@2x.webp" 2x,
-    "../img/hero-slider/professional/professional-experience-tablet@1x.jpg" 1x,
-    "../img/hero-slider/professional/professional-experience-tablet@2x.jpg" 2x
-    );
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/professional/professional-experience-tablet@1x.webp" 1x,
+        "../img/hero-slider/professional/professional-experience-tablet@2x.webp" 2x,
+        "../img/hero-slider/professional/professional-experience-tablet@1x.jpg" 1x,
+        "../img/hero-slider/professional/professional-experience-tablet@2x.jpg" 2x
+      );
   }
 
   @media (min-width: $desktop-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/professional/professional-experience-desktop@1x.webp" 1x,
-    "../img/hero-slider/professional/professional-experience-desktop@2x.webp" 2x,
-    "../img/hero-slider/professional/professional-experience-desktop.jpg" 1x,
-    "../img/hero-slider/professional/professional-experience-desktop@2x.jpg" 2x
-    );
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/professional/professional-experience-desktop@1x.webp" 1x,
+        "../img/hero-slider/professional/professional-experience-desktop@2x.webp" 2x,
+        "../img/hero-slider/professional/professional-experience-desktop.jpg" 1x,
+        "../img/hero-slider/professional/professional-experience-desktop@2x.jpg" 2x
+      );
   }
 }
 
 .hero__slide--volunteer {
-
-  --hero-slide-background: image-set(
-    "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.webp" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.webp" 2x,
-    "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.jpg" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.jpg" 2x
+  --hero-slide-background:
+    image-set(
+      "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.webp" 1x,
+      "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.webp" 2x,
+      "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.jpg" 1x,
+      "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.jpg" 2x
     );
 
   @media (min-width: $tablet-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.webp" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.webp" 2x,
-    "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.jpg" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.jpg" 2x
-    );
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.webp" 1x,
+        "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.webp" 2x,
+        "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.jpg" 1x,
+        "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.jpg" 2x
+      );
   }
 
   @media (min-width: $desktop-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/volunteer/volunteer-programs-desktop@1x.webp" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.webp" 2x,
-    "../img/hero-slider/volunteer/volunteer-programs-desktop.jpg" 1x,
-    "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.jpg" 2x
-    );
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/volunteer/volunteer-programs-desktop@1x.webp" 1x,
+        "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.webp" 2x,
+        "../img/hero-slider/volunteer/volunteer-programs-desktop.jpg" 1x,
+        "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.jpg" 2x
+      );
   }
 }
 
 .hero__slide--internship {
-
-  --hero-slide-background: image-set(
-    "../img/hero-slider/internship/internship-programs-mobile@1x.webp" 1x,
-    "../img/hero-slider/internship/internship-programs-mobile@2x.webp" 2x,
-    "../img/hero-slider/internship/internship-programs-mobile@1x.jpg" 1x,
-    "../img/hero-slider/internship/internship-programs-mobile@2x.jpg" 2x);
+  --hero-slide-background:
+    image-set(
+      "../img/hero-slider/internship/internship-programs-mobile@1x.webp" 1x,
+      "../img/hero-slider/internship/internship-programs-mobile@2x.webp" 2x,
+      "../img/hero-slider/internship/internship-programs-mobile@1x.jpg" 1x,
+      "../img/hero-slider/internship/internship-programs-mobile@2x.jpg" 2x);
 
   @media (min-width: $tablet-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/internship/internship-programs-tablet@1x.webp" 1x,
-    "../img/hero-slider/internship/internship-programs-tablet@2x.webp" 2x,
-    "../img/hero-slider/internship/internship-programs-tablet@1x.jpg" 1x,
-    "../img/hero-slider/internship/internship-programs-tablet@2x.jpg" 2x);
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/internship/internship-programs-tablet@1x.webp" 1x,
+        "../img/hero-slider/internship/internship-programs-tablet@2x.webp" 2x,
+        "../img/hero-slider/internship/internship-programs-tablet@1x.jpg" 1x,
+        "../img/hero-slider/internship/internship-programs-tablet@2x.jpg" 2x);
   }
 
   @media (min-width: $desktop-width) {
-    --hero-slide-background: image-set(
-    "../img/hero-slider/internship/internship-programs-desktop@1x.webp" 1x,
-    "../img/hero-slider/internship/internship-programs-desktop@2x.webp" 2x,
-    "../img/hero-slider/internship/internship-programs-desktop.jpg" 1x,
-    "../img/hero-slider/internship/internship-programs-desktop@2x.jpg" 2x
-    );
+    --hero-slide-background:
+      image-set(
+        "../img/hero-slider/internship/internship-programs-desktop@1x.webp" 1x,
+        "../img/hero-slider/internship/internship-programs-desktop@2x.webp" 2x,
+        "../img/hero-slider/internship/internship-programs-desktop.jpg" 1x,
+        "../img/hero-slider/internship/internship-programs-desktop@2x.jpg" 2x
+      );
   }
 }

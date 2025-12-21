@@ -1,5 +1,6 @@
 .footer-nav {
   @include list-reset;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -7,13 +8,13 @@
   row-gap: 20px;
   padding-block: 20px;
 
-  @media (min-width:$tablet-width) {
+  @media (min-width: $tablet-width) {
     justify-content: end;
     column-gap: 15px;
     padding-block: 41px 40px;
   }
 
-  @media (min-width:$desktop-width) {
+  @media (min-width: $desktop-width) {
     justify-content: start;
     margin-inline-start: 52px;
     column-gap: 30px;
@@ -23,17 +24,6 @@
 .footer-nav__link {
   color: var(--text, #333333);
   text-decoration: none;
-
-  @media (min-width:$tablet-width) {
-    font-size: 16px;
-  }
-
-  @media (min-width:$desktop-width) {
-    line-height: 26px;
-  }
-}
-
-.footer-nav__link{
 
   &:hover {
     color: var(--brand, #316dc2);
@@ -49,5 +39,13 @@
 
   &:active {
     color: var(--active, #275699);
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
   }
 }

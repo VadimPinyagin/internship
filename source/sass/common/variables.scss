@@ -3,14 +3,14 @@ $tablet-width: 768px;
 $desktop-width: 1440px;
 
 :root {
-  --brand: #316dc2;
-  --active: #275699;
+  --brand: #316dc2; // Запасной #0000ff;
+  --active: #275699; // Запасной #0000ff;
   --white: #ffffff;
   --light-accent: #f0efe9;
   --gray: #484848;
   --light-gray: #a9afb7;
   --accent: #ff5e66;
-  --bg: var(--light-accent); // Запасной #ffffff;
+  --bg: var(--light-accent); // Запасной #ffffff;#0000ff;
   --text: var(--gray); // Запасной #333333;
   --attention: var(--accent); // Запасной #ff0000;
   --disabled: var(--light-gray); // Запасной #a0a0a0;
