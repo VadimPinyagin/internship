@@ -1,4 +1,4 @@
-.criterias {
+.criteria {
   --square-size: 42px;
   --translation: -20px;
   --star-w: 18px;
@@ -33,7 +33,7 @@
   }
 }
 
-.criterias__item {
+.criteria__item {
   position: relative;
   padding-block: 16px;
   padding-inline: 21px;
@@ -44,7 +44,7 @@
   gap: 15px;
 }
 
-.criterias__item::before {
+.criteria__item::before {
   content: "";
   display: block;
   position: absolute;
@@ -56,7 +56,7 @@
   background-color: var(--brand, #0000ff);
 }
 
-.criterias__item::after {
+.criteria__item::after {
   content: "";
   display: block;
   position: absolute;
@@ -70,7 +70,7 @@
   left: calc(var(--translation) + var(--half-square) - var(--half-star-w));
 }
 
-.criterias__header {
+.criteria__header {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
@@ -82,7 +82,7 @@
   }
 }
 
-.criterias__description {
+.criteria__description {
   font-weight: 300;
   margin: 0;
   grid-row: 2;
