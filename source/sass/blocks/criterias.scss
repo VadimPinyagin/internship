@@ -1,22 +1,76 @@
 .criterias {
+  --square-size: 42px;
+  --translation: -20px;
+  --star-w: 18px;
+  --star-h: 22px;
+  --half-square: calc(var(--square-size) / 2);
+  --half-star-w: calc(var(--star-w) / 2);
+  --half-star-h: calc(var(--star-h) / 2);
   @include list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   background-color: var(--brand, #0000ff);
   border-radius: 20px;
   padding-inline: 20px;
   padding-block: 40px;
   color: var(--white, #ffffff);
+
+  @media (min-width: $tablet-width) {
+
+  }
+
+  @media (min-width: $desktop-width) {
+//
+  }
 }
 
 .criterias__item {
+  position: relative;
+  padding-block: 16px;
   padding-inline: 21px;
+  box-shadow: inset 0 0 0 1px var(--white, #ffffff);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.criterias__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: var(--translation);
+  top: var(--translation);
+  width: var(--square-size);
+  aspect-ratio: 1;
+  mask-position: center;
+  background-color: var(--brand, #0000ff);
+}
+
+.criterias__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--star-w);
+  height: var(--star-h);
+  mask-image: url("/__spritemap#sprite-star-view");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: var(--white, #ffffff);
+  top: calc(var(--translation) + var(--half-square) - var(--half-star-h));
+  left: calc(var(--translation) + var(--half-square) - var(--half-star-w));
 }
 
 .criterias__header {
   font-weight: 400;
-  font-size: 15;
+  font-size: 16px;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .criterias__description {
   font-weight: 300;
+  margin: 0;
+  grid-row: 2;
 }
