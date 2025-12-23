@@ -1,0 +1,22 @@
+.criterias {
+  @include list-reset;
+  background-color: var(--brand, #0000ff);
+  border-radius: 20px;
+  padding-inline: 20px;
+  padding-block: 40px;
+  color: var(--white, #ffffff);
+}
+
+.criterias__item {
+  padding-inline: 21px;
+}
+
+.criterias__header {
+  font-weight: 400;
+  font-size: 15;
+  text-transform: uppercase;
+}
+
+.criterias__description {
+  font-weight: 300;
+}
