@@ -1,10 +1,17 @@
+.about {
+  padding-block: 50px;
+}
+
 .about__title {
   @include title;
   font-size: 20px;
   line-height: 20px;
+  margin: 0;
+  padding-block-end: 15px;
 }
 
 .about__text {
   font-size: 16px;
   line-height: 22px;
+  margin: 0;
 }
