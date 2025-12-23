@@ -6,10 +6,12 @@
   --half-square: calc(var(--square-size) / 2);
   --half-star-w: calc(var(--star-w) / 2);
   --half-star-h: calc(var(--star-h) / 2);
+  --gap: 22px;
+  --gap-y: calc(var(--gap) - 2px);
   @include list-reset;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: var(--gap);
   background-color: var(--brand, #0000ff);
   border-radius: 20px;
   padding-inline: 20px;
@@ -17,7 +19,13 @@
   color: var(--white, #ffffff);
 
   @media (min-width: $tablet-width) {
-
+    --gap: 54px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    row-gap: var(--gap);
+    column-gap: var(--gap-y);
+    padding-inline: 70px 50px;
   }
 
   @media (min-width: $desktop-width) {
@@ -67,10 +75,19 @@
   font-size: 16px;
   text-transform: uppercase;
   margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 22px;
+  }
 }
 
 .criterias__description {
   font-weight: 300;
   margin: 0;
   grid-row: 2;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
 }
