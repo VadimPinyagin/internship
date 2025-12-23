@@ -1,4 +1,4 @@
-.link-more {
+.button {
   position: relative;
   display: flex;
   align-items: center;
@@ -18,7 +18,31 @@
   gap: 24px;
 }
 
-.link-more::after {
+.button:hover {
+  background-color: var(--brand, #0000ff);
+  color: var(--white, #ffffff);
+}
+
+.button:hover::after {
+  background-color: var(--white, #ffffff);
+}
+
+.button:hover::before {
+  transform: rotate(45deg);
+  background-color: var(--brand, #0000ff);
+}
+
+.button:active {
+  background-color: var(--brand, #0000ff);
+  color: var(--white, #ffffff);
+  opacity: 0.7;
+}
+
+.button:active::before {
+  background-color: var(--brand, #0000ff);
+}
+
+.button::after {
   content: "";
   display: block;
   border-radius: 50%;
@@ -27,7 +51,7 @@
   height: 34px;
 }
 
-.link-more::before {
+.button::before {
   content: "";
   display: block;
   position: absolute;
@@ -38,26 +62,14 @@
   background-color: var(--white, #ffffff);
 }
 
-.link-more:hover {
-  background-color: var(--brand, #0000ff);
-  color: var(--white, #ffffff);
-}
+.button__is--disabled {
+  color: var(--disabled, #484848);
+  background-color: transparent;
+  border-color: var(--disabled, #484848);
+  cursor: not-allowed;
+  pointer-events: none;
 
-.link-more:hover::after {
-  background-color: var(--white, #ffffff);
-}
-
-.link-more:hover::before {
-  transform: rotate(45deg);
-  background-color: var(--brand, #0000ff);
-}
-
-.link-more:active {
-  background-color: var(--brand, #0000ff);
-  color: var(--white, #ffffff);
-  opacity: 0.7;
-}
-
-.link-more:active::before {
-  background-color: var(--brand, #0000ff);
+  &::after {
+    background-color: var(--disabled, #484848);
+  }
 }

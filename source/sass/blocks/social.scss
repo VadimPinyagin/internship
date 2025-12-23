@@ -39,7 +39,7 @@
   mask-image: var(--icon);
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: cover;
+  mask-size: contain;
   background-color: var(--icon-fill);
   width: var(--icon-w);
   height: var(--icon-h);

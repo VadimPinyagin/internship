@@ -13,7 +13,7 @@ $desktop-width: 1440px;
   --bg: var(--light-accent); // Запасной #ffffff;#0000ff;
   --text: var(--gray); // Запасной #333333;
   --attention: var(--accent); // Запасной #ff0000;
-  --disabled: var(--light-gray); // Запасной #a0a0a0;
+  --disabled: var(--light-gray); // Запасной #484848;
   --color-overlay: color-mix(in sRGB, var(--brand) 20%, transparent);
 
   // Для серого оверлея просто переопределять в media --color-overlay: rgba(13, 29, 51, 0.4);
