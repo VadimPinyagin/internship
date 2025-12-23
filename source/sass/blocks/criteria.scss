@@ -1,11 +1,4 @@
 .criteria {
-  --square-size: 42px;
-  --translation: -20px;
-  --star-w: 18px;
-  --star-h: 22px;
-  --half-square: calc(var(--square-size) / 2);
-  --half-star-w: calc(var(--star-w) / 2);
-  --half-star-h: calc(var(--star-h) / 2);
   --gap: 22px;
   --gap-y: calc(var(--gap) - 2px);
   @include list-reset;
@@ -48,26 +41,17 @@
   content: "";
   display: block;
   position: absolute;
-  left: var(--translation);
-  top: var(--translation);
-  width: var(--square-size);
-  aspect-ratio: 1;
-  mask-position: center;
+  width: 18px;
+  height: 22px;
+  background-image: url("/__spritemap#sprite-star-view");
   background-color: var(--brand, #0000ff);
-}
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 6px 0 2px var(--brand, #0000ff);
 
-.criteria__item::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--star-w);
-  height: var(--star-h);
-  mask-image: url("/__spritemap#sprite-star-view");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  background-color: var(--white, #ffffff);
-  top: calc(var(--translation) + var(--half-square) - var(--half-star-h));
-  left: calc(var(--translation) + var(--half-square) - var(--half-star-w));
 }
 
 .criteria__header {
