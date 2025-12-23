@@ -1,10 +1,8 @@
 .criteria {
-  --gap: 22px;
-  --gap-y: calc(var(--gap) - 2px);
   @include list-reset;
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 22px;
   background-color: var(--brand, #0000ff);
   border-radius: 20px;
   padding-inline: 20px;
@@ -12,17 +10,17 @@
   color: var(--white, #ffffff);
 
   @media (min-width: $tablet-width) {
-    --gap: 54px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    row-gap: var(--gap);
-    column-gap: var(--gap-y);
-    padding-inline: 70px 50px;
+    padding: 50px;
+    gap: 32px;
   }
 
   @media (min-width: $desktop-width) {
-//
+    padding-inline: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 
@@ -35,6 +33,16 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (min-width: $tablet-width) {
+    margin: 22px 0 0 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    padding: 31px 41px;
+    align-items: center;
+  }
 }
 
 .criteria__item::before {
@@ -64,6 +72,12 @@
     font-size: 20px;
     line-height: 22px;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 26px;
+    line-height: 30px;
+    flex: 1;
+  }
 }
 
 .criteria__description {
@@ -73,5 +87,9 @@
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex: 1;
   }
 }
