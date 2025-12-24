@@ -27,20 +27,16 @@
 
 .criteria__item {
   position: relative;
-  padding-block: 16px;
   padding-inline: 21px;
   box-shadow: inset 0 0 0 1px var(--white, #ffffff);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 
   @media (min-width: $tablet-width) {
     margin: 22px 0 0 22px;
   }
 
   @media (min-width: $desktop-width) {
-    flex-direction: row;
+    display: flex;
     padding: 31px 41px;
     align-items: center;
   }
@@ -63,11 +59,10 @@
 
 }
 
-.criteria__header {
+.criteria__item h3 {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
-  margin: 0;
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
@@ -81,9 +76,8 @@
   }
 }
 
-.criteria__description {
+.criteria__item p {
   font-weight: 300;
-  margin: 0;
   grid-row: 2;
 
   @media (min-width: $tablet-width) {
