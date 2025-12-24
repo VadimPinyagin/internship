@@ -2,25 +2,29 @@
   padding-block: 50px;
 }
 
-.about__title {
+.about__wrapper h2 {
   @include title;
+  margin-block: 0 15px;
   font-size: 20px;
   line-height: 20px;
-  margin: 0;
-  padding-block-end: 15px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    //
+  }
 }
 
-.about__term {
-  display: inline-block;
-}
-
-.about__definition {
+.about__wrapper p {
   font-size: 16px;
   line-height: 22px;
-  margin: 0;
-}
+  margin-block: 15px;
 
-.about__term-description {
-  margin: 0;
-  display: inline;
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
