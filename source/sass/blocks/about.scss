@@ -10,8 +10,17 @@
   padding-block-end: 15px;
 }
 
-.about__text {
+.about__term {
+  display: inline-block;
+}
+
+.about__definition {
   font-size: 16px;
   line-height: 22px;
   margin: 0;
+}
+
+.about__term-description {
+  margin: 0;
+  display: inline;
 }
