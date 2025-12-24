@@ -1,16 +1,21 @@
 .about {
-  padding-block: 50px;
+  padding-block: 35px;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 20px;
+  }
 }
 
 .about__wrapper h2 {
   @include title;
-  margin-block: 0 15px;
+  margin-block: 15px;
   font-size: 20px;
   line-height: 20px;
 
   @media (min-width: $tablet-width) {
     font-size: 34px;
     line-height: 50px;
+    margin-block: 30px;
   }
 
   @media (min-width: $desktop-width) {
@@ -26,5 +31,6 @@
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 26px;
+    margin-block: 30px;
   }
 }
