@@ -17,7 +17,9 @@ $desktop-width: 1440px;
   --color-overlay: color-mix(in sRGB, var(--brand) 20%, transparent);
   --swiper-navigation-sides-offset: auto;
   --swiper-navigation-top-offset: 100%;
+  --swiper-scrollbar-size: 2px;
   --swiper-navigation-color: var(--brand);
+  --swiper-scrollbar-drag-bg-color: var(--brand);
 
 
   // Для серого оверлея просто переопределять в media --color-overlay: rgba(13, 29, 51, 0.4);

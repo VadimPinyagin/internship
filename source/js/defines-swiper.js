@@ -36,6 +36,8 @@ export const initSwiperPrograms = () => {
       768: {
         scrollbar: {
           el:'.swiper-scrollbar',
+          draggable: true,
+          dragSize: '324',
         },
         centeredSlides: false,
         slidesPerView: 2,

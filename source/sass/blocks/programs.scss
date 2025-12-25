@@ -71,8 +71,10 @@
 }
 
 .programs__swiper-scrollbar {
+  display: none;
 
   @media (min-width: $tablet-width) {
+    display: block;
     height: 2px;
     background-color: color-mix(in sRGB, var(--brand, #0000ff) 20%, transparent);
   }
