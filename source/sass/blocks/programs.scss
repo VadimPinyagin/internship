@@ -1,5 +1,80 @@
+.programs__container {
+  position: relative;
+}
+
 .programs__list {
   @include list-reset;
+
+  @media (min-width: $tablet-width) {
+    margin-block-end: 50px;
+  }
+}
+
+.programs__title {
+  @include title;
+  font-size: 20px;
+  margin-block: 0 35px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+}
+
+.programs__button {
+  margin-block-start: 30px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: transparent;
+}
+
+.programs__button-prev,
+.programs__button-next {
+  width: 22px;
+  height: 22px;
+  top: 24px;
+
+    &::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
+    background-color: var(--light-gray, #333333);
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 40px;
+  }
+}
+
+.programs__button-prev {
+  right: 30px;
+
+  &::before{
+    background-color: var(--swiper-navigation-color, #0000ff);
+    transform: rotate(-135deg);
+  }
+}
+
+.programs__button-next {
+  right: 0;
+
+  &::before{
+    background-color: var(--swiper-navigation-color, #0000ff);
+    transform: rotate(45deg);
+  }
+}
+
+.programs__swiper-scrollbar {
+
+  @media (min-width: $tablet-width) {
+    height: 2px;
+    background-color: color-mix(in sRGB, var(--brand, #0000ff) 20%, transparent);
+  }
 }
 
 .programs__slide {
@@ -24,10 +99,6 @@
 
   @media (min-width: $tablet-width) {
     min-height: 420px;
-  }
-
-  @media (min-width: $desktop-width) {
-    min-height: 800px;
   }
 }
 
@@ -90,3 +161,34 @@
       );
   }
 }
+
+.programs__slide--learning {
+  --programs-slide-background:
+    image-set(
+      "../img/programs-slider/learning/learning-mobile@1x.webp" 1x,
+      "../img/programs-slider/learning/learning-mobile@2x.webp" 2x,
+      "../img/programs-slider/learning/learning-mobile@1x.jpg" 1x,
+      "../img/programs-slider/learning/learning-mobile@2x.jpg" 2x
+    );
+
+  @media (min-width: $tablet-width) {
+    --programs-slide-background:
+      image-set(
+        "../img/programs-slider/learning/learning-tablet@1x.webp" 1x,
+        "../img/programs-slider/learning/learning-tablet@2x.webp" 2x,
+        "../img/programs-slider/learning/learning-tablet@1x.jpg" 1x,
+        "../img/programs-slider/learning/learning-tablet@2x.jpg" 2x
+      );
+  }
+
+  @media (min-width: $desktop-width) {
+    --programs-slide-background:
+      image-set(
+        "../img/programs-slider/learning/learning-desktop@1x.webp" 1x,
+        "../img/programs-slider/learning/learning-desktop@2x.webp" 2x,
+        "../img/programs-slider/learning/learning-desktop.jpg" 1x,
+        "../img/programs-slider/learning/learning-desktop@2x.jpg" 2x
+      );
+  }
+}
+
