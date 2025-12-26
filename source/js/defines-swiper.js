@@ -1,5 +1,8 @@
 import Swiper from 'swiper';
 import {Pagination, Navigation, Scrollbar} from 'swiper/modules';
+const programsButtonPrev = document.querySelector('.programs__button-prev');
+const programsButtonNext = document.querySelector('.programs__button-next');
+const programsScrollbar = document.querySelector('.programs__swiper-scrollbar');
 
 export const initSwiperHero = () => {
   new Swiper('.hero', {
@@ -12,7 +15,6 @@ export const initSwiperHero = () => {
     },
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
       clickable: true,
     },
   });
@@ -23,8 +25,8 @@ export const initSwiperPrograms = () => {
     modules: [Scrollbar, Navigation],
     direction: 'horizontal',
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: programsButtonPrev,
+      prevEl: programsButtonNext,
     },
     breakpoints: {
       0: {
@@ -35,7 +37,7 @@ export const initSwiperPrograms = () => {
       },
       768: {
         scrollbar: {
-          el:'.swiper-scrollbar',
+          el: programsScrollbar,
           draggable: true,
           dragSize: '324',
         },
