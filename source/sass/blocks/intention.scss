@@ -8,6 +8,7 @@
 
 .intention h3 {
   @include title;
+
   font-size: 18px;
   line-height: 22px;
   margin-block: 40px 20px;
@@ -20,7 +21,6 @@
 }
 
 .intention p {
-
   @media (min-width: $tablet-width) {
     font-size: 16px;
   }

@@ -3,12 +3,10 @@
 @import "common/variables";
 @import "common/base";
 @import "common/global";
-
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 @import "swiper/css/scrollbar";
-
 @import "blocks/page";
 @import "blocks/container";
 @import "blocks/header";
@@ -18,9 +16,9 @@
 @import "blocks/hero";
 @import "blocks/about";
 @import "blocks/intention";
-@import "blocks/criteria.scss";
-@import "blocks/button.scss";
-@import "blocks/programs.scss";
+@import "blocks/criteria";
+@import "blocks/button";
+@import "blocks/programs";
 @import "blocks/footer";
 @import "blocks/footer-nav";
 @import "blocks/social";

@@ -12,6 +12,7 @@
 
 .programs__title {
   @include title;
+
   font-size: 20px;
   margin-block: 0 35px;
 
@@ -24,56 +25,102 @@
 .programs__link {
   text-decoration: none;
   margin-block-start: 30px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-    color: transparent;
+.programs__control-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    gap: 52px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.programs__button-container {
+  display: flex;
+  gap: 8px;
 }
 
 .programs__button-prev,
 .programs__button-next {
   width: 22px;
-  height: 22px;
-  top: 24px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 0;
 
-    &::before{
+  &::before {
     content: "";
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 10px;
     height: 10px;
-    position: absolute;
     mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
-    background-color: var(--light-gray, #333333);
+    background-color: var(--swiper-navigation-color, #0000ff);
   }
 
-  @media (min-width: $tablet-width) {
-    top: 40px;
+  &:hover::before {
+    background-color: color-mix(in sRGB, var(--swiper-navigation-color, #0000ff) 70%, transparent);
+  }
+
+  &:focus,
+  :focus-visible {
+    border-radius: 50%;
+    background-color: var(--white, #ffffff);
+
+    &::before {
+      background-color: var(--swiper-navigation-color, #0000ff);
+    }
+  }
+
+  &:active {
+    border-radius: 50%;
+    background-color: var(--white, #ffffff);
+
+    &::before {
+      background-color: color-mix(in sRGB, var(--swiper-navigation-color, #0000ff) 70%, transparent);
+    }
+  }
+
+  &:disabled {
+    background-color: transparent;
+    &::before {
+      background-color: var(--disabled, #484848);
+    }
   }
 }
 
-.programs__button-prev {
-  right: 30px;
-
-  &::before{
-    background-color: var(--swiper-navigation-color, #0000ff);
-    transform: rotate(-135deg);
-  }
+.programs__button-prev::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
 }
 
-.programs__button-next {
-  right: 0;
-
-  &::before{
-    background-color: var(--swiper-navigation-color, #0000ff);
-    transform: rotate(45deg);
-  }
+.programs__button-next::before {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .programs__swiper-scrollbar {
   display: none;
 
   @media (min-width: $tablet-width) {
+    flex-grow: 1;
     display: block;
     height: 2px;
     background-color: color-mix(in sRGB, var(--brand, #0000ff) 20%, transparent);
@@ -82,6 +129,7 @@
 
 .programs__slide {
   --radius: 12px;
+
   display: flex;
   align-items: center;
   background: var(--programs-slide-background) no-repeat center/cover;

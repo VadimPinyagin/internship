@@ -8,6 +8,7 @@
 
 .about__title {
   @include title;
+
   margin-block: 15px;
   font-size: 20px;
   line-height: 20px;
@@ -15,11 +16,7 @@
   @media (min-width: $tablet-width) {
     font-size: 34px;
     line-height: 50px;
-    margin-block:0 30px;
-  }
-
-  @media (min-width: $desktop-width) {
-    //
+    margin-block: 0 30px;
   }
 }
 

@@ -77,7 +77,7 @@
           <div class="about__element intention">
             <h3>Наша цель</h3>
             <p>Наша деятельность направлена на повышение квалификации молодых специалистов на ранних и средних стадиях карьеры, предоставляя им инструменты для решения сложных проблем, с которыми сталкиваются в мире. Цель центра &mdash; наделить этих людей способностью инициировать значимые изменения.</p>
-            <button href="#" class="intention__button button">Подробнее&nbsp;о&nbsp;проекте</button>
+            <button class="intention__button button" type="button">Подробнее&nbsp;о&nbsp;проекте</button>
           </div>
           <ul class="about__element criteria">
             <li class="criteria__item">
@@ -102,8 +102,13 @@
       <section class="programs swiper" data-test="programs">
         <div class="programs__container container">
           <h2 class="programs__title">Программы</h2>
-          <div class="programs__button-prev"></div><!-- swiper-button-prev swiper-button-next -->
-          <div class="programs__button-next"></div>
+          <div class="programs__control-container">
+            <div class="programs__swiper-scrollbar"></div>
+            <div class="programs__button-container">
+              <button class="programs__button programs__button-prev" type="button"></button>
+              <button class="programs__button programs__button-next" type="button"></button>
+            </div>
+          </div>
           <div class="programs__swiper swiper">
             <ul class="programs__list swiper-wrapper">
               <li class="programs__slide swiper-slide programs__slide--internship"></li>
@@ -113,7 +118,6 @@
               <li class="programs__slide swiper-slide programs__slide--volunteer"></li>
               <li class="programs__slide swiper-slide programs__slide--learning"></li>
             </ul>
-            <div class="programs__swiper-scrollbar"></div>
           </div>
           <a class="programs__link button" href="#">Все программы</a>
         </div>
@@ -150,17 +154,17 @@
         </ul>
         <ul class="footer__social social">
           <li class="social__item">
-            <a class="social__link social__link--vk" href="#" target="_blank">
+            <a class="social__link social__link--vk" href="#" target="_blank" rel="noreferrer noopener">
               <span class="visually-hidden">Мы в Вконтакте</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--ok" href="#" target="_blank">
+            <a class="social__link social__link--ok" href="#" target="_blank" rel="noreferrer noopener">
               <span class="visually-hidden">Мы в Одноклассниках</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--reddit" href="#" target="_blank">
+            <a class="social__link social__link--reddit" href="#" target="_blank" rel="noreferrer noopener">
               <span class="visually-hidden">Мы в Reddit</span>
             </a>
           </li>

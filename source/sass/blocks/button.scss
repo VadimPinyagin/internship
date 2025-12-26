@@ -61,8 +61,8 @@
   color: color-mix(in sRGB, var(--white, #ffffff) 70%, transparent);
 
   &::before {
-  background-color: color-mix(in sRGB,  var(--brand, #0000ff) 70%, transparent);;
-}
+    background-color: color-mix(in sRGB, var(--brand, #0000ff) 70%, transparent);
+  }
 
   &::after {
     background-color: var(--white, #ffffff);

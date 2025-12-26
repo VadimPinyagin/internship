@@ -1,8 +1,7 @@
 import Swiper from 'swiper';
-import {Pagination, Navigation, Scrollbar} from 'swiper/modules';
-const programsButtonPrev = document.querySelector('.programs__button-prev');
-const programsButtonNext = document.querySelector('.programs__button-next');
-const programsScrollbar = document.querySelector('.programs__swiper-scrollbar');
+import { Pagination, Navigation, Scrollbar } from 'swiper/modules';
+import { programsButton, programsButtonPrev, programsButtonNext, programsScrollbar } from './constants.js';
+import { manageNavigationButtons } from './utils.js';
 
 export const initSwiperHero = () => {
   new Swiper('.hero', {
@@ -21,12 +20,12 @@ export const initSwiperHero = () => {
 };
 
 export const initSwiperPrograms = () => {
-  new Swiper('.programs__swiper', {
+  const programsSwiper = new Swiper('.programs__swiper', {
     modules: [Scrollbar, Navigation],
     direction: 'horizontal',
     navigation: {
-      nextEl: programsButtonPrev,
-      prevEl: programsButtonNext,
+      nextEl: programsButtonNext,
+      prevEl: programsButtonPrev,
     },
     breakpoints: {
       0: {
@@ -52,4 +51,8 @@ export const initSwiperPrograms = () => {
       },
     },
   });
+
+  manageNavigationButtons(programsSwiper, programsButton);
+
+  return programsSwiper;
 };
