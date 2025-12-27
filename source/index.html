@@ -159,24 +159,24 @@
       <!-- <section data-test="contacts">contacts</section> -->
       <section class="feedback" data-test="form">
         <div class="feedback__container container">
-          <h3 class="feedback__title">Напишите нам</h3>
-          <p class="feedbeck__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
           <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="post">
+            <h3 class="feedback__title">Напишите нам</h3>
+            <p class="feedbeck__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
             <fieldset class="feedback__set">
               <label for="user-name">Имя</label>
               <input type="text" name="name" id="user-name" autocomplete="off" required>
             </fieldset>
-            <fieldset data-validate-type="phone" data-on-input-validate>
+            <fieldset class="feedback__set" data-validate-type="phone" data-on-input-validate>
               <label for="phone">Телефон</label>
               <input type="tel" name="phone" id="phone" autocomplete="off" required>
             </fieldset>
-            <fieldset data-validate-type="text">
+            <fieldset class="feedback__set" data-validate-type="text">
               <label for="message">Ваше сообщение</label>
               <textarea name="message" id="message" cols="30" rows="10" required></textarea>
             </fieldset>
-            <fieldset data-name="city" required>
+            <fieldset class="feedback__set" data-name="city">
               <label>Выберите город</label>
-              <select class="custom-select" aria-label="Выберите город">
+              <select class="feedback__custom-select" aria-label="Выберите город" required>
                 <option value=""></option>
                 <option value="spb">Санкт-Петербург</option>
                 <option value="msk">Москва</option>
@@ -184,9 +184,9 @@
                 <option value="nsb">Новосибирск</option>
               </select>
             </fieldset>
-            <fieldset data-validate-type="checkbox">
-              <label>Я согласен на обработку моих персональных данных</label>
-              <input type="checkbox" name="confirmation" value="agree" aria-label="Согласие на обработку персональных данных." required>
+            <fieldset class="feedback__set" data-validate-type="checkbox">
+              <label for="agreement">Я согласен на обработку моих персональных данных</label>
+              <input type="checkbox" name="confirmation" value="agree" id="agreement" aria-label="Согласие на обработку персональных данных." required>
             </fieldset>
             <button class="button button--dark" type="submit">Отправить</button>
           </form>

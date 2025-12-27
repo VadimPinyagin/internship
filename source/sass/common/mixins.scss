@@ -22,3 +22,14 @@
   background-color: var(--disable, #a0a0a0);
   cursor: not-allowed;
 }
+
+@mixin feedback-bg {
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
