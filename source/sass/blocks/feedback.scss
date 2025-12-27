@@ -1,0 +1,54 @@
+.feedback {
+  min-height: 753px;
+  background-image: image-set(
+      "../img/feedback/feedback-bg-mobile@1x.webp" 1x,
+      "../img/feedback/feedback-bg-mobile@2x.webp" 2x,
+      "../img/feedback/feedback-bg-mobile@1x.jpg" 1x,
+      "../img/feedback/feedback-bg-mobile@2x.jpg" 2x
+    );
+}
+
+.feedback__form {
+  background-color: var(--brand, #0000ff);
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.feedback__set {
+  border: none;
+}
+
+.feedback__container {
+
+}
+
+// .hero__slide--volunteer {
+//   --hero-slide-background:
+//     image-set(
+//       "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.webp" 1x,
+//       "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.webp" 2x,
+//       "../img/hero-slider/volunteer/volunteer-programs-mobile@1x.jpg" 1x,
+//       "../img/hero-slider/volunteer/volunteer-programs-mobile@2x.jpg" 2x
+//     );
+
+//   @media (min-width: $tablet-width) {
+//     --hero-slide-background:
+//       image-set(
+//         "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.webp" 1x,
+//         "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.webp" 2x,
+//         "../img/hero-slider/volunteer/volunteer-programs-tablet@1x.jpg" 1x,
+//         "../img/hero-slider/volunteer/volunteer-programs-tablet@2x.jpg" 2x
+//       );
+//   }
+
+//   @media (min-width: $desktop-width) {
+//     --hero-slide-background:
+//       image-set(
+//         "../img/hero-slider/volunteer/volunteer-programs-desktop@1x.webp" 1x,
+//         "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.webp" 2x,
+//         "../img/hero-slider/volunteer/volunteer-programs-desktop.jpg" 1x,
+//         "../img/hero-slider/volunteer/volunteer-programs-desktop@2x.jpg" 2x
+//       );
+//   }
+// }
