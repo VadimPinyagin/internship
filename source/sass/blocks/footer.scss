@@ -7,13 +7,12 @@
 
   @media (min-width: $tablet-width) {
     display: grid;
-    padding-block-start: 15px;
     gap: 25px;
   }
 
   @media (min-width: $desktop-width) {
     grid-template-columns: max-content 1fr auto;
-    padding-block-start: 32px;
+    padding-block-start: 60px;
   }
 }
 
@@ -83,12 +82,11 @@
 }
 
 .footer__copyright-link {
-  @include link-reset;
-
+  color: inherit;
+  text-underline-offset: 3px;
   font-size: 12px;
   line-height: 14px;
-  margin: auto;
-  border-bottom: 1px solid;
+  text-align: center;
 
   @media (min-width: $tablet-width) {
     margin-inline-start: 0;
@@ -102,7 +100,6 @@
   }
 }
 
-.footer-nav__link,
 .footer__copyright-link {
   &:hover {
     color: var(--brand, #316dc2);

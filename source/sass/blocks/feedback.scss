@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  min-height: 753px;
   margin-block: 40px;
 
   @media (min-width: $tablet-width) {
@@ -28,6 +27,7 @@
       "../img/feedback/feedback-bg-desktop@1x.jpg" 1x,
       "../img/feedback/feedback-bg-desktop@2x.jpg" 2x
     );
+    margin-block: 60px;
   }
 }
 

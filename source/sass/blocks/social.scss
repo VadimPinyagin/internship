@@ -12,11 +12,9 @@
   gap: 10px;
 
   @media (min-width: $tablet-width) {
+    --link-size: 36px;
     justify-content: end;
     column-gap: 20px;
-
-    --link-w: 36px;
-    --link-h: 36px;
   }
 
   @media (min-width: $desktop-width) {
