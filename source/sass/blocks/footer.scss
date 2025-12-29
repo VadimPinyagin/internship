@@ -1,13 +1,14 @@
 .footer__container {
   padding-block: 40px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 
   @media (min-width: $tablet-width) {
     display: grid;
     padding-block-start: 15px;
+    gap: 25px;
   }
 
   @media (min-width: $desktop-width) {
@@ -48,6 +49,7 @@
 
 .footer__copyright {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column-reverse;
 
   @media (min-width: $tablet-width) {
@@ -85,9 +87,8 @@
 
   font-size: 12px;
   line-height: 14px;
-  margin: 0 auto;
+  margin: auto;
   border-bottom: 1px solid;
-  padding-block-end: 3px;
 
   @media (min-width: $tablet-width) {
     margin-inline-start: 0;

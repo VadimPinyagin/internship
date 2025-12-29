@@ -1,5 +1,5 @@
 .feedback{
-  --feedback-bg: image-set(
+  --bg-image: image-set(
     "../img/feedback/feedback-bg-mobile@1x.webp" 1x,
     "../img/feedback/feedback-bg-mobile@2x.webp" 2x,
     "../img/feedback/feedback-bg-mobile@1x.jpg" 1x,
@@ -12,7 +12,7 @@
   margin-block: 40px;
 
   @media (min-width: $tablet-width) {
-    --feedback-bg: image-set(
+    --bg-image: image-set(
       "../img/feedback/feedback-bg-tablet@1x.webp" 1x,
       "../img/feedback/feedback-bg-tablet@2x.webp" 2x,
       "../img/feedback/feedback-bg-tablet@1x.jpg" 1x,
@@ -22,7 +22,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    --feedback-bg: image-set(
+    --bg-image: image-set(
       "../img/feedback/feedback-bg-desktop@1x.webp" 1x,
       "../img/feedback/feedback-bg-desktop@2x.webp" 2x,
       "../img/feedback/feedback-bg-desktop@1x.jpg" 1x,
@@ -33,7 +33,7 @@
 
 .feedback::before {
   @include feedback-bg;
-  background-image: var(--feedback-bg);
+  background-image: var(--bg-image);
 
   @media (min-width: $tablet-width) {
     display: none;
@@ -57,7 +57,7 @@
 
   @media (min-width: $tablet-width) {
     @include feedback-bg;
-    background-image: var(--feedback-bg);
+    background-image: var(--bg-image);
     border-radius: 16px;
   }
 }
