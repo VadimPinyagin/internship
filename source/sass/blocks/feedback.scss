@@ -1,56 +1,28 @@
 .feedback{
+  --feedback-bg: image-set(
+    "../img/feedback/feedback-bg-mobile@1x.webp" 1x,
+    "../img/feedback/feedback-bg-mobile@2x.webp" 2x,
+    "../img/feedback/feedback-bg-mobile@1x.jpg" 1x,
+    "../img/feedback/feedback-bg-mobile@2x.jpg" 2x
+  );
+  display: flex;
+  align-items: center;
   position: relative;
   min-height: 753px;
   margin-block: 40px;
 
   @media (min-width: $tablet-width) {
-    margin-block: 50px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin-block: 60px;
-  }
-}
-
-.feedback::before {
-  @include feedback-bg;
-  min-height: 753px;
-  background-image: image-set(
-      "../img/feedback/feedback-bg-mobile@1x.webp" 1x,
-      "../img/feedback/feedback-bg-mobile@2x.webp" 2x,
-      "../img/feedback/feedback-bg-mobile@1x.jpg" 1x,
-      "../img/feedback/feedback-bg-mobile@2x.jpg" 2x
-    );
-  @media (min-width: $tablet-width) {
-    display: none;
-  }
-}
-
-.feedback__container{
-  min-width: 300px;
-  padding-block-start: 43px;
-  @media (min-width: $tablet-width) {
-    position: relative;
-    min-height: 753px;
-  }
-}
-
-.feedback__container::before {
-
-  @media (min-width: $tablet-width) {
-    @include feedback-bg;
-    min-height: 780px;
-    border-radius: 16px;
-    background-image: image-set(
+    --feedback-bg: image-set(
       "../img/feedback/feedback-bg-tablet@1x.webp" 1x,
       "../img/feedback/feedback-bg-tablet@2x.webp" 2x,
       "../img/feedback/feedback-bg-tablet@1x.jpg" 1x,
       "../img/feedback/feedback-bg-tablet@2x.jpg" 2x
     );
+    margin-block: 50px;
   }
 
   @media (min-width: $desktop-width) {
-    background-image: image-set(
+    --feedback-bg: image-set(
       "../img/feedback/feedback-bg-desktop@1x.webp" 1x,
       "../img/feedback/feedback-bg-desktop@2x.webp" 2x,
       "../img/feedback/feedback-bg-desktop@1x.jpg" 1x,
@@ -59,19 +31,49 @@
   }
 }
 
+.feedback::before {
+  @include feedback-bg;
+  background-image: var(--feedback-bg);
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.feedback__container{
+  width: 300px;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    width: 652px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1240px;
+  }
+}
+
+.feedback__container::before {
+
+  @media (min-width: $tablet-width) {
+    @include feedback-bg;
+    background-image: var(--feedback-bg);
+    border-radius: 16px;
+  }
+}
 
 .feedback__form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   padding: 15px;
   background-color: var(--brand, #0000ff);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   border-radius: 16px;
 
   @media (min-width: $tablet-width) {
     width: 442px;
+    padding-block: 41px 36px;
+    padding-inline: 40px;
   }
 }
 
@@ -101,4 +103,13 @@
 
 .feedback__set:has([type="checkbox"]) {
   flex-direction: row-reverse;
+}
+
+.feedback__set input:not([type="checkbox"]) {
+  appearance: none;
+  border: none;
+  padding: 15px 24px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px color-mix(in sRGB, var(--white, #ffffff) 30%, transparent);
 }
