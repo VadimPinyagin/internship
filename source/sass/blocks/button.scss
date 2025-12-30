@@ -79,3 +79,86 @@
     background-color: var(--disabled, #484848);
   }
 }
+
+
+.button--dark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--white, #ffffff);
+  text-transform: uppercase;
+  min-height: 44px;
+  width: fit-content;
+  border: 1px solid var(--white, #0000ff);
+  border-radius: 30px;
+  background-color: var(--brand, #0000ff);
+  padding: 0 4px 0 20px;
+  gap: 20px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
+    width: 8px;
+    aspect-ratio: 1;
+    right: 16px;
+    background-color: var(--brand, #0000ff);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: var(--white, #ffffff);
+    width: 34px;
+    height: 34px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    gap: 30px;
+  }
+}
+
+.button:hover {
+  background-color: var(--white, #ffffff);
+  color: var(--brand, #0000ff);
+
+  &::before {
+    transform: rotate(45deg);
+    background-color: var(--white, #ffffff);
+  }
+
+  &::after {
+    background-color: var(--brand, #0000ff);
+  }
+}
+
+.button:active {
+  background-color: var(--white, #ffffff);
+  color: color-mix(in sRGB, var(--brand, #0000ff) 70%, transparent);
+
+  &::before {
+    background-color: color-mix(in sRGB, var(--white, #ffffff) 70%, transparent);
+  }
+
+  &::after {
+    background-color: var(--brand, #0000ff);
+  }
+}
+
+.button:disabled {
+  color: var(--disabled, #484848);
+  background-color: transparent;
+  border-color: var(--disabled, #484848);
+  cursor: not-allowed;
+
+  &::after {
+    background-color: var(--disabled, #484848);
+  }
+}
