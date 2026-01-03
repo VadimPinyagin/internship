@@ -130,6 +130,32 @@
 
 .feedback__set-item:has([type="checkbox"]) {
   flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  flex: 0 0 auto;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white, #ffffff);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--brand, #0000ff);
+  mask-image: url("/__spritemap#sprite-check-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .feedback__form-button {

@@ -91,7 +91,7 @@
   color: var(--white, #ffffff);
   text-transform: uppercase;
   min-height: 44px;
-  width: fit-content;
+  min-width: 260px;
   border: 1px solid var(--white, #0000ff);
   border-radius: 30px;
   background-color: var(--brand, #0000ff);
