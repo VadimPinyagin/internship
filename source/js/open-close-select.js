@@ -6,6 +6,7 @@ export const initCustomSelect = () => {
   selectButton.addEventListener('click', () => {
     selectOptions.classList.toggle('custom-select__options--is-open');
     selectOptions.classList.toggle('custom-select__options--is-close');
+    selectButton.classList.toggle('active');
   });
 
   selectOptions.querySelectorAll('.custom-select__item').forEach((item) => {

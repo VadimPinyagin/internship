@@ -160,44 +160,50 @@
       <section class="feedback" data-test="form">
         <div class="feedback__container container">
           <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
-            <h3 class="feedback__title">Напишите нам</h3>
-            <p class="feedbeck__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+            <div class="feedback__form-heder">
+              <h3 class="feedback__title">Напишите нам</h3>
+              <p class="feedbeck__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+            </div>
             <fieldset class="feedback__set">
-              <label for="user-name">Имя</label>
-              <input type="text" name="name" id="user-name" autocomplete="off" required>
-            </fieldset>
-            <fieldset class="feedback__set" data-validate-type="phone" data-on-input-validate>
-              <label for="phone">Телефон</label>
-              <input type="tel" name="phone" id="phone" autocomplete="off" required>
-            </fieldset>
-            <fieldset class="feedback__set" data-validate-type="text">
-              <label for="message">Ваше сообщение</label>
-              <textarea class="feedback__set-message" name="message" id="message" cols="30" rows="10" required></textarea>
-            </fieldset>
-            <fieldset class="feedback__set" data-name="city">
-              <label for="city-select">Выберите город</label>
-              <select class="feedback__select" id="city-select" name="city" required>
-                <option value="" disabled selected></option>
-                <option value="spb">Санкт-Петербург</option>
-                <option value="msk">Москва</option>
-                <option value="ekb">Екатеринбург</option>
-                <option value="nsb">Новосибирск</option>
-              </select>
-              <div class="custom-select">
-                <button type="button" class="custom-select__button" tabindex="0">
-                  <span class="custom-select__text"></span>
-                </button>
-                <ul class="custom-select__options custom-select__options--is-close">
-                  <li class="custom-select__item" data-value="spb">Санкт-Петербург</li>
-                  <li class="custom-select__item" data-value="msk">Москва</li>
-                  <li class="custom-select__item" data-value="ekb">Екатеринбург</li>
-                  <li class="custom-select__item" data-value="nsb">Новосибирск</li>
-                </ul>
-              </div>
-            </fieldset>
-            <fieldset class="feedback__set" data-validate-type="checkbox">
-              <label for="agreement">Я согласен на обработку моих персональных данных</label>
-              <input type="checkbox" name="confirmation" value="agree" id="agreement" required>
+              <ul class="feedback__set-fields">
+                <li class="feedback__set-item">
+                  <label for="user-name">Имя</label>
+                  <input type="text" name="name" id="user-name" autocomplete="off" required>
+                </li>
+                <li class="feedback__set-item">
+                  <label for="phone">Телефон</label>
+                  <input type="tel" name="phone" id="phone" autocomplete="off" required>
+                </li>
+                <li class="feedback__set-item">
+                  <label for="message">Ваше сообщение</label>
+                  <textarea class="feedback__set-message" name="message" id="message" cols="30" rows="10" required></textarea>
+                </li>
+                <li class="feedback__set-item">
+                  <label for="city-select">Выберите город</label>
+                  <select class="feedback__select" id="city-select" name="city" required>
+                    <option value="" disabled selected label=" "></option>
+                    <option value="spb">Санкт-Петербург</option>
+                    <option value="msk">Москва</option>
+                    <option value="ekb">Екатеринбург</option>
+                    <option value="nsb">Новосибирск</option>
+                  </select>
+                  <div class="custom-select">
+                    <button type="button" class="custom-select__button" tabindex="0">
+                      <span class="custom-select__text"></span>
+                    </button>
+                    <ul class="custom-select__options custom-select__options--is-close">
+                      <li class="custom-select__item" data-value="spb">Санкт-Петербург</li>
+                      <li class="custom-select__item" data-value="msk">Москва</li>
+                      <li class="custom-select__item" data-value="ekb">Екатеринбург</li>
+                      <li class="custom-select__item" data-value="nsb">Новосибирск</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="feedback__set-item">
+                  <label for="agreement">Я согласен на обработку моих персональных данных</label>
+                  <input type="checkbox" name="confirmation" value="agree" id="agreement" required>
+                </li>
+              </ul>
             </fieldset>
             <button class="feedback__form-button button button--dark" type="submit"><span>Отправить</span></button>
           </form>

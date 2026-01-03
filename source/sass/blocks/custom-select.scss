@@ -13,11 +13,11 @@
   min-height: 52px;
   cursor: pointer;
 
-  &:active::after {
-    transform: rotate(180deg);
+  &:hover {
+    box-shadow: inset 0 0 0 1px color-mix(in sRGB, var(--white, #ffffff) 100%, transparent);
   }
 
-  &:focus::after {
+  &.active::after {
     transform: rotate(180deg);
   }
 }

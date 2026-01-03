@@ -87,12 +87,12 @@
   font-size: 18px;
   line-height: 22px;
   color: var(--white, #ffffff);
-  margin: 0;
+  margin-block: 0 31px;
 }
 
 .feedbeck__text {
   color: var(--white, #ffffff);
-  margin: 0;
+  margin-block: 15px 0;
 }
 
 .feedback__set {
@@ -100,14 +100,6 @@
   flex-direction: column;
   border: none;
   padding: 0;
-  gap: 12px;
-  color: var(--white, #ffffff);
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.feedback__set:has([type="checkbox"]) {
-  flex-direction: row-reverse;
 }
 
 .feedback__set input:not([type="checkbox"]), .feedback__set-message {
@@ -118,7 +110,26 @@
 .feedback__set-message {
   resize: none;
   height: 88px;
+}
 
+.feedback__set-fields {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback__set-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--white, #ffffff);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.feedback__set-item:has([type="checkbox"]) {
+  flex-direction: row-reverse;
 }
 
 .feedback__form-button {
