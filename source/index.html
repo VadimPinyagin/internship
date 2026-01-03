@@ -156,7 +156,37 @@
       <!-- <section data-test="news">news</section> -->
       <!-- <section data-test="FAQ">FAQ</section> -->
       <!-- <section data-test="reviews">reviews</section> -->
-      <!-- <section data-test="contacts">contacts</section> -->
+      <section class="contacts" data-test="contacts">
+        <div class="contacts__container container">
+          <address class="contacts__set">
+            <h2>Контакты</h2>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <h3>Центральный офис</h3>
+                <p>г. Новосибирск, ул. Щетинкина 68, культурный центр</p>
+              </li>
+              <li class="contacts__item">
+                <h3>Телефон</h3>
+                <a class="contacts__link" href="tel:+796387687676">+7 963 876 876 76</a>
+              </li>
+              <li class="contacts__item">
+                <h3>Email</h3>
+                <a class="contacts__link" href="mailto:info@stazh.ru">Info@stazh.ru</a>
+              </li>
+            </ul>
+          </address>
+          <div class="contacts__map">
+            <picture>
+              <source type="image/webp" media="(min-width: 1440px)" width="1240" height="486" srcset="img/map/map-desktop@1x.webp 1x, img/map/map-desktop@2x.webp 2x">
+              <source type="image/png" media="(min-width: 1440px)" width="1240" height="486" srcset="img/map/map-desktop@1x.png 1x, img/map/map-desktop@2x.png 2x">
+              <source type="image/webp" media="(min-width: 768px)" width="678" height="500" srcset="img/map/map-tablet@1x.webp 1x, img/map/map-tablet@2x.webp 2x">
+              <source type="image/png" media="(min-width: 768px)" width="678" height="500" srcset="img/map/map-tablet@1x.png 1x, img/map/map-tablet@2x.png 2x">
+              <source type="image/webp" media="(min-width: 320px)" width="290" height="240" srcset="img/map/map-mobile@1x.webp 1x, img/map/map-mobile@2x.webp 2x">
+              <img class="grant__image" src="img/map/map-mobile@1x.png" srcset="img/map/map-mobile@2x.png 2x" width="290" height="240" alt="Указатель с расстояниями до России, Израиля, Индии, Испании и Тайланда на фоне ясного неба.">
+              </picture>
+          </div>
+        </div>
+      </section>
       <section class="feedback" data-test="form">
         <div class="feedback__container container">
           <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
