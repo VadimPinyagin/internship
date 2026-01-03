@@ -1,0 +1,110 @@
+.contacts {
+  display: flex;
+  background-color: var(--brand, #0000ff);
+  padding-block: 70px;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 100px;
+  }
+}
+
+.contacts__set {
+  font-style: normal;
+  color: var(--white, #ffffff);
+  border-bottom: 2px solid color-mix(in sRGB, var(--white, #ffffff) 20%, transparent);
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: 30px;
+  }
+}
+
+.contacts__set h2 {
+  font-weight: 400;
+  font-size: 20px;
+  margin-block: 5px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    font-size: 50px;
+  }
+}
+
+.contacts__set p {
+  margin-block: 15px 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.contacts__list {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 30px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 0;
+  }
+}
+
+.contacts__set h3 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: var(--light-accent, #a9afb7);
+  opacity: 0.8;
+  margin-block: 0 15px;
+}
+
+.contacts__link {
+  @include link-reset;
+  display: block;
+  margin-block-start: 15px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: var(--gray, #000000);
+  }
+
+  &:active {
+    color: var(--white, #ffffff);
+  }
+
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+}
+
+picture:has(.contacts__map), source {
+  display: contents;
+}
+
+.contacts__map {
+  margin-block-start: 30px;
+}
