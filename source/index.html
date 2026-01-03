@@ -159,7 +159,7 @@
       <!-- <section data-test="contacts">contacts</section> -->
       <section class="feedback" data-test="form">
         <div class="feedback__container container">
-          <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="post">
+          <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
             <h3 class="feedback__title">Напишите нам</h3>
             <p class="feedbeck__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
             <fieldset class="feedback__set">
@@ -172,17 +172,28 @@
             </fieldset>
             <fieldset class="feedback__set" data-validate-type="text">
               <label for="message">Ваше сообщение</label>
-              <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+              <textarea class="feedback__set-message" name="message" id="message" cols="30" rows="10" required></textarea>
             </fieldset>
             <fieldset class="feedback__set" data-name="city">
-              <label id="city">Выберите город</label>
-              <select class="feedback__custom-select" for="city" required>
-                <option value=""></option>
+              <label for="city-select">Выберите город</label>
+              <select class="feedback__select" id="city-select" name="city" required>
+                <option value="" disabled selected></option>
                 <option value="spb">Санкт-Петербург</option>
                 <option value="msk">Москва</option>
                 <option value="ekb">Екатеринбург</option>
                 <option value="nsb">Новосибирск</option>
               </select>
+              <div class="custom-select">
+                <button type="button" class="custom-select__button" tabindex="0">
+                  <span class="custom-select__text"></span>
+                </button>
+                <ul class="custom-select__options custom-select__options--is-close">
+                  <li class="custom-select__item" data-value="spb">Санкт-Петербург</li>
+                  <li class="custom-select__item" data-value="msk">Москва</li>
+                  <li class="custom-select__item" data-value="ekb">Екатеринбург</li>
+                  <li class="custom-select__item" data-value="nsb">Новосибирск</li>
+                </ul>
+              </div>
             </fieldset>
             <fieldset class="feedback__set" data-validate-type="checkbox">
               <label for="agreement">Я согласен на обработку моих персональных данных</label>

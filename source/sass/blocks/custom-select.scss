@@ -1,0 +1,70 @@
+.custom-select {
+  --select-w: 260px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.custom-select__button {
+  @include form-fields;
+  position: relative;
+  text-align: left;
+  min-width: var(--select-w);
+  min-height: 52px;
+  cursor: pointer;
+
+  &:active::after {
+    transform: rotate(180deg);
+  }
+
+  &:focus::after {
+    transform: rotate(180deg);
+  }
+}
+
+.custom-select__button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  aspect-ratio: 1;
+  mask-image: url("/__spritemap#sprite-tick-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--white, #ffffff);
+  right: 20px;
+  top: 20px;
+}
+
+.custom-select__options--is-close {
+  display: none;
+}
+
+.custom-select__options--is-open {
+  @include list-reset;
+  position: absolute;
+  bottom: -4px;
+  z-index: 1;
+  width: var(--select-w);
+  height: 194px;
+  background-color: var(--white, #ffffff);
+  box-shadow: inset 0 0 0 1px var(--white, #ffffff);
+  overflow-y: auto;
+  border-radius: 8px;
+  transform: translateY(100%);
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-select__item {
+  color: var(--text, #333333);
+  padding: 17px 20px;
+
+  &:hover {
+    color: var(--white, #ffffff);
+    background-color: var(--brand, #0000ff);
+  }
+}
+
+.custom-select__text {
+  color: var(--white, #ffffff);
+}

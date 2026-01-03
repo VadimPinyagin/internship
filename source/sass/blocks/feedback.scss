@@ -5,10 +5,13 @@
     "../img/feedback/feedback-bg-mobile@1x.jpg" 1x,
     "../img/feedback/feedback-bg-mobile@2x.jpg" 2x
   );
+
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   margin-block: 40px;
+  min-height: 753px;
 
   @media (min-width: $tablet-width) {
     --bg-image: image-set(
@@ -42,6 +45,7 @@
 
 .feedback__container{
   width: 300px;
+  margin: auto;
 
   @media (min-width: $tablet-width) {
     position: relative;
@@ -74,6 +78,7 @@
     width: 442px;
     padding-block: 41px 36px;
     padding-inline: 40px;
+    margin: 0;
   }
 }
 
@@ -105,16 +110,28 @@
   flex-direction: row-reverse;
 }
 
-.feedback__set input:not([type="checkbox"]) {
-  appearance: none;
-  border: none;
-  padding: 15px 24px;
-  background: transparent;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 1px color-mix(in sRGB, var(--white, #ffffff) 30%, transparent);
+.feedback__set input:not([type="checkbox"]), .feedback__set-message {
+  @include form-fields;
+  color: var(--white, #ffffff);
+}
+
+.feedback__set-message {
+  resize: none;
+  height: 88px;
+
 }
 
 .feedback__form-button {
   width: 100%;
   justify-content: space-between;
+}
+
+.feedback__form-button span {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.feedback__select {
+  display: none;
 }
