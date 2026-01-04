@@ -1,6 +1,6 @@
 const programsButton = document.querySelectorAll('.programs__button');
-const programsButtonPrev = document.querySelector('.programs__button-prev');
-const programsButtonNext = document.querySelector('.programs__button-next');
-const programsScrollbar = document.querySelector('.programs__swiper-scrollbar');
+const commonButtonControls = document.querySelectorAll('.common-control__button');
+// const reviewsButton = document.querySelectorAll('.reviews__button');
 
-export {programsButton, programsButtonPrev, programsButtonNext, programsScrollbar};
+
+export {programsButton, commonButtonControls};

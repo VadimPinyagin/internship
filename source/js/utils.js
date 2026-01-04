@@ -8,7 +8,7 @@ const manageNavigationButtons = (swiper, buttons) => {
       if (button.position === 'prev') {
         button.el.disabled = isAtBeginning;
       } else if (button.position === 'next') {
-        button.el.disabled = isAtEnd;
+        button.el.disabled = isAtEnd; // Устанавливаем атрибут disabled
       }
     });
   });

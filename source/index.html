@@ -102,13 +102,13 @@
       <section class="programs swiper" data-test="programs">
         <div class="programs__container container">
           <h2 class="programs__title">Программы</h2>
-          <div class="programs__control-container">
-            <div class="programs__swiper-scrollbar"></div>
-            <div class="programs__button-container">
-              <button class="programs__button programs__button-prev" type="button"></button>
-              <button class="programs__button programs__button-next" type="button"></button>
+          <div class="common-control programs__swiper-control">
+              <div class="common-control__scrollbar"></div>
+              <div class="common-control__button-container">
+                <button class="common-control__button common-control__button--prev programs__button-prev" type="button"></button>
+                <button class="common-control__button common-control__button--next programs__button-next" type="button"></button>
+              </div>
             </div>
-          </div>
           <div class="programs__swiper swiper">
             <ul class="programs__list swiper-wrapper">
               <li class="programs__slide swiper-slide programs__slide--internship"></li>
@@ -155,7 +155,76 @@
       </section>
       <!-- <section data-test="news">news</section> -->
       <!-- <section data-test="FAQ">FAQ</section> -->
-      <!-- <section data-test="reviews">reviews</section> -->
+      <section class="reviews" data-test="reviews">
+        <div class="reviews__container container">
+          <div class="reviews__swiper swiper">
+            <h2 class="reviews__title">Отзывы</h2>
+            <div class="common-control reviews__swiper-control">
+              <div class="common-control__scrollbar"></div>
+              <div class="common-control__button-container">
+                <button class="common-control__button common-control__button--prev reviews__button-prev" type="button"></button>
+                <button class="common-control__button common-control__button--next reviews__button-next" type="button"></button>
+              </div>
+            </div>
+            <ul class="reviews__list swiper-wrapper">
+              <li class="reviews__slide swiper-slide">
+                <article class="review">
+                  <header class="review__header">
+                    <h3 class="review__user-name">Лола<br> Алекс</h3>
+                    <picture>
+                      <source type="image/webp" media="(min-width: 768px)" width="90" height="90" srcset="img/avatars/avatar-lola-alex-small@1x.webp 1x, img/avatars/avatar-lola-alex-small@2x.webp 2x">
+                      <source type="image/png" media="(min-width: 768px)" width="90" height="90" srcset="img/avatars/avatar-lola-alex-small@1x.png 1x, img/avatars/avatar-lola-alex-small@2x.png 2x">
+                      <source type="image/webp" media="(min-width: 320px)" width="60" height="60" srcset="img/avatars/avatar-lola-alex-small@1x.webp 1x, img/avatars/avatar-lola-alex-small@2x.webp 2x">
+                      <img class="review__user-avatar" src="img/avatars/avatar-lola-alex-small@1x.png" srcset="img/avatars/avatar-lola-alex-small@2x.png x2" width="60" height="60" alt="Аватар стажёра Лола Алекс">
+                    </picture>
+                  <dl class="review__details">
+                    <div class="review__details-container">
+                      <dt class="review__details-term">Программа</dt>
+                      <dd class="review__details-description">Masa&nbsp;Art&nbsp;Challenge</dd>
+                    </div>
+                    <div class="review__details-container">
+                      <dt class="review__details-term">Дата</dt>
+                      <dd class="review__details-description">Осень&nbsp;2022</dd>
+                    </div>
+                  </dl>
+                  </header>
+                  <blockquote class="review__body">
+                    <h4 class="review__body-title">Я&nbsp;могу с&nbsp;уверенностью сказать, что это был один из&nbsp;самых незабываемых опытов в&nbsp;жизни!</h4>
+                    <p>Я&nbsp;рекомендую программу &laquo;Стажировка&raquo; всем студентам, желающим получить незабываемые впечатления. Сочетание путешествий, общения и&nbsp;значимой работы действительно отличает её&nbsp;от&nbsp;других программ, и&nbsp;я&nbsp;чувствую огромную благодарность за&nbsp;предоставленную мне возможность.</p>
+                  </blockquote>
+                </article>
+              </li>
+              <li class="reviews__slide swiper-slide">
+                <article class="review">
+                  <header class="review__header">
+                    <h3 class="review__user-name">Давид<br> Иванов</h3>
+                    <picture>
+                      <source type="image/webp" media="(min-width: 768px)" width="90" height="90" srcset="img/avatars/avatar-david-ivanov-small@1x.webp 1x, img/avatars/avatar-david-ivanov-small@2x.webp 2x">
+                      <source type="image/png" media="(min-width: 768px)" width="90" height="90" srcset="img/avatars/avatar-david-ivanov-small@1x.png 1x, img/avatars/avatar-david-ivanov-small@2x.png 2x">
+                      <source type="image/webp" media="(min-width: 320px)" width="60" height="60" srcset="img/avatars/avatar-david-ivanov-small@1x.webp 1x, img/avatars/avatar-david-ivanov-small@2x.webp 2x">
+                      <img class="review__user-avatar" src="img/avatars/avatar-david-ivanov-small@1x.png" srcset="img/avatars/avatar-david-ivanov-small@2x.png x2" width="60" height="60" alt="Аватар стажёра Лола Алекс">
+                    </picture>
+                  <dl class="review__details">
+                    <div class="review__details-container">
+                      <dt class="review__details-term">Программа</dt>
+                      <dd class="review__details-description">Volunteer&nbsp;Chance</dd>
+                    </div>
+                    <div class="review__details-container">
+                      <dt class="review__details-term">Дата</dt>
+                      <dd class="review__details-description">Лето&nbsp;2022</dd>
+                    </div>
+                  </dl>
+                  </header>
+                  <blockquote class="review__body">
+                    <h4 class="review__body-title">Благодаря опыту стажировки я&nbsp;узнал так много нового о&nbsp;себе и&nbsp;об&nbsp;окружающем мире.</h4>
+                    <p>Каждый день был возможностью оказать ощутимое влияние на&nbsp;жизнь других людей. Я&nbsp;бы очень рекомендовал эту волонтёрскую программу всем, кто ищет значимый и&nbsp;незабываемый опыт. Организация была на&nbsp;высшем уровне. Для меня было честью быть частью такой удивительной инициативы.</p>
+                  </blockquote>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section class="contacts" data-test="contacts">
         <div class="contacts__container container">
           <address class="contacts__set">

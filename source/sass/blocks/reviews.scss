@@ -1,0 +1,19 @@
+.reviews {
+  margin-block: 50px;
+}
+
+.reviews__list {
+  @include list-reset;
+}
+
+.reviews__title {
+  @include title;
+
+  font-size: 20px;
+  margin-block: 0 35px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+}

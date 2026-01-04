@@ -3,6 +3,7 @@
 @import "common/variables";
 @import "common/base";
 @import "common/global";
+@import "common/common-control";
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
@@ -20,6 +21,8 @@
 @import "blocks/button";
 @import "blocks/programs";
 @import "blocks/grant.scss";
+@import "blocks/reviews.scss";
+@import "blocks/review.scss";
 @import "blocks/contacts.scss";
 @import "blocks/feedback.scss";
 @import "blocks/custom-select.scss";
