@@ -81,11 +81,12 @@ export const initSwiperReviews = () => {
         },
         centeredSlides: false,
         slidesPerView: 1,
+        width: 560,
         spaceBetween: 30,
       },
       1440: {
         centeredSlides: false,
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 32,
       },
     },
