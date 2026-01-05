@@ -11,6 +11,11 @@
     min-height: 417px;
     padding: 52px;
   }
+
+  @media (min-width: $desktop-width) {
+    min-height: 483px;
+    padding: 48px;
+  }
 }
 
 .review__header {
@@ -20,6 +25,8 @@
 
   @media (min-width: $tablet-width) {
     justify-content: space-between;
+    margin-block-start: 4px;
+    margin-inline-start: 4px;
   }
 }
 
@@ -61,10 +68,18 @@
     font-size: 14px;
     line-height: 20px;
   }
+
+  @media (min-width: $desktop-width) {
+    line-height: 18px;
+  }
 }
 
 .review__body {
   margin: 0;
+
+  @media (min-width: $desktop-width) {
+    margin-inline-start: 4px;
+  }
 }
 
 .review__body-title {
@@ -79,6 +94,12 @@
     line-height: 24px;
     margin-block: 25px;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 26px;
+    margin-block: 30px;
+  }
 }
 
 .review__body p {
@@ -87,6 +108,11 @@
   @media (min-width: $tablet-width) {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+    padding-inline-end: 37px;
   }
 }
 
