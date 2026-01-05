@@ -1,4 +1,4 @@
-import { programsButton, commonButtonControls } from './constants.js';
+import { commonButtonControls } from './constants.js';
 import { manageNavigationButtons } from './utils.js';
 import Swiper from 'swiper';
 import { Pagination, Navigation, Scrollbar } from 'swiper/modules';
@@ -53,7 +53,7 @@ export const initSwiperPrograms = () => {
     },
   });
 
-  manageNavigationButtons(programsSwiper, programsButton);
+  manageNavigationButtons(programsSwiper, commonButtonControls);
   return programsSwiper;
 };
 
@@ -76,11 +76,11 @@ export const initSwiperReviews = () => {
         scrollbar: {
           el: '.reviews__swiper-scrollbar',
           draggable: true,
-          dragSize: '324',
+          dragSize: 'auto',
           hide: false,
         },
         centeredSlides: false,
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 30,
       },
       1440: {

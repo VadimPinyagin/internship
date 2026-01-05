@@ -2,8 +2,13 @@
   margin-block: 50px;
 }
 
+.reviews__container {
+  position: relative;
+}
+
 .reviews__list {
   @include list-reset;
+  margin-block-end: 40px;
 }
 
 .reviews__title {
