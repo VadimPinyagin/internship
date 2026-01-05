@@ -1,0 +1,9 @@
+.faq {
+  padding-block: 50px;
+}
+
+.faq__title {
+  @include title;
+  font-size: 20px;
+  margin-block: 0 30px;
+}
