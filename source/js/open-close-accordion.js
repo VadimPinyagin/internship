@@ -17,11 +17,9 @@ export const toggleAccordion = () => {
       if (isOpen) {
         currentContent.classList.remove('accordion__content--hidden');
         currentContent.classList.add('accordion__content--visible');
-        currentButton.classList.add('accordion__trigger--dark');
       } else {
         currentContent.classList.remove('accordion__content--visible');
         currentContent.classList.add('accordion__content--hidden');
-        currentButton.classList.remove('accordion__trigger--dark');
       }
     });
   });
