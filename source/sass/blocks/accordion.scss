@@ -3,6 +3,7 @@
   --padding-inline: 17px;
   --transparent: transparent;
   --dark: var(--brand, #0000ff);
+  --dark-active: var(--active, #070777);
   --light: var(--light-accent, #ffffff);
   --icon-default: url("/__spritemap#sprite-plus-view");
   --icon-open: url("/__spritemap#sprite-minus-view");
@@ -38,6 +39,19 @@
 }
 
 .accordion__trigger {
+
+  &:hover,
+  &:focus,
+  &:focus-visible{
+    outline: none;
+    background: var(--white, #ffffff);
+  }
+
+  &:active {
+    background: var(--white, #ffffff);
+    color: var(--dark-active);
+    box-shadow:inset 0 0 0 2px var(--dark-active);
+  }
 
   &::before {
     content: "";
@@ -80,6 +94,6 @@
 }
 
 .accordion__trigger--open::after {
-  background: var(--white, #ffffff);
+  background: var(--transparent);
   box-shadow: inset 0 0 0 1px var(--dark);
 }
