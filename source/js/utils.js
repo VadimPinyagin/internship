@@ -1,3 +1,8 @@
+const replaceIcon = (icon, classOpen, classClose) => {
+  icon.classList.toggle(classOpen);
+  icon.classList.toggle(classClose);
+};
+
 const manageNavigationButtons = (swiper, buttons) => {
 
   swiper.on('slideChange', () => {
@@ -8,10 +13,10 @@ const manageNavigationButtons = (swiper, buttons) => {
       if (button.position === 'prev') {
         button.el.disabled = isAtBeginning;
       } else if (button.position === 'next') {
-        button.el.disabled = isAtEnd; // Устанавливаем атрибут disabled
+        button.el.disabled = isAtEnd;
       }
     });
   });
 };
 
-export { manageNavigationButtons };
+export { replaceIcon, manageNavigationButtons };

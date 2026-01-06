@@ -1,9 +1,6 @@
 import {toggleMenu} from './open-close-nav.js';
-import { initSwiperHero } from './defines-swiper.js';
-import { initSwiperPrograms } from './defines-swiper.js';
-import { initSwiperReviews } from './defines-swiper.js';
 import { initCustomSelect } from './open-close-select.js';
-
+import { initSwiperHero, initSwiperPrograms, initSwiperReviews } from './defines-swiper.js';
 
 toggleMenu();
 initSwiperHero();
