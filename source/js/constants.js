@@ -8,5 +8,4 @@ export const iconOpen = 'toggle__icon--open';
 export const iconClose = 'toggle__icon--close';
 export const iconTrigerDefault = 'accordion__trigger--default';
 export const iconTrigerOpen = 'accordion__trigger--open';
-
-export const trigger = document.querySelector('.accordion__trigger');
+export const triggers = document.querySelectorAll('.accordion__trigger');
