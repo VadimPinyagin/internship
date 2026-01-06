@@ -1,13 +1,28 @@
 
-import { triggers, iconTrigerDefault, iconTrigerOpen} from './constants.js';
+const accordionPanels = Array.from(document.querySelectorAll('.accordion__panel'));
 
 export const toggleAccordion = () => {
-  triggers.forEach((trigger) => {
-    trigger.classList.add(iconTrigerDefault);
+  accordionPanels.forEach((currentPanel) => {
+    const currentButton = currentPanel.querySelector('.accordion__trigger');
+    const currentContent = currentPanel.querySelector('.accordion__content');
 
-    trigger.addEventListener('click', () => {
-      trigger.classList.toggle(iconTrigerDefault);
-      trigger.classList.toggle(iconTrigerOpen);
+    currentButton.classList.add('accordion__trigger--default');
+    currentContent.classList.add('accordion__content--hidden');
+
+    currentButton.addEventListener('click', () => {
+      currentButton.classList.toggle('accordion__trigger--default');
+      currentButton.classList.toggle('accordion__trigger--open');
+
+      const isOpen = currentPanel.classList.toggle('accordion__panel--is-open');
+      if (isOpen) {
+        currentContent.classList.remove('accordion__content--hidden');
+        currentContent.classList.add('accordion__content--visible');
+        currentButton.classList.add('accordion__trigger--dark');
+      } else {
+        currentContent.classList.remove('accordion__content--visible');
+        currentContent.classList.add('accordion__content--hidden');
+        currentButton.classList.remove('accordion__trigger--dark');
+      }
     });
   });
 };
