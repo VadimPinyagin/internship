@@ -1,13 +1,21 @@
-
-const accordionPanels = Array.from(document.querySelectorAll('.accordion__panel'));
-
 export const toggleAccordion = () => {
+  const accordionPanels = Array.from(document.querySelectorAll('.accordion__panel'));
+  const initiallyOpenId = 'accordion__content-3';
+
   accordionPanels.forEach((currentPanel) => {
     const currentButton = currentPanel.querySelector('.accordion__trigger');
-    const currentContent = currentPanel.querySelector('.accordion__content');
+    const controlsId = currentButton.getAttribute('aria-controls');
+    const currentContent = document.getElementById(controlsId);
 
     currentButton.classList.add('accordion__trigger--default');
     currentContent.classList.add('accordion__content--hidden');
+
+    if (controlsId === initiallyOpenId) {
+      currentButton.classList.remove('accordion__trigger--default');
+      currentButton.classList.add('accordion__trigger--open');
+      currentPanel.classList.add('accordion__panel--is-open');
+      currentContent.classList.remove('accordion__content--hidden');
+    }
 
     currentButton.addEventListener('click', () => {
       currentButton.classList.toggle('accordion__trigger--default');
@@ -15,10 +23,10 @@ export const toggleAccordion = () => {
 
       const isOpen = currentPanel.classList.toggle('accordion__panel--is-open');
       if (isOpen) {
+        currentContent.style.maxHeight = `${currentContent.scrollHeight}px`;
         currentContent.classList.remove('accordion__content--hidden');
-        currentContent.classList.add('accordion__content--visible');
       } else {
-        currentContent.classList.remove('accordion__content--visible');
+        currentContent.style.maxHeight = '0';
         currentContent.classList.add('accordion__content--hidden');
       }
     });
