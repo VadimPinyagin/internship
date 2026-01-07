@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Pagination, Navigation, Scrollbar } from 'swiper/modules';
 
-export const initSwiperHero = () => {
+const initSwiperHero = () => {
   new Swiper('.hero', {
     modules: [Pagination],
     direction: 'horizontal',
@@ -17,7 +17,7 @@ export const initSwiperHero = () => {
   });
 };
 
-export const initSwiperPrograms = () => {
+const initSwiperPrograms = () => {
   const programsSwiper = new Swiper('.programs__swiper', {
     modules: [Scrollbar, Navigation],
     direction: 'horizontal',
@@ -54,7 +54,7 @@ export const initSwiperPrograms = () => {
   return programsSwiper;
 };
 
-export const initSwiperReviews = () => {
+const initSwiperReviews = () => {
   const reviewsSwiper = new Swiper('.reviews__swiper', {
     modules: [Scrollbar, Navigation],
     direction: 'horizontal',
@@ -91,3 +91,7 @@ export const initSwiperReviews = () => {
 
   return reviewsSwiper;
 };
+
+initSwiperHero();
+initSwiperPrograms();
+initSwiperReviews();

@@ -34,3 +34,5 @@ export const initCustomSelect = () => {
     selectButton.querySelector('.custom-select__text').textContent = initialText;
   }
 };
+
+initCustomSelect();

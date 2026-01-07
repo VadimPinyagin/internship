@@ -12,6 +12,7 @@
   position: relative;
   margin-block: 40px;
   min-height: 753px;
+  background: var(--bg-image) no-repeat center / cover;
 
   @media (min-width: $tablet-width) {
     --bg-image: image-set(
@@ -21,6 +22,7 @@
       "../img/feedback/feedback-bg-tablet@2x.jpg" 2x
     );
     margin-block: 50px;
+    background: none;
   }
 
   @media (min-width: $desktop-width) {
@@ -34,21 +36,13 @@
   }
 }
 
-.feedback::before {
-  @include feedback-bg;
-  background-image: var(--bg-image);
-
-  @media (min-width: $tablet-width) {
-    display: none;
-  }
-}
-
-.feedback__container{
+.feedback__container {
   width: 300px;
   margin: auto;
 
   @media (min-width: $tablet-width) {
     position: relative;
+    background: var(--bg-image) no-repeat center / cover;
     width: 652px;
   }
 
@@ -57,11 +51,9 @@
   }
 }
 
-.feedback__container::before {
+.feedback__container {
 
   @media (min-width: $tablet-width) {
-    @include feedback-bg;
-    background-image: var(--bg-image);
     border-radius: 16px;
   }
 }
@@ -134,7 +126,7 @@
   justify-content: flex-end;
 }
 
-input[type="checkbox"] {
+.feedback__set-check {
   appearance: none;
   flex: 0 0 auto;
   margin: 0;
@@ -147,7 +139,7 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-input[type="checkbox"]:checked::before {
+.feedback__set-check:checked::before {
   content: '';
   display: block;
   width: 10px;

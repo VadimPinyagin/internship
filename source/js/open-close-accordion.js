@@ -1,4 +1,4 @@
-export const toggleAccordion = () => {
+const toggleAccordion = () => {
   const accordionPanels = Array.from(document.querySelectorAll('.accordion__panel'));
   const initiallyOpenId = 'accordion__content-3';
 
@@ -32,3 +32,5 @@ export const toggleAccordion = () => {
     });
   });
 };
+
+toggleAccordion ();

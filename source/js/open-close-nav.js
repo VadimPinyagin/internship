@@ -1,8 +1,12 @@
 import { mainNav, toggle, toggleIcon, iconOpen, iconClose} from './constants.js';
-import { replaceIcon } from './utils.js';
 mainNav.classList.add('header__menu--is-close');
 
-export const toggleMenu = () => {
+const replaceIcon = (icon, classOpen, classClose) => {
+  icon.classList.toggle(classOpen);
+  icon.classList.toggle(classClose);
+};
+
+const toggleMenu = () => {
 
   if (toggle) {
     toggle.addEventListener('click', () => {
@@ -14,4 +18,4 @@ export const toggleMenu = () => {
   }
 };
 
-
+toggleMenu();

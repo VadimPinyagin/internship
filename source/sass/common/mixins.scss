@@ -22,18 +22,6 @@
   cursor: not-allowed;
 }
 
-@mixin feedback-bg {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 @mixin form-fields {
   appearance: none;
   border: none;
