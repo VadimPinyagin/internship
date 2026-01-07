@@ -1,5 +1,3 @@
-import { commonButtonControls } from './constants.js';
-import { manageNavigationButtons } from './utils.js';
 import Swiper from 'swiper';
 import { Pagination, Navigation, Scrollbar } from 'swiper/modules';
 
@@ -53,7 +51,6 @@ export const initSwiperPrograms = () => {
     },
   });
 
-  manageNavigationButtons(programsSwiper, commonButtonControls);
   return programsSwiper;
 };
 
@@ -92,6 +89,5 @@ export const initSwiperReviews = () => {
     },
   });
 
-  manageNavigationButtons(reviewsSwiper, commonButtonControls);
   return reviewsSwiper;
 };
