@@ -1,0 +1,41 @@
+.news {
+  padding-block: 50px;
+}
+
+.news__title {
+  font-weight: 400;
+  color: var(--brand, #333333);
+  font-size: 20px;
+  margin-block: 0 30px;
+  text-align: center;
+}
+
+.news__tabs {
+  @include list-reset;
+  display: flex;
+  gap: 12px;
+}
+
+.news__tab {
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 16px 22px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: transparent;
+  }
+
+  &:focus,
+  &:focus-visible {
+    background-color: var(--white, #ffffff);
+  }
+}
+
+.news__tab--cutrrent {
+  box-shadow: 0 0 0 2px var(--brand, #0000ff);
+  opacity: 1;
+}

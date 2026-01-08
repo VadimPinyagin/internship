@@ -1,4 +1,3 @@
-
 const selectElement = document.getElementById('city-select');
 const optionsList = document.createElement('ul');
 
@@ -12,7 +11,7 @@ function generateOptionsList() {
     if (option.value) {
       const li = document.createElement('li');
       li.classList.add('custom-select__item');
-      li.textContent = option.text
+      li.textContent = option.text;
       li.setAttribute('data-value', option.value);
       optionsList.appendChild(li);
     }
