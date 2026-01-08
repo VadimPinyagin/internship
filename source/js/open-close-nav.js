@@ -1,4 +1,8 @@
-import { mainNav, toggle, toggleIcon, iconOpen, iconClose} from './constants.js';
+export const mainNav = document.querySelector('.nav');
+export const toggle = document.querySelector('.toggle');
+export const iconOpen = 'toggle__icon--open';
+export const iconClose = 'toggle__icon--close';
+export const toggleIcon = document.querySelector('.toggle__icon');
 mainNav.classList.add('header__menu--is-close');
 
 const replaceIcon = (icon, classOpen, classClose) => {
