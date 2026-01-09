@@ -2,6 +2,13 @@
   padding-block: 50px;
 }
 
+.news__container {
+
+  @media (min-width: $tablet-width) {
+    width: 674px;
+  }
+}
+
 .news__title {
   font-weight: 400;
   color: var(--brand, #333333);
@@ -12,8 +19,11 @@
 
 .news__tabs {
   @include list-reset;
-  display: flex;
-  gap: 12px;
+}
+
+.news__tabs-item {
+  display: inline-block;
+  width: auto;
 }
 
 .news__tab {
@@ -35,7 +45,21 @@
   }
 }
 
-.news__tab--cutrrent {
-  box-shadow: 0 0 0 2px var(--brand, #0000ff);
+.news__tab--current {
+  box-shadow:inset 0 0 0 2px var(--brand, #0000ff);
+  background-color: transparent;
   opacity: 1;
+
+  &:focus,
+  &:focus-visible {
+    background-color: transparent;
+  }
+}
+
+.news__swiper {
+  @include list-reset;
+}
+
+picture:has(.news__slide-image) {
+  display: contents;
 }

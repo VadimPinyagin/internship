@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation, Scrollbar } from 'swiper/modules';
+import { Grid, Pagination, Navigation, Scrollbar } from 'swiper/modules';
 
 const initSwiperHero = () => {
   new Swiper('.hero', {
@@ -16,6 +16,8 @@ const initSwiperHero = () => {
     },
   });
 };
+
+initSwiperHero();
 
 const initSwiperPrograms = () => {
   const programsSwiper = new Swiper('.programs__swiper', {
@@ -53,6 +55,8 @@ const initSwiperPrograms = () => {
 
   return programsSwiper;
 };
+
+initSwiperPrograms();
 
 const initSwiperReviews = () => {
   const reviewsSwiper = new Swiper('.reviews__swiper', {
@@ -92,6 +96,81 @@ const initSwiperReviews = () => {
   return reviewsSwiper;
 };
 
-initSwiperHero();
-initSwiperPrograms();
 initSwiperReviews();
+
+const initTabsNewsSwiper = () => {
+  const newsSwiperTabs = new Swiper('.news__swiper-tabs', {
+    breakpoints: {
+      0: {
+        loop: false,
+        centeredSlides: false,
+        slidesPerView: 'auto',
+      },
+    },
+  });
+
+  const container = document.querySelector('.news__swiper-tabs');
+  if (container) {
+    container.addEventListener('click', (e) => {
+      const slideEl = e.target.closest('.swiper-slide');
+      if (!slideEl) {
+        return;
+      }
+      const index = Array.prototype.indexOf.call(newsSwiperTabs.slides, slideEl);
+      if (index === -1) {
+        return;
+      }
+      const targetIndex = Math.max(0, index - 1);
+      newsSwiperTabs.slideTo(targetIndex, 300);
+    });
+  }
+
+  return newsSwiperTabs;
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTabsNewsSwiper();
+});
+
+initTabsNewsSwiper();
+
+const initNewsSwiper = () => {
+  const newsSwiper = new Swiper('.news__swiper-container', {
+    modules: [Grid, Navigation],
+    speed: 1000,
+    observer: true,
+    loop: false,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        grid: {
+          rows: 2,
+          fill: 'columns',
+        },
+        spaceBetween: 20,
+        allowTouchMove: true,
+      },
+      768: {
+        slidesPerView: 2,
+        grid: {
+          rows: 2,
+          fill: 'rows',
+        },
+        spaceBetween: 20,
+        allowTouchMove: true,
+      },
+    },
+    pagination: {
+      el: '.news__swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.news__button-next',
+      prevEl: '.news__button-prev',
+    },
+  });
+
+  return newsSwiper;
+};
+
+initNewsSwiper();

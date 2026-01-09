@@ -156,23 +156,87 @@
       <section class="news" data-test="news">
         <h2 class="news__title">Новости и материалы</h2>
         <div class="news__container container">
-          <ul class="news__tabs">
-            <li class="news__tabs-item">
-              <button class="news__tab button button--news news__tab--cutrrent" type="button">Общее</button>
-            </li>
-            <li class="news__tabs-item">
-              <button class="news__tab button button--news" type="button">Волонтёрство</button>
-            </li>
-            <li class="news__tabs-item">
-              <button class="news__tab button button--news" type="button">Стажировки</button>
-            </li>
-            <li class="news__tabs-item">
-              <button class="news__tab button button--news" type="button">Карьера</button>
-            </li>
-            <li class="news__tabs-item">
-              <button class="news__tab button button--news" type="button">Путешествия</button>
-            </li>
-          </ul>
+          <div class="news__swiper-tabs swiper">
+            <ul class="news__tabs swiper-wrapper">
+              <li class="news__tabs-item swiper-slide">
+                <button class="news__tab button button--news" type="button">Общее</button>
+              </li>
+              <li class="news__tabs-item swiper-slide">
+                <button class="news__tab button button--news" type="button">Волонтёрство</button>
+              </li>
+              <li class="news__tabs-item swiper-slide">
+                <button class="news__tab button button--news" type="button">Стажировки</button>
+              </li>
+              <li class="news__tabs-item swiper-slide">
+                <button class="news__tab button button--news" type="button">Карьера</button>
+              </li>
+              <li class="news__tabs-item swiper-slide">
+                <button class="news__tab button button--news" type="button">Путешествия</button>
+              </li>
+            </ul>
+          </div>
+          <div class="news__swiper-container swiper">
+            <ul class="news__swiper swiper-wrapper">
+              <li class="news__swiper-slide swiper-slide">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" width="604" height="400" srcset="img/news/news-interview-big.webp 1x, img/news/news-interview-big@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 1440px)" width="604" height="400" srcset="img/news/news-interview-big.jpg 1x, img/news/news-interview-big@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-interview-tablet.webp 1x, img/news/news-interview-tablet@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-interview-tablet.jpg 1x, img/news/news-interview-tablet@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 320px)" width="290" height="330" srcset="img/news/news-interview-mobile.webp 1x, img/news/news-interview-mobile@2x.webp 2x">
+                  <img class="news__slide-image" src="./img/news/news-interview-mobile.jpg" srcset="./img/news/news-interview-mobile@2x.jpg 2x" width="290" height="330" alt="Интервью с участницей программы стажировки">
+                </picture>
+              </li>
+              <li class="news__swiper-slide swiper-slide">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-travel-desktop.webp 1x, img/news/news-travel-desktop@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-travel-desktop.jpg 1x, img/news/news-travel-desktop@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-travel-tablet.webp 1x, img/news/news-travel-tablet@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-travel-tablet.jpg 1x, img/news/news-travel-tablet@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 320px)" width="290" height="240" srcset="img/news/news-travel-mobile.webp 1x, img/news/news-travel-mobile@2x.webp 2x">
+                  <img class="news__slide-image" src="./img/news/news-travel-mobile.jpg" srcset="./img/news/news-travel-mobile@2x.jpg 2x" width="290" height="240" alt="Интервью с участницей программы стажировки">
+                </picture>
+              </li>
+              <li class="news__swiper-slide swiper-slide">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-volunteering-desktop.webp 1x, img/news/news-volunteering-desktop@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-volunteering-desktop.jpg 1x, img/news/news-volunteering-desktop@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-volunteering-tablet.webp 1x, img/news/news-volunteering-tablet@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-volunteering-tablet.jpg 1x, img/news/news-volunteering-tablet@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 320px)" width="290" height="330" srcset="img/news/news-volunteering-mobile.webp 1x, img/news/news-volunteering-mobile@2x.webp 2x">
+                  <img class="news__slide-image" src="./img/news/news-volunteering-mobile.jpg" srcset="./img/news/news-volunteering-mobile@2x.jpg 2x" width="290" height="330" alt="Интервью с участницей программы стажировки">
+                </picture>
+              </li>
+              <li class="news__swiper-slide swiper-slide">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-career-desktop.webp 1x, img/news/news-career-desktop@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 1440px)" width="286" height="400" srcset="img/news/news-career-desktop.jpg 1x, img/news/news-career-desktop@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-career-tablet.webp 1x, img/news/news-career-tablet@2x.webp 2x">
+                  <source type="image/jpeg" media="(min-width: 768px)" width="324" height="350" srcset="img/news/news-career-tablet.jpg 1x, img/news/news-career-tablet@2x.jpg 2x">
+                  <source type="image/webp" media="(min-width: 320px)" width="290" height="330" srcset="img/news/news-career-mobile.webp 1x, img/news/news-career-mobile@2x.webp 2x">
+                  <img class="news__slide-image" src="./img/news/news-career-mobile.jpg" srcset="./img/news/news-career-mobile@2x.jpg 2x" width="290" height="330" alt="Интервью с участницей программы стажировки">
+                </picture>
+              </li>
+            </ul>
+            <ul class="news__swiper-pagination">
+              <li class="news__swiper-pagination-item">
+                <button class="news__pagination-button" type="button">1</button>
+              </li>
+              <li class="news__swiper-pagination-item">
+                <button class="news__pagination-button" type="button">2</button>
+              </li>
+              <li class="news__swiper-pagination-item">
+                <button class="news__pagination-button" type="button">3</button>
+              </li>
+              <li class="news__swiper-pagination-item">
+                <button class="news__pagination-button" type="button">4</button>
+              </li>
+            </ul>
+            <div class="common-control__button-container">
+              <button class="common-control__button common-control__button--prev news__button-prev" type="button"></button>
+              <button class="common-control__button common-control__button--next news__button-next" type="button"></button>
+            </div>
+          </div>
         </div>
       </section>
        <section class="faq" data-test="FAQ">
