@@ -2,19 +2,30 @@ import Swiper from 'swiper';
 import { Grid, Pagination, Navigation, Scrollbar } from 'swiper/modules';
 
 const initSwiperHero = () => {
-  new Swiper('.hero', {
-    modules: [Pagination],
+  const heroSwiper = new Swiper('.hero', {
+    autoHeight: true,
     direction: 'horizontal',
+    loop: true,
+    modules: [Pagination],
+    pagination: {
+      el: '.swiper-slide-active [data-hero-pagination]',
+      type: 'bullets',
+      clickable: true,
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        heroSwiper.pagination.init();
+        heroSwiper.pagination.render();
+        heroSwiper.pagination.update();
+      }
+    },
     0: {
-      loop: true,
       centeredSlides: true,
       slidesPerView: 'auto',
     },
-    loop: true,
-    pagination: {
-      clickable: true,
-    },
   });
+
+  return heroSwiper;
 };
 
 initSwiperHero();
@@ -141,11 +152,11 @@ const initNewsSwiper = () => {
     observer: true,
     loop: false,
     breakpoints: {
-      320: {
+      0: {
         slidesPerView: 1,
         grid: {
           rows: 2,
-          fill: 'columns',
+          fill: 'rows',
         },
         spaceBetween: 20,
         allowTouchMove: true,
