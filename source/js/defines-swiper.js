@@ -156,7 +156,7 @@ const initNewsSwiper = () => {
         slidesPerView: 1,
         grid: {
           rows: 2,
-          fill: 'rows',
+          fill: 'column',
         },
         spaceBetween: 20,
         allowTouchMove: true,

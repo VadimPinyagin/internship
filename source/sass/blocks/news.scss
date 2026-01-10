@@ -58,6 +58,11 @@
 
 .news__swiper {
   @include list-reset;
+  height: 590px;
+}
+
+.news__slide-image {
+  vertical-align: bottom;
 }
 
 picture:has(.news__slide-image) {
