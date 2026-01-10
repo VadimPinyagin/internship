@@ -59,9 +59,25 @@
 .news__swiper {
   @include list-reset;
   height: 590px;
+
+  @media (min-width: $tablet-width) {
+    height: 730px;
+  }
+}
+
+.news__swiper-slide {
+  height: 400px;
+}
+
+.news__image-wrapper {
+  height: 100%;
 }
 
 .news__slide-image {
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top center;
   vertical-align: bottom;
 }
 

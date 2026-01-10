@@ -164,6 +164,7 @@ const initNewsSwiper = () => {
       768: {
         slidesPerView: 2,
         grid: {
+          slidesPerGroup: 2,
           rows: 2,
           fill: 'rows',
         },
