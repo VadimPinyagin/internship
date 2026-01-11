@@ -147,7 +147,9 @@ initTabsNewsSwiper();
 
 const initNewsSwiper = () => {
   const newsSwiper = new Swiper('.news__swiper-container', {
-    modules: [Grid, Navigation],
+    modules: [Grid, Navigation, Pagination],
+    observer: true,
+    observeParents: true,
     speed: 1000,
     loop: false,
     breakpoints: {
@@ -162,6 +164,7 @@ const initNewsSwiper = () => {
       },
       768: {
         spaceBetween: 30,
+        slidesPerGroup: 2,
         slidesPerView: 2,
         grid: {
           rows: 2,
@@ -176,14 +179,10 @@ const initNewsSwiper = () => {
         },
       },
     },
-    on: {
-      breakpoint: function (swiper) {
-        swiper.update();
-      },
-    },
     pagination: {
       el: '.news__swiper-pagination',
       clickable: true,
+      renderBullet: (index, className) => `<button class="news__pagination-button ${className}" type="button" aria-label="Перейти к ${index + 1} слайду">${index + 1}</button>`,
     },
     navigation: {
       nextEl: '.news__button-next',
@@ -196,3 +195,7 @@ const initNewsSwiper = () => {
 };
 
 initNewsSwiper();
+
+window.addEventListener('resize', () => {
+  initNewsSwiper();
+});
