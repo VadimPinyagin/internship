@@ -181,12 +181,23 @@
     line-height: 44px;
     padding: 30px 40px 24px 40px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-inline-end: 272px;
+    font-size: 54px;
+    line-height: 62px;
+    padding: 40px 50px 30px 50px;
+  }
 }
 
 .hero__content-wrapper {
 
   @media (min-width: $tablet-width) {
     display: flex;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 968px;
   }
 }
 
@@ -205,14 +216,22 @@
     padding: 0 30px 20px 40px;
     margin-inline-end: 0;
   }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+  }
 }
 
 .hero__text p {
   margin-block: 15px;
 
   @media (min-width: $tablet-width) {
-     width: 285px;
-     margin-block-start: 0;
+    width: 285px;
+    margin-block-start: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 446px;
   }
 }
 
