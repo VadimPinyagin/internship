@@ -149,27 +149,36 @@ const initNewsSwiper = () => {
   const newsSwiper = new Swiper('.news__swiper-container', {
     modules: [Grid, Navigation],
     speed: 1000,
-    observer: true,
     loop: false,
     breakpoints: {
-      0: {
+      320: {
+        allowTouchMove: true,
+        spaceBetween: 20,
         slidesPerView: 1,
         grid: {
           rows: 2,
           fill: 'column',
         },
-        spaceBetween: 20,
-        allowTouchMove: true,
       },
       768: {
+        spaceBetween: 30,
         slidesPerView: 2,
         grid: {
-          slidesPerGroup: 2,
           rows: 2,
-          fill: 'rows',
+          fill: 'row',
         },
-        spaceBetween: 20,
-        allowTouchMove: true,
+      },
+      1440: {
+        spaceBetween: 32,
+        slidesPerView: 'auto',
+        grid: {
+          rows: 1,
+        },
+      },
+    },
+    on: {
+      breakpoint: function (swiper) {
+        swiper.update();
       },
     },
     pagination: {
@@ -183,6 +192,7 @@ const initNewsSwiper = () => {
   });
 
   return newsSwiper;
+
 };
 
 initNewsSwiper();

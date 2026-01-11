@@ -1,0 +1,22 @@
+.slide-content {
+  --corner: url("/__spritemap#sprite-indented-corner-view");
+  --bg-color: var(--white, #ffffff);
+  position: relative;
+  background-color: var(--bg-color);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    aspect-ratio: 1;
+    mask: var(--corner) no-repeat center / cover;
+    background-color: var(--bg-color);
+    right: -10px;
+    top: 0;
+  }
+}
+
+.slide-content--corner-rotate::after {
+  transform: rotate(-90deg);
+}
