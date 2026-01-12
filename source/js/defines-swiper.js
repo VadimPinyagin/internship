@@ -191,11 +191,6 @@ const initNewsSwiper = () => {
   });
 
   return newsSwiper;
-
 };
 
 initNewsSwiper();
-
-window.addEventListener('resize', () => {
-  initNewsSwiper();
-});

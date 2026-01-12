@@ -24,10 +24,11 @@
   }
 }
 
-.contacts__set h2 {
+.contacts__title {
   font-weight: 400;
   font-size: 20px;
   margin-block: 5px;
+  color: var(--white, #ffffff);
 
   @media (min-width: $tablet-width) {
     font-size: 34px;
@@ -66,7 +67,7 @@
   }
 }
 
-.contacts__set h3 {
+.contacts__addres {
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
