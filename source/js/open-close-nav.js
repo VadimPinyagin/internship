@@ -27,8 +27,10 @@ const toggleMenu = () => {
       mainNav.classList.toggle('header__menu--is-close', !isOpen);
       toggle.classList.toggle('header__toggle--opened');
       replaceIcon(toggleIcon, iconOpen, iconClose);
+
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
       if (isOpen) {
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.overflow = 'hidden';
         document.body.style.marginRight = `${scrollbarWidth}px`;
       } else {
@@ -48,10 +50,17 @@ const toggleMenu = () => {
         closeMenu();
       }
     };
+    const handleAnchorClick = () => {
+      closeMenu();
+    };
+    const anchorLinks = mainNav.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
+
     document.addEventListener('click', handleClickOutside);
     document.addEventListener('keydown', handleEscapeKey);
   }
 };
 
 toggleMenu();
+
 
