@@ -27,7 +27,6 @@ const toggleMenu = () => {
       mainNav.classList.toggle('header__menu--is-close', !isOpen);
       toggle.classList.toggle('header__toggle--opened');
       replaceIcon(toggleIcon, iconOpen, iconClose);
-
       if (isOpen) {
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.overflow = 'hidden';
@@ -36,7 +35,6 @@ const toggleMenu = () => {
         document.body.style.overflow = '';
         document.body.style.marginRight = '';
       }
-
       document.body.classList.toggle('page__body--menu-open', isOpen);
     });
     const handleEscapeKey = (event) => {
@@ -44,12 +42,13 @@ const toggleMenu = () => {
         closeMenu();
       }
     };
-    document.addEventListener('click', (event) => {
+    const handleClickOutside = (event) => {
       const isClickInside = mainNav.contains(event.target) || toggle.contains(event.target);
-      if (!isClickInside) {
+      if (!isClickInside && mainNav.classList.contains('header__menu--is-open')) {
         closeMenu();
       }
-    });
+    };
+    document.addEventListener('click', handleClickOutside);
     document.addEventListener('keydown', handleEscapeKey);
   }
 };
