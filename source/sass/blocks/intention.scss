@@ -21,8 +21,9 @@
 }
 
 .intention__button {
-  margin-block-start: 30px;
+  margin-block-start: 29px;
   background-color: transparent;
+  gap: 16px;
 
   @media (min-width: $tablet-width) {
     margin-block-start: 40px;

@@ -1,6 +1,6 @@
 const toggleAccordion = () => {
   const accordionPanels = Array.from(document.querySelectorAll('.accordion__panel'));
-  const initiallyOpenId = 'accordion__content-3';
+  const initiallyOpenId = 'accordion-content-3';
 
   accordionPanels.forEach((currentPanel) => {
     const currentButton = currentPanel.querySelector('.accordion__trigger');

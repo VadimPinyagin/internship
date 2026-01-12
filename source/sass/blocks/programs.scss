@@ -1,5 +1,5 @@
 .programs {
-  margin-block-end: 50px;
+  margin-block:54px 50px;
 }
 
 .programs__container {
@@ -30,6 +30,8 @@
   text-decoration: none;
   margin-block-start: 30px;
   background-color: transparent;
+  padding-inline-start: 29px;
+  gap: 35px;
 
   @media (min-width: $tablet-width) {
     position: absolute;
@@ -93,12 +95,12 @@ picture:has(.programs__slide-image) {
 .programs__slide-title {
   grid-column: 1/2;
   display: inline-block;
-  min-width: 173px;
+  min-width: 146px;
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
   color: var(--brand, #0000ff);
-  padding: 18px 35px 6px 18px;
+  padding: 18px 0 6px 18px;
   border-radius: 12px 12px 0 0;
   margin-block: 0;
 

@@ -3,11 +3,12 @@
 
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
   background-color: var(--brand, #0000ff);
   border-radius: 20px;
   padding-inline: 20px;
   padding-block: 40px;
+  margin-block-start: 41px;
   margin-block-end: 15px;
   color: var(--white, #ffffff);
 
