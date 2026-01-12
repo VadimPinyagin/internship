@@ -17,7 +17,6 @@
 }
 
 .footer__nav-list {
-
   @media (min-width: $tablet-width) {
     justify-content: end;
     grid-column: span 2;
@@ -78,19 +77,6 @@
   line-height: 14px;
   text-align: center;
 
-  @media (min-width: $tablet-width) {
-    margin-inline-start: 0;
-    line-height: 12px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin: 0;
-    font-size: 14px;
-    line-height: 18px;
-  }
-}
-
-.footer__copyright-link {
   &:hover {
     color: var(--brand, #316dc2);
     opacity: 0.7;
@@ -106,5 +92,16 @@
 
   &:active {
     color: var(--active, #275699);
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-inline-start: 0;
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
   }
 }

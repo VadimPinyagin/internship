@@ -62,5 +62,3 @@ const toggleMenu = () => {
 };
 
 toggleMenu();
-
-

@@ -41,8 +41,10 @@
 
 .programs__slide {
   --radius: 12px;
+
   display: grid;
   align-items: start;
+
   &::before {
     content: "";
     position: absolute;
@@ -123,7 +125,7 @@ picture:has(.programs__slide-image) {
   gap: 16px;
   padding-inline: 18px;
   align-items: center;
-  border-radius: 0 12px 12px 12px;
+  border-radius: 0 12px 12px;
 
   &::after {
     display: none;

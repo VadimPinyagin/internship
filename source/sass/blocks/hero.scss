@@ -125,7 +125,7 @@
 
 .hero__container {
   display: grid;
-  margin-block-end: 20px;
+  margin-block-end: 21px;
 
   @media (min-width: $tablet-width) {
     padding-inline-end: 20px;
@@ -136,10 +136,11 @@
 
 [data-hero-pagination="hero-pagination"].swiper-pagination {
   top: 0;
-  border-radius: 16px 16px 0 0;
+  border-radius: 12px 12px 0 0;
   display: flex;
   padding: 10px 16px;
   width: max-content;
+  gap: 12px;
 
   &::after {
     top: auto;
@@ -153,6 +154,8 @@
   border: 2px solid var(--brand, #0000ff);
   background-color: var(--white, #ffffff);
   opacity: 1;
+
+  --swiper-pagination-bullet-horizontal-gap: 0;
 
   @media (min-width: $tablet-width) {
     width: 12px;
@@ -173,25 +176,24 @@
   text-align: left;
   background-color: var(--white, #ffffff);
   margin: 0;
-  padding: 20px 16px 0 14px;
+  padding: 20px 16px 15px 14px;
   border-radius: 0 16px 16px 0;
 
   @media (min-width: $tablet-width) {
     font-size: 36px;
     line-height: 44px;
-    padding: 30px 40px 24px 40px;
+    padding: 30px 40px 24px;
   }
 
   @media (min-width: $desktop-width) {
     margin-inline-end: 272px;
     font-size: 54px;
     line-height: 62px;
-    padding: 40px 50px 30px 50px;
+    padding: 40px 50px 30px;
   }
 }
 
 .hero__content-wrapper {
-
   @media (min-width: $tablet-width) {
     display: flex;
   }
@@ -206,7 +208,7 @@
   flex-wrap: wrap;
   text-align: left;
   font-size: 16px;
-  border-radius: 0 0 16px 0;
+  border-radius: 0 0 16px;
   padding-inline: 15px;
   margin-inline-end: 23px;
 
@@ -223,7 +225,7 @@
 }
 
 .hero__text p {
-  margin-block: 15px;
+  margin-block: 0 15px;
 
   @media (min-width: $tablet-width) {
     width: 285px;
@@ -248,7 +250,7 @@
 
   @media (min-width: $tablet-width) {
     align-items: flex-start;
-    border-radius: 0 0 16px 0;
+    border-radius: 0 0 16px;
     padding-block: 0;
     padding-inline-end: 40px;
   }
@@ -256,6 +258,6 @@
 
 .hero__link {
   @include link-reset;
+
   color: var(--brand, #0000ff);
 }
-

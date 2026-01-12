@@ -1,0 +1,96 @@
+.common-control {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    gap: 52px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.common-control__scrollbar {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    flex-grow: 1;
+    display: block;
+    height: 2px;
+    background-color: color-mix(in sRGB, var(--brand, #0000ff) 20%, transparent);
+  }
+}
+
+.common-control__button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.common-control__button {
+  width: 22px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 0;
+}
+
+.common-control__button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
+  background-color: var(--swiper-navigation-color, #0000ff);
+}
+
+.common-control__button:hover::before {
+  background-color: color-mix(in sRGB, var(--swiper-navigation-color, #0000ff) 70%, transparent);
+}
+
+.common-control__button:focus,
+.common-control__button:focus-visible {
+  border-radius: 50%;
+  background-color: var(--white, #ffffff);
+}
+
+.common-control__button:focus::before {
+  background-color: var(--swiper-navigation-color, #0000ff);
+}
+
+.common-control__button:active {
+  border-radius: 50%;
+  background-color: var(--white, #ffffff);
+}
+
+.common-control__button:active::before {
+  background-color: color-mix(in sRGB, var(--swiper-navigation-color, #0000ff) 70%, transparent);
+}
+
+.common-control__button:disabled {
+  background-color: transparent;
+}
+
+.common-control__button:disabled::before {
+  background-color: var(--disabled, #484848);
+}
+
+.common-control__button--prev::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.common-control__button--next::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.common-control--news {
+  position: static;
+}

@@ -1,5 +1,6 @@
 .review {
   --accent-color: var(--brand, #0000ff);
+
   display: flex;
   flex-direction: column;
   min-height: 472px;
@@ -49,7 +50,6 @@
     font-size: 20px;
     line-height: 20px;
   }
-
 }
 
 .review__details-term {
@@ -61,6 +61,7 @@
 
 .review__details-description {
   margin-block-start: 8px;
+  margin-inline-start: 0;
   font-size: 12px;
   line-height: 14px;
 
@@ -140,8 +141,4 @@ picture:has(.review__user-avatar) {
   @media (min-width: $tablet-width) {
     justify-content: center;
   }
-}
-
-.review__details-description {
-  margin-inline-start: 0;
 }

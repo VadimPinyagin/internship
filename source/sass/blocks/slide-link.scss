@@ -8,15 +8,15 @@
   flex-shrink: 0;
 
   &::before {
-  content: "";
-  display: block;
-  position: absolute;
-  mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
-  width: 8px;
-  height: 8px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--white, #ffffff);
+    content: "";
+    display: block;
+    position: absolute;
+    mask: url("/__spritemap#sprite-arrow-link-view") center / cover no-repeat;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white, #ffffff);
   }
 }

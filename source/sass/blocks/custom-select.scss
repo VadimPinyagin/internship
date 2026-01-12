@@ -1,5 +1,6 @@
 .custom-select {
   --select-w: 260px;
+
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -7,6 +8,7 @@
 
 .custom-select__button {
   @include form-fields;
+
   position: relative;
   text-align: left;
   min-width: var(--select-w);
@@ -17,7 +19,7 @@
     box-shadow: inset 0 0 0 1px color-mix(in sRGB, var(--white, #ffffff) 100%, transparent);
   }
 
-  &.active::after {
+  .active::after {
     transform: rotate(180deg);
   }
 }
@@ -42,6 +44,7 @@
 
 .custom-select__options--is-open {
   @include list-reset;
+
   position: absolute;
   bottom: -4px;
   z-index: 1;

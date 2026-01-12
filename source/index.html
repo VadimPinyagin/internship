@@ -144,8 +144,8 @@
           <div class="common-control programs__swiper-control">
             <div class="common-control__scrollbar"></div>
             <div class="common-control__button-container">
-              <button class="common-control__button common-control__button--prev programs__button-prev" type="button"></button>
-              <button class="common-control__button common-control__button--next programs__button-next" type="button"></button>
+              <button class="common-control__button common-control__button--prev programs__button-prev" type="button" aria-label="Листать назад"></button>
+              <button class="common-control__button common-control__button--next programs__button-next" type="button" aria-label="Листать вперёд"></button>
             </div>
           </div>
           <div class="programs__swiper swiper">
@@ -408,57 +408,57 @@
                 </div>
               </li>
             </ul>
-            <div class="news__control-container">
-              <button class="common-control__button common-control__button--prev news__button-prev" type="button"></button>
+            <div class="news__control-container common-control common-control--news">
+              <button class="common-control__button common-control__button--prev" type="button" aria-label="Листать назад"></button>
               <div class="news__swiper-pagination"></div>
-              <button class="common-control__button common-control__button--next news__button-next" type="button"></button>
+              <button class="common-control__button common-control__button--next" type="button" aria-label="Листать вперёд"></button>
             </div>
           </div>
         </div>
       </section>
-       <section class="faq" data-test="FAQ">
+      <section class="faq" data-test="FAQ">
         <div class="faq__container container">
           <h2 class="faq__title">Вопросы и ответы</h2>
           <ul class="faq__accordion accordion" role="presentation">
             <li class="accordion__panel">
               <h3 class="accordion__heading">
-                <button class="accordion__trigger" aria-controls="accordion__content-1" aria-expanded="false" tabindex="0" id="accordion__title-1">Кто организатор? Какие сроки у программы?</button>
+                <button class="accordion__trigger" type="button" aria-controls="accordion-content-1" aria-expanded="false" tabindex="0" id="accordion-title-1">Кто организатор? Какие сроки у программы?</button>
               </h3>
-              <div class="accordion__content" id="accordion__content-1" role="region" aria-hidden="true" aria-labelledby="accordion__title-1">
+              <section class="accordion__content" id="accordion-content-1"  aria-hidden="true" aria-labelledby="accordion-title-1">
                 <p>Организатором программы является проект &laquo;Стажировка&raquo; в сотрудничестве с образовательными учреждениями. Сроки программы обмена могут варьироваться от одного семестра до года.</p>
-              </div>
+              </section>
             </li>
             <li class="accordion__panel">
               <h3 class="accordion__heading">
-                <button class="accordion__trigger" aria-controls="accordion__content-2" aria-expanded="false" tabindex="0" id="accordion__title-2">Что такое грант на обучение?</button>
+                <button class="accordion__trigger" type="button" aria-controls="accordion-content-2" aria-expanded="false" tabindex="0" id="accordion-title-2">Что такое грант на обучение?</button>
               </h3>
-              <div class="accordion__content" id="accordion__content-2" role="region" aria-hidden="true" aria-labelledby="accordion__title-2">
+              <section class="accordion__content" id="accordion-content-2"  aria-hidden="true" aria-labelledby="accordion-title-2">
                 <p>Грант на обучение — это финансовая поддержка, которую предоставляет организатор программы обмена студентами для оплаты учебных расходов.</p>
-              </div>
+              </section>
             </li>
             <li class="accordion__panel">
               <h3 class="accordion__heading">
-                <button class="accordion__trigger" aria-controls="accordion__content-3" aria-expanded="false" tabindex="0" id="accordion__title-3">Как определяется стоимость программы?</button>
+                <button class="accordion__trigger" type="button" aria-controls="accordion-content-3" aria-expanded="false" tabindex="0" id="accordion-title-3">Как определяется стоимость программы?</button>
               </h3>
-              <div class="accordion__content" id="accordion__content-3" role="region" aria-hidden="true" aria-labelledby="accordion__title-3">
+              <section class="accordion__content" id="accordion-content-3" aria-hidden="true" aria-labelledby="accordion-title-3">
                 <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Стажировка» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
-              </div>
+              </section>
             </li>
             <li class="accordion__panel">
               <h3 class="accordion__heading">
-                <button class="accordion__trigger" aria-controls="accordion__content-4" aria-expanded="false" tabindex="0" id="accordion__title-4">Признаётся ли учёба в&nbsp;рамках проекта для дальнейшего обучения?</button>
+                <button class="accordion__trigger" type="button" aria-controls="accordion-content-4" aria-expanded="false" tabindex="0" id="accordion-title-4">Признаётся ли учёба в&nbsp;рамках проекта для дальнейшего обучения?</button>
               </h3>
-              <div class="accordion__content" id="accordion__content-4" role="region" aria-hidden="true" aria-labelledby="accordion__title-4">
+              <section class="accordion__content" id="accordion-content-4"  aria-hidden="true" aria-labelledby="accordion-title-4">
                 <p>Студенты, участвующие в проекте, могут использовать полученные знания и навыки в своей будущей профессиональной деятельности или продолжить обучение в высших учебных заведениях. Многие университеты и колледжи предоставляют кредиты за участие в программе обмена студентами.</p>
-              </div>
+              </section>
             </li>
             <li class="accordion__panel">
               <h3 class="accordion__heading">
-                <button class="accordion__trigger" aria-controls="accordion__content-5" aria-expanded="false" tabindex="0" id="accordion__title-5">Как выглядит полный процесс регистрации на программу «Стажировка»?</button>
+                <button class="accordion__trigger" type="button" aria-controls="accordion-content-5" aria-expanded="false" tabindex="0" id="accordion-title-5">Как выглядит полный процесс регистрации на программу «Стажировка»?</button>
               </h3>
-              <div class="accordion__content" id="accordion__content-5" role="region" aria-hidden="true" aria-labelledby="accordion__title-5">
+              <section class="accordion__content" id="accordion-content-5"  aria-hidden="true" aria-labelledby="accordion-title-5">
                 <p>Процесс регистрации на программу обмена включает выбор университета-партнера и программы обмена, общение с координатором программы, заполнение заявления и предоставление необходимых документов, прохождение интервью, оформление визы, жилья и страховки, обучение по безопасности за границей и подписание договора об участии в программе. Подробнее можно узнать, позвонив в центр.</p>
-              </div>
+              </section>
             </li>
           </ul>
         </div>
@@ -469,8 +469,8 @@
           <div class="common-control reviews__swiper-control">
             <div class="common-control__scrollbar "></div>
             <div class="common-control__button-container">
-              <button class="common-control__button common-control__button--prev reviews__button-prev" type="button"></button>
-              <button class="common-control__button common-control__button--next reviews__button-next" type="button"></button>
+              <button class="common-control__button common-control__button--prev reviews__button-prev" type="button" aria-label="Листать назад"></button>
+              <button class="common-control__button common-control__button--next reviews__button-next" type="button" aria-label="Листать вперёд"></button>
             </div>
           </div>
           <div class="reviews__swiper swiper">
@@ -632,6 +632,7 @@
               <p class="feedback__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
             </div>
             <fieldset class="feedback__set">
+              <legend class="visually-hidden">Заполните поля формы</legend>
               <ul class="feedback__set-fields">
                 <li class="feedback__set-item">
                   <label for="user-name">Имя</label>
@@ -655,7 +656,7 @@
                     <option value="nsb">Новосибирск</option>
                   </select>
                   <div class="custom-select">
-                    <button type="button" class="custom-select__button" tabindex="0">
+                    <button class="custom-select__button" type="button" tabindex="0" aria-label="Выберете город">
                       <span class="custom-select__text"></span>
                     </button>
                   </div>

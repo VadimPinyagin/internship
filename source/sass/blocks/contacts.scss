@@ -52,6 +52,7 @@
 
 .contacts__list {
   @include list-reset;
+
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -79,6 +80,7 @@
 
 .contacts__link {
   @include link-reset;
+
   display: block;
   margin-block-start: 15px;
 
@@ -102,7 +104,8 @@
   }
 }
 
-picture:has(.contacts__map), source {
+picture:has(.contacts__map),
+source {
   display: contents;
 }
 

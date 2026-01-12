@@ -1,6 +1,6 @@
 .grant {
   background-color: var(--brand, #0000ff);
-  padding-block: 70px;
+  padding-block: 70px 55px;
   color: var(--white, #ffffff);
 
   @media (min-width: $tablet-width) {
@@ -9,7 +9,6 @@
 }
 
 .grant__container {
-
   @media (min-width: $desktop-width) {
     display: grid;
     column-gap: 138px;
@@ -60,7 +59,7 @@ picture:has(.grant__image) {
 }
 
 .grant__image {
-  margin-block:15px 40px;
+  margin-block: 16px 35px;
 
   @media (min-width: $tablet-width) {
     margin-block-start: 25px;
@@ -68,7 +67,7 @@ picture:has(.grant__image) {
 }
 
 .grant__item-text {
-  margin-block: 25px;
+  margin-block: 9px;
 
   @media (min-width: $tablet-width) {
     font-weight: 400;
@@ -80,8 +79,11 @@ picture:has(.grant__image) {
 }
 
 .grant__element {
+  padding-inline-start: 15px;
   padding-inline-end: 0;
   padding-block: 0;
+  margin-block-start: 30px;
+  gap: 15px;
 
   @media (min-width: $tablet-width) {
     margin-block-start: 25px;
