@@ -17,6 +17,7 @@ const closeMenu = () => {
   replaceIcon(toggleIcon, iconOpen, iconClose);
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
+  document.body.style.marginRight = '';
 };
 
 const toggleMenu = () => {
@@ -27,23 +28,28 @@ const toggleMenu = () => {
       toggle.classList.toggle('header__toggle--opened');
       replaceIcon(toggleIcon, iconOpen, iconClose);
 
-      document.body.classList.toggle('page__body--menu-open', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
+      if (isOpen) {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflow = 'hidden';
+        document.body.style.marginRight = `${scrollbarWidth}px`;
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.marginRight = '';
+      }
 
+      document.body.classList.toggle('page__body--menu-open', isOpen);
+    });
     const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
         closeMenu();
       }
     };
-
     document.addEventListener('click', (event) => {
       const isClickInside = mainNav.contains(event.target) || toggle.contains(event.target);
       if (!isClickInside) {
         closeMenu();
       }
     });
-
     document.addEventListener('keydown', handleEscapeKey);
   }
 };
