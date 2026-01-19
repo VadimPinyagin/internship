@@ -8,15 +8,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   padding-block-start: 21px;
-}
-
-.header__button {
-  justify-self: end;
-}
-
-.header__menu:has(.header__toggle--opened) {
-  justify-self: end;
-  width: 290px;
+  justify-content: space-between;
 }
 
 .header__menu--is-close {
@@ -28,5 +20,6 @@
 .header__menu--is-open {
   .header__nav-list {
     display: flex;
+    width: 290px;
   }
 }

@@ -1,32 +1,24 @@
 const mainNav = document.querySelector('.nav');
-const toggle = document.querySelector('.toggle');
-const iconOpen = 'toggle__icon--open';
-const iconClose = 'toggle__icon--close';
-const toggleIcon = document.querySelector('.toggle__icon');
+const headerButton = document.querySelector('.button--header');
+const headerLogo = document.querySelector('.header__logo');
 mainNav.classList.add('header__menu--is-close');
-
-const replaceIcon = (icon, classOpen, classClose) => {
-  icon.classList.toggle(classOpen);
-  icon.classList.toggle(classClose);
-};
 
 const closeMenu = () => {
   mainNav.classList.remove('header__menu--is-open');
   mainNav.classList.add('header__menu--is-close');
-  toggle.classList.remove('header__toggle--opened');
-  replaceIcon(toggleIcon, iconOpen, iconClose);
+  headerButton.classList.remove('button--menu-opened');
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
   document.body.style.marginRight = '';
 };
 
 const toggleMenu = () => {
-  if (toggle) {
-    toggle.addEventListener('click', () => {
+  if (headerButton) {
+    headerButton.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('header__menu--is-open');
+      headerLogo.classList.add('header__logo--overlay');
       mainNav.classList.toggle('header__menu--is-close', !isOpen);
-      toggle.classList.toggle('header__toggle--opened');
-      replaceIcon(toggleIcon, iconOpen, iconClose);
+      headerButton.classList.toggle('button--menu-opened');
 
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -36,6 +28,7 @@ const toggleMenu = () => {
       } else {
         document.body.style.overflow = '';
         document.body.style.marginRight = '';
+        headerLogo.classList.remove('header__logo--overlay');
       }
       document.body.classList.toggle('page__body--menu-open', isOpen);
     });
@@ -45,7 +38,7 @@ const toggleMenu = () => {
       }
     };
     const handleClickOutside = (event) => {
-      const isClickInside = mainNav.contains(event.target) || toggle.contains(event.target);
+      const isClickInside = mainNav.contains(event.target) || headerButton.contains(event.target);
       if (!isClickInside && mainNav.classList.contains('header__menu--is-open')) {
         closeMenu();
       }
