@@ -1,11 +1,11 @@
-const mainNav = document.querySelector('.nav');
+const mainNav = document.querySelector('.header__nav');
 const headerButton = document.querySelector('.button--header');
 const headerLogo = document.querySelector('.header__logo');
-mainNav.classList.add('header__menu--is-close');
+mainNav.classList.add('header__nav--is-close');
 
 const closeMenu = () => {
-  mainNav.classList.remove('header__menu--is-open');
-  mainNav.classList.add('header__menu--is-close');
+  mainNav.classList.remove('header__nav--is-open');
+  mainNav.classList.add('header__nav--is-close');
   headerButton.classList.remove('button--menu-opened');
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
@@ -15,9 +15,9 @@ const closeMenu = () => {
 const toggleMenu = () => {
   if (headerButton) {
     headerButton.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('header__menu--is-open');
+      const isOpen = mainNav.classList.toggle('header__nav--is-open');
       headerLogo.classList.add('header__logo--overlay');
-      mainNav.classList.toggle('header__menu--is-close', !isOpen);
+      mainNav.classList.toggle('header__nav--is-close', !isOpen);
       headerButton.classList.toggle('button--menu-opened');
 
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -39,7 +39,7 @@ const toggleMenu = () => {
     };
     const handleClickOutside = (event) => {
       const isClickInside = mainNav.contains(event.target) || headerButton.contains(event.target);
-      if (!isClickInside && mainNav.classList.contains('header__menu--is-open')) {
+      if (!isClickInside && mainNav.classList.contains('header__nav--is-open')) {
         closeMenu();
       }
     };
