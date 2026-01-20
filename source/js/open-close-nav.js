@@ -1,4 +1,4 @@
-const mainNav = document.querySelector('.header__nav');
+const mainNav = document.querySelector('.header__nav--main');
 const headerButton = document.querySelector('.button--header');
 const headerLogo = document.querySelector('.header__logo');
 mainNav.classList.add('header__nav--is-close');
