@@ -15,16 +15,16 @@
   margin-block-start: 4px;
 }
 
-.header__nav--is-close {
+// .header__nav--is-close {
 
-  .header__nav-list {
-    display: none;
-  }
+//   .header__nav-list {
+//     display: none;
+//   }
 
-  .header__nav-list--submenu {
-    display: none;
-  }
-}
+//   .header__nav-list--submenu {
+//     display: none;
+//   }
+// }
 
 .header__nav--is-open {
 
@@ -39,9 +39,13 @@
     border-radius: 16px;
     row-gap: 28px;
   }
+
+  .header__nav-list--submenu {
+    padding-inline: 16px;
+    padding-block: 20px 0;
+    width: 100%;
+  }
 }
-
-
 
 .header__nav-link,
 .header__nav-button {
