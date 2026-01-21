@@ -1,30 +1,43 @@
 const headerLogoOverlay = document.querySelector('.header__logo-overlay');
-const buttonSubMenu = document.querySelectorAll('.header__nav-button');
-const subMenu = document.querySelectorAll('.header__nav-list');
-const anchorLinks = document.querySelectorAll('.menu-link');
+const buttonsMenu = document.querySelectorAll('.header__nav-button');
+const menu = document.querySelectorAll('.header__nav-list');
 const hiddenClass = 'header__nav-list--is-hidden';
 
 const findAnElement = (elements) =>
-  Array.from(elements).map((value, index) => ({ value, index })
-);
+  Array.from(elements).map((value, index) => ({ value, index }));
 
 const toggleSubMenu = () => {
-  const currentButtons = findAnElement(buttonSubMenu);
-  const currentSubMenus = findAnElement(subMenu);
+  const buttons = findAnElement(buttonsMenu);
+  const currentSubMenus = findAnElement(menu);
 
   document.addEventListener('DOMContentLoaded', () => {
-  currentSubMenus.forEach(item => item.value.classList.add('header__nav-list--is-hidden'));
-});
+    currentSubMenus.forEach((item) => item.value.classList.add('header__nav-list--is-hidden'));
+  });
 
-  currentButtons.forEach(item => {
+  buttons.forEach((item) => {
     const button = item.value;
     const buttonIndex = item.index;
-    const related = currentSubMenus.find(s => s.index === buttonIndex).value;
+    const related = menu[buttonIndex];
 
     button.addEventListener('click', () => {
       button.classList.toggle('header__nav-button--is-active');
       const expanded = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!expanded));
+
+      const closeMenu = () => {
+        related.classList.add(hiddenClass);
+        menu.forEach((subMenu, index) => {
+          if (index > 0) {
+            subMenu.classList.add(hiddenClass);
+          }
+        });
+        button.classList.remove('header__nav--submenu-button--open');
+        button.classList.remove('button--menu-opened');
+        headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
+        document.body.classList.remove('page__body--menu-open');
+        document.body.style.overflow = '';
+        document.body.style.marginRight = '';
+      };
 
       if (related){
         related.classList.toggle(hiddenClass);
@@ -42,24 +55,15 @@ const toggleSubMenu = () => {
         document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
         document.body.style.marginRight = document.body.style.marginRight === `${scrollbarWidth}px` ? '' : `${scrollbarWidth}px`;
 
-        const closeMenu = () => {
-          related.classList.add(hiddenClass);
-          button.classList.remove('button--menu-opened');
-          headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
-          document.body.classList.remove('page__body--menu-open');
-          document.body.style.overflow = '';
-          document.body.style.marginRight = '';
-        };
-
         const handleEscapeKey = (event) => {
           if (event.key === 'Escape') {
             closeMenu();
           }
         };
 
-        const handleClickOutside = (event, related, button, hiddenClass, closeMenu) => {
-          const isClickInside = related.contains(event.target) || button.contains(event.target);
-          if (!isClickInside && !related.classList.contains(hiddenClass)) {
+        const handleClickOutside = (event) => {
+          const clickInside = related.contains(event.target) || button.contains(event.target);
+          if (!clickInside && !related.classList.contains(hiddenClass)) {
             closeMenu();
           }
         };
@@ -67,7 +71,6 @@ const toggleSubMenu = () => {
         const handleAnchorClick = () => {
           closeMenu();
         };
-
         const anchorLinks = related.querySelectorAll('a[href^="#"]');
         anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
         document.addEventListener('keydown', handleEscapeKey);
