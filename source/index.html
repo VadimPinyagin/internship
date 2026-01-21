@@ -16,18 +16,20 @@
   <body class="page__body">
     <header class="header">
       <div class="header__container container">
-        <img class="header__logo logo" src="./img/logotype.svg" width="52" height="52" alt="Логотип проекта Стажировка">
+        <div class="header__logo-overlay">
+          <img class="header__logo logo" src="./img/logotype.svg" width="52" height="52" alt="Логотип проекта Стажировка">
+        </div>
         <div class="header__menu">
-          <button class="button button--header button--menu-opened" type="button">Меню</button>
-          <nav class="header__nav header__nav--main header__nav--is-open">
-            <ul class="header__nav-list">
+          <button class="header__nav-button button button--header" type="button">Меню</button>
+          <nav class="header__nav header__nav--main">
+            <ul class="header__nav-list header__nav-list--is-hidden">
               <li>
                 <a class="header__nav-link" href="#about">О&nbsp;проекте</a>
               </li>
               <li>
                 <nav class="header__nav header__nav--submenu">
-                  <button class="header__nav-button" type="button" aria-expanded="false" aria-controls="list">Программы</button>
-                  <ul class="header__nav-list header__nav-list--submenu" id="list-programs">
+                  <button class="header__nav-button header__nav--submenu-button" type="button" aria-expanded="false" aria-controls="list">Программы</button>
+                  <ul class="header__nav-list header__nav-list--submenu header__nav-list--is-hidden" id="list-programs">
                     <li><a class="header__nav-link header__nav-link--submenu" href="#programs">Стажировки</a></li>
                     <li><a class="header__nav-link header__nav-link--submenu" href="#programs">Волонтёрство</a></li>
                     <li><a class="header__nav-link header__nav-link--submenu" href="#programs">Учеба</a></li>
@@ -42,9 +44,9 @@
                 <a class="header__nav-link" href="#reviews">Отзывы</a>
               </li>
               <li>
-                <nav class="header__nav header__nav--submenu">
-                  <button class="header__nav-button" type="button" aria-expanded="false" aria-controls="list">Новости</button>
-                  <ul class="header__nav-list header__nav-list--submenu" id="list-news">
+                <nav class="header__nav header__nav--submenu header__nav--submenu-is-hidden">
+                  <button class="header__nav-button header__nav--submenu-button" type="button" aria-expanded="false" aria-controls="list">Новости</button>
+                  <ul class="header__nav-list header__nav-list--submenu header__nav-list--is-hidden" id="list-news">
                     <li><a class="header__nav-link header__nav-link--submenu" href="#news">Общее</a></li>
                     <li><a class="header__nav-link header__nav-link--submenu" href="#news">Волонтёрство</a></li>
                     <li><a class="header__nav-link header__nav-link--submenu" href="#news">Стажировки</a></li>
