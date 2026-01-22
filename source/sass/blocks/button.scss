@@ -27,6 +27,7 @@
   padding-block: 2px;
   padding-inline: 19px 2px;
   background: var(--color2);
+  transition: width 300ms ease, justify-content 300ms ease, gap 200ms ease;
 
   &::after {
     @include pseudoelement;
