@@ -99,7 +99,7 @@ const handleEscapeKey = (event) => {
 };
 
 const handleClickOutside = (event) => {
-  const isClickInside = mainMenu.contains(event.matches) || btnBurger.contains(event.matches);
+  const isClickInside = mainMenu.contains(event.target) || btnBurger.contains(event.target);
   if (!isClickInside && !mainMenu.classList.contains(hiddenClass)) {
     closeMenu();
   }
