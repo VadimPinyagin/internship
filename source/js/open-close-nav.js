@@ -1,7 +1,6 @@
 
 // const buttonSubMenu = document.querySelectorAll('.header__nav-button');
 const subMenu = document.querySelectorAll('.header__nav-list');
-const anchorLinks = document.querySelectorAll('.menu-link');
 
 
 // const findAnElement = (elements) =>
@@ -85,17 +84,13 @@ const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
 
 const closeMenu = () => {
-  button.classList.remove('button--menu-opened');
+  btnBurger.classList.remove('button--menu-opened');
+  mainMenu.classList.remove('header__menu--is-open');
+  mainMenu.classList.add('header__menu--is-close');
   headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
   document.body.style.marginRight = '';
-};
-
-const handleEscapeKey = (event) => {
-  if (event.key === 'Escape') {
-    closeMenu();
-  }
 };
 
 const handleClickOutside = (event) => {
@@ -105,11 +100,15 @@ const handleClickOutside = (event) => {
   }
 };
 
-const toggleSubMenu = () => {
+const handleAnchorClick = () => {
+  closeMenu();
+};
 
-    navContainer.addEventListener('click', (evt) => {
+const toggleMenu = () => {
 
-    if (btnBurger) {
+  navContainer.addEventListener('click', (event) => {
+
+    if (!mainMenu.contains(event.target) && btnBurger) {
       btnBurger.classList.toggle('button--menu-opened');
       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
       mainMenu.classList.toggle(hiddenClass, !isOpen);
@@ -123,18 +122,18 @@ const toggleSubMenu = () => {
       } else {
         closeMenu();
       }
-
-      // const handleAnchorClick = () => {
-      //   closeMenu();
-      // };
-
-      // const anchorLinks = related.querySelectorAll('a[href^="#"]');
-      // anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
-      // document.addEventListener('keydown', handleEscapeKey);
-      // document.addEventListener('click', (element) => handleClickOutside(element, related, button, hiddenClass, closeMenu));
     }
-    handleClickOutside();
   });
-}
+  document.addEventListener('click', handleClickOutside);
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closeMenu();
+    }
+  });
 
-toggleSubMenu();
+  const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
+};
+
+toggleMenu();
+
