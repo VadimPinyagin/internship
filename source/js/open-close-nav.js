@@ -1,7 +1,5 @@
 
 // const buttonSubMenu = document.querySelectorAll('.header__nav-button');
-const subMenu = document.querySelectorAll('.header__nav-list');
-
 
 // const findAnElement = (elements) =>
 //   Array.from(elements).map((value, index) => ({ value, index }) // Функция создаёт массив из коллекции элементов
@@ -79,14 +77,20 @@ const subMenu = document.querySelectorAll('.header__nav-list');
 // toggleSubMenu();
 const headerLogoOverlay = document.querySelector('.header__logo-overlay');
 const navContainer = document.querySelector('.header__menu');
-const hiddenClass = 'header__menu--is-close';
+const hiddenClass = 'header__nav--is-close';
 const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
+const subMenu = document.querySelectorAll('.header__nav-list');
+const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
+
+const findAnElement = (elements) =>
+  Array.from(elements).map((value, index) => ({ value, index }) // Функция создаёт массив из коллекции элементов
+);
 
 const closeMenu = () => {
   btnBurger.classList.remove('button--menu-opened');
   mainMenu.classList.remove('header__menu--is-open');
-  mainMenu.classList.add('header__menu--is-close');
+  mainMenu.classList.add('header__nav--is-close');
   headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
@@ -131,7 +135,6 @@ const toggleMenu = () => {
     }
   });
 
-  const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
 };
 
