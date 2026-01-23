@@ -78,14 +78,42 @@
 const headerLogoOverlay = document.querySelector('.header__logo-overlay');
 const navContainer = document.querySelector('.header__menu');
 const hiddenClass = 'header__nav--is-close';
+const subMenuHiddenClass = 'header__nav-list--submenui-is-hidden';
 const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
-const subMenu = document.querySelectorAll('.header__nav-list');
 const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
+const subMenulist = document.querySelectorAll('.header__nav-list');
+const subMenuButtons = document.querySelectorAll('.header__nav-button');
 
 const findAnElement = (elements) =>
-  Array.from(elements).map((value, index) => ({ value, index }) // Функция создаёт массив из коллекции элементов
-);
+  Array.from(elements).map((value, index) => ({ value, index }));
+
+const closeSubMenu = () => {
+  const subMenu = findAnElement(subMenulist);
+  subMenu.forEach((item, index) => {
+    if (index > 0) {
+      item.value.classList.add('header__nav-list--is-hidden');
+      item.value.classList.remove('header__nav-list');
+    }
+  });
+};
+
+
+const openSubMenu = () => {
+
+  const subButton = findAnElement(subMenuButtons);
+
+  subButton.forEach((item, index) => {
+    if (index > 0) {
+      console.log(item);
+      item.value.classList.toggle('header__nav--submenu-button--open');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  closeSubMenu();
+});
 
 const closeMenu = () => {
   btnBurger.classList.remove('button--menu-opened');
@@ -112,6 +140,8 @@ const toggleMenu = () => {
 
   navContainer.addEventListener('click', (event) => {
 
+    openSubMenu();
+
     if (!mainMenu.contains(event.target) && btnBurger) {
       btnBurger.classList.toggle('button--menu-opened');
       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
@@ -126,6 +156,10 @@ const toggleMenu = () => {
       } else {
         closeMenu();
       }
+    }
+
+    if(buttonIndex > 0) {
+      button.classList.toggle('header__nav--submenu-button--open');
     }
   });
   document.addEventListener('click', handleClickOutside);

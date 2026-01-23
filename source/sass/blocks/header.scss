@@ -81,6 +81,13 @@
   .header__nav-link--submenu {
     text-transform: none;
   }
+
+  .header__nav-list--submenu-is-hidden {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
 }
 
 .header__nav-link,
