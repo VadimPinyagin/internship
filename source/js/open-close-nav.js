@@ -1,115 +1,25 @@
-
-// const buttonSubMenu = document.querySelectorAll('.header__nav-button');
-
-// const findAnElement = (elements) =>
-//   Array.from(elements).map((value, index) => ({ value, index }) // Функция создаёт массив из коллекции элементов
-// );
-
-// const toggleSubMenu = () => {
-//   const currentButtons = findAnElement(buttonSubMenu);
-//   const currentSubMenus = findAnElement(subMenu);
-
-//   document.addEventListener('DOMContentLoaded', () => {
-//   currentSubMenus.forEach(item => item.value.classList.add('header__nav-list--is-hidden'));
-// });
-
-//   currentButtons.forEach(item => {
-//     const button = item.value;
-//     const buttonIndex = item.index;
-//     const related = currentSubMenus.find(s => s.index === buttonIndex).value;
-
-//     button.addEventListener('click', () => {
-//       button.classList.toggle('header__nav-button--is-active');
-//       const expanded = button.getAttribute('aria-expanded') === 'true';
-//       button.setAttribute('aria-expanded', String(!expanded));
-
-//       if (related){
-//         related.classList.toggle(hiddenClass);
-//       }
-
-//       if(buttonIndex > 0) {
-//         button.classList.toggle('header__nav--submenu-button--open');
-//       }
-
-//       if(buttonIndex === 0) {
-//         button.classList.toggle('button--menu-opened');
-//         headerLogoOverlay.classList.toggle('header__logo-overlay--is-active');
-//         document.body.classList.toggle('page__body--menu-open');
-//         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-//         document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
-//         document.body.style.marginRight = document.body.style.marginRight === `${scrollbarWidth}px` ? '' : `${scrollbarWidth}px`;
-
-//         const closeMenu = () => {
-//           related.classList.add(hiddenClass);
-//           button.classList.remove('button--menu-opened');
-//           headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
-//           document.body.classList.remove('page__body--menu-open');
-//           document.body.style.overflow = '';
-//           document.body.style.marginRight = '';
-//         };
-
-//         const handleEscapeKey = (event) => {
-//           if (event.key === 'Escape') {
-//             closeMenu();
-//           }
-//         };
-
-//         const handleClickOutside = (event, related, button, hiddenClass, closeMenu) => {
-//           const isClickInside = related.contains(event.target) || button.contains(event.target);
-//           if (!isClickInside && !related.classList.contains(hiddenClass)) {
-//             closeMenu();
-//           }
-//         };
-
-//         const handleAnchorClick = () => {
-//           closeMenu();
-//         };
-
-//         const anchorLinks = related.querySelectorAll('a[href^="#"]');
-//         anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
-//         document.addEventListener('keydown', handleEscapeKey);
-//         document.addEventListener('click', (element) => handleClickOutside(element, related, button, hiddenClass, closeMenu));
-//       }
-//     });
-//   });
-// };
-
-// toggleSubMenu();
 const headerLogoOverlay = document.querySelector('.header__logo-overlay');
 const navContainer = document.querySelector('.header__menu');
 const hiddenClass = 'header__nav--is-close';
-const subMenuHiddenClass = 'header__nav-list--submenui-is-hidden';
+const subMenuHiddenClass = 'header__nav-list--submenu-is-hidden';
+const allMenuButtons = document.querySelectorAll('.header__nav-button');
 const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
 const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
-const subMenulist = document.querySelectorAll('.header__nav-list');
-const subMenuButtons = document.querySelectorAll('.header__nav-button');
 
 const findAnElement = (elements) =>
   Array.from(elements).map((value, index) => ({ value, index }));
 
+const buttons = findAnElement(allMenuButtons);
+
+const subButtons = buttons.filter((item) => item.value !== btnBurger); // Получил все кнопки кроме btnBurger.
+const subMenus = subButtons.map((item) => item.value.nextElementSibling); // Получил все меню кроме mainMenu.
+
 const closeSubMenu = () => {
-  const subMenu = findAnElement(subMenulist);
-  subMenu.forEach((item, index) => {
-    if (index > 0) {
-      item.value.classList.add('header__nav-list--is-hidden');
-      item.value.classList.remove('header__nav-list');
-    }
+  subMenus.forEach((currentMenu) => {
+    currentMenu.classList.add(subMenuHiddenClass);
   });
 };
-
-
-const openSubMenu = () => {
-
-  const subButton = findAnElement(subMenuButtons);
-
-  subButton.forEach((item, index) => {
-    if (index > 0) {
-      console.log(item);
-      item.value.classList.toggle('header__nav--submenu-button--open');
-    }
-  });
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   closeSubMenu();
@@ -123,6 +33,20 @@ const closeMenu = () => {
   document.body.classList.remove('page__body--menu-open');
   document.body.style.overflow = '';
   document.body.style.marginRight = '';
+  closeSubMenu();
+};
+
+const openSubMenu = () => {
+  subButtons.forEach((item) => {
+    const button = item.value;
+    const currentMenu = button.nextElementSibling;
+    button.addEventListener('click', () => {
+      button.classList.toggle('header__nav--submenu-button--open');
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      currentMenu.classList.toggle(subMenuHiddenClass);
+    });
+  });
 };
 
 const handleClickOutside = (event) => {
@@ -140,8 +64,6 @@ const toggleMenu = () => {
 
   navContainer.addEventListener('click', (event) => {
 
-    openSubMenu();
-
     if (!mainMenu.contains(event.target) && btnBurger) {
       btnBurger.classList.toggle('button--menu-opened');
       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
@@ -157,10 +79,6 @@ const toggleMenu = () => {
         closeMenu();
       }
     }
-
-    if(buttonIndex > 0) {
-      button.classList.toggle('header__nav--submenu-button--open');
-    }
   });
   document.addEventListener('click', handleClickOutside);
   document.addEventListener('keydown', (evt) => {
@@ -168,7 +86,7 @@ const toggleMenu = () => {
       closeMenu();
     }
   });
-
+  openSubMenu();
   anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
 };
 

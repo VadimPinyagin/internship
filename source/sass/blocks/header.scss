@@ -27,11 +27,6 @@
   }
 }
 
-.header__nav {
-  margin-block-start: 4px;
-}
-
-
 .header__nav--is-close {
 
   .header__nav-list {
@@ -83,10 +78,11 @@
   }
 
   .header__nav-list--submenu-is-hidden {
-    max-height: 0;
-    padding: 0;
-    overflow: hidden;
-    transition: 0.3s;
+    display: none;
+    // max-height: 0;
+    // padding: 0;
+    // overflow: hidden;
+    // transition: 0.3s;
   }
 }
 
