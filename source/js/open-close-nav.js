@@ -1,26 +1,24 @@
+import {findAnElement, processElements} from './utils.js';
+
 const headerLogoOverlay = document.querySelector('.header__logo-overlay');
 const navContainer = document.querySelector('.header__menu');
 const hiddenClass = 'header__nav--is-close';
 const subMenuHiddenClass = 'header__nav-list--submenu-is-hidden';
-const allMenuButtons = document.querySelectorAll('.header__nav-button');
 const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
+const allMenuButtons = document.querySelectorAll('.header__nav-button');
 const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
-
-const findAnElement = (elements) =>
-  Array.from(elements).map((value, index) => ({ value, index }));
-
 const buttons = findAnElement(allMenuButtons);
-
-const subButtons = buttons.filter((item) => item.value !== btnBurger); // Получил все кнопки кроме btnBurger.
-const subMenus = subButtons.map((item) => item.value.nextElementSibling); // Получил все меню кроме mainMenu.
+const subButtons = buttons.filter((item) => item.value !== btnBurger);
+const submenuCollection = subButtons.map((item) => item.value.nextElementSibling);
+const subMenus = findAnElement(submenuCollection);
 
 const closeSubMenu = () => {
-  subButtons.forEach((item) => {
-    const button = item.value;
-    button.classList.add('header__nav--submenu-button--open');
+  processElements(subButtons, (button) => {
+    button.classList.add('header__nav--submenu-open-button');
   });
-  subMenus.forEach((currentMenu) => {
+
+  processElements(subMenus, (currentMenu) => {
     currentMenu.classList.add(subMenuHiddenClass);
   });
 };
@@ -45,7 +43,7 @@ const openSubMenu = () => {
     const button = item.value;
     const currentMenu = button.nextElementSibling;
     button.addEventListener('click', () => {
-      button.classList.toggle('header__nav--submenu-button--open');
+      button.classList.toggle('header__nav--submenu-open-button');
       const expanded = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!expanded));
       currentMenu.classList.toggle(subMenuHiddenClass);
@@ -69,6 +67,7 @@ const toggleMenu = () => {
   navContainer.addEventListener('click', (event) => {
 
     if (!mainMenu.contains(event.target) && btnBurger) {
+
       btnBurger.classList.toggle('button--menu-opened');
       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
       mainMenu.classList.toggle(hiddenClass, !isOpen);
