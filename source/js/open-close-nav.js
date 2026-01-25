@@ -16,6 +16,10 @@ const subButtons = buttons.filter((item) => item.value !== btnBurger); // Пол
 const subMenus = subButtons.map((item) => item.value.nextElementSibling); // Получил все меню кроме mainMenu.
 
 const closeSubMenu = () => {
+  subButtons.forEach((item) => {
+    const button = item.value;
+    button.classList.add('header__nav--submenu-button--open');
+  });
   subMenus.forEach((currentMenu) => {
     currentMenu.classList.add(subMenuHiddenClass);
   });
@@ -91,4 +95,3 @@ const toggleMenu = () => {
 };
 
 toggleMenu();
-
