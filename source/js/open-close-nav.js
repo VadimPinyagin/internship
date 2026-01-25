@@ -14,10 +14,6 @@ const submenuCollection = subButtons.map((item) => item.value.nextElementSibling
 const subMenus = findAnElement(submenuCollection);
 
 const closeSubMenu = () => {
-  processElements(subButtons, (button) => {
-    button.classList.add('header__nav--submenu-open-button');
-  });
-
   processElements(subMenus, (currentMenu) => {
     currentMenu.classList.add(subMenuHiddenClass);
   });
@@ -36,6 +32,12 @@ const closeMenu = () => {
   document.body.style.overflow = '';
   document.body.style.marginRight = '';
   closeSubMenu();
+
+  if(closeSubMenu) {
+    processElements(subButtons, (button) => {
+      button.classList.remove('header__nav--submenu-open-button');
+    });
+  }
 };
 
 const openSubMenu = () => {
