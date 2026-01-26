@@ -9,6 +9,10 @@
   grid-template-columns: repeat(2, auto);
   padding-block-start: 21px;
   justify-content: space-between;
+
+  @media (min-width: $tablet-width) {
+    padding-block-start: 32px;
+  }
 }
 
 .header__logo-overlay--is-active{

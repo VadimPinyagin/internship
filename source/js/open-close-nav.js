@@ -8,6 +8,7 @@ const btnBurger = navContainer.firstElementChild;
 const mainMenu = btnBurger.nextElementSibling;
 const allMenuButtons = document.querySelectorAll('.header__nav-button');
 const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
+
 const buttons = findAnElement(allMenuButtons);
 const subButtons = buttons.filter((item) => item.value !== btnBurger);
 const submenuCollection = subButtons.map((item) => item.value.nextElementSibling);
@@ -41,8 +42,8 @@ const closeMenu = () => {
 };
 
 const openSubMenu = () => {
-  subButtons.forEach((item) => {
-    const button = item.value;
+  processElements(subButtons, (button) => {
+    button.classList.remove('header__nav--submenu-open-button');
     const currentMenu = button.nextElementSibling;
     button.addEventListener('click', () => {
       button.classList.toggle('header__nav--submenu-open-button');
