@@ -75,15 +75,7 @@ const toggleMenu = () => {
       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
       mainMenu.classList.toggle(hiddenClass, !isOpen);
       headerLogoOverlay.classList.toggle('header__logo-overlay--is-active');
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.classList.toggle('page__body--menu-open', isOpen);
-
-      if (isOpen) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.marginRight = `${scrollbarWidth}px`;
-      } else {
-        closeMenu();
-      }
     }
   });
   document.addEventListener('click', handleClickOutside);
