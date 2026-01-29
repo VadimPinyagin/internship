@@ -1,91 +1,91 @@
-import {findAnElement, processElements} from './utils.js';
+// import {findAnElement, processElements} from './utils.js';
 
-const headerLogoOverlay = document.querySelector('.header__logo-overlay');
-const navContainer = document.querySelector('.header__menu');
-const hiddenClass = 'header__nav--is-close';
-const subMenuHiddenClass = 'header__nav-list--submenu-is-hidden';
-const btnBurger = navContainer.firstElementChild;
-const mainMenu = btnBurger.nextElementSibling;
-const allMenuButtons = document.querySelectorAll('.header__nav-button');
-const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
+// const headerLogoOverlay = document.querySelector('.header__logo-overlay');
+// const navContainer = document.querySelector('.header__nav');
+// const hiddenClass = 'header__nav--is-close';
+// const subMenuHiddenClass = 'header__nav-list--submenu-is-hidden';
+// const btnBurger = 'btn-burger';
+// const mainMenu = btnBurger.nextElementSibling;
+// const allMenuButtons = document.querySelectorAll('.header__nav-button');
+// const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
 
-const buttons = findAnElement(allMenuButtons);
-const subButtons = buttons.filter((item) => item.value !== btnBurger);
-const submenuCollection = subButtons.map((item) => item.value.nextElementSibling);
-const subMenus = findAnElement(submenuCollection);
+// const buttons = findAnElement(allMenuButtons);
+// const subButtons = buttons.filter((item) => item.value !== btnBurger);
+// const submenuCollection = subButtons.map((item) => item.value.nextElementSibling);
+// const subMenus = findAnElement(submenuCollection);
 
-const closeSubMenu = () => {
-  processElements(subMenus, (currentMenu) => {
-    currentMenu.classList.add(subMenuHiddenClass);
-  });
-};
+// const closeSubMenu = () => {
+//   processElements(subMenus, (currentMenu) => {
+//     currentMenu.classList.add(subMenuHiddenClass);
+//   });
+// };
 
-document.addEventListener('DOMContentLoaded', () => {
-  closeSubMenu();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   closeSubMenu();
+// });
 
-const closeMenu = () => {
-  btnBurger.classList.remove('button--menu-opened');
-  mainMenu.classList.remove('header__menu--is-open');
-  mainMenu.classList.add('header__nav--is-close');
-  headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
-  document.body.classList.remove('page__body--menu-open');
-  document.body.style.overflow = '';
-  document.body.style.marginRight = '';
-  closeSubMenu();
+// const closeMenu = () => {
+//   btnBurger.classList.remove('button--menu-opened');
+//   mainMenu.classList.remove('header__menu--is-open');
+//   mainMenu.classList.add('header__nav--is-close');
+//   headerLogoOverlay.classList.remove('header__logo-overlay--is-active');
+//   document.body.classList.remove('page__body--menu-open');
+//   document.body.style.overflow = '';
+//   document.body.style.marginRight = '';
+//   closeSubMenu();
 
-  if(closeSubMenu) {
-    processElements(subButtons, (button) => {
-      button.classList.remove('header__nav--submenu-open-button');
-    });
-  }
-};
+//   if(closeSubMenu) {
+//     processElements(subButtons, (button) => {
+//       button.classList.remove('header__nav--submenu-open-button');
+//     });
+//   }
+// };
 
-const openSubMenu = () => {
-  processElements(subButtons, (button) => {
-    button.classList.remove('header__nav--submenu-open-button');
-    const currentMenu = button.nextElementSibling;
-    button.addEventListener('click', () => {
-      button.classList.toggle('header__nav--submenu-open-button');
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      currentMenu.classList.toggle(subMenuHiddenClass);
-    });
-  });
-};
+// const openSubMenu = () => {
+//   processElements(subButtons, (button) => {
+//     button.classList.remove('header__nav--submenu-open-button');
+//     const currentMenu = button.nextElementSibling;
+//     button.addEventListener('click', () => {
+//       button.classList.toggle('header__nav--submenu-open-button');
+//       const expanded = button.getAttribute('aria-expanded') === 'true';
+//       button.setAttribute('aria-expanded', String(!expanded));
+//       currentMenu.classList.toggle(subMenuHiddenClass);
+//     });
+//   });
+// };
 
-const handleClickOutside = (event) => {
-  const isClickInside = mainMenu.contains(event.target) || btnBurger.contains(event.target);
-  if (!isClickInside && !mainMenu.classList.contains(hiddenClass)) {
-    closeMenu();
-  }
-};
+// const handleClickOutside = (event) => {
+//   const isClickInside = mainMenu.contains(event.target) || btnBurger.contains(event.target);
+//   if (!isClickInside && !mainMenu.classList.contains(hiddenClass)) {
+//     closeMenu();
+//   }
+// };
 
-const handleAnchorClick = () => {
-  closeMenu();
-};
+// const handleAnchorClick = () => {
+//   closeMenu();
+// };
 
-const toggleMenu = () => {
+// const toggleMenu = () => {
 
-  navContainer.addEventListener('click', (event) => {
+//   navContainer.addEventListener('click', (event) => {
 
-    if (!mainMenu.contains(event.target) && btnBurger) {
+//     if (!mainMenu.contains(event.target) && btnBurger) {
 
-      btnBurger.classList.toggle('button--menu-opened');
-      const isOpen = mainMenu.classList.toggle('header__menu--is-open');
-      mainMenu.classList.toggle(hiddenClass, !isOpen);
-      headerLogoOverlay.classList.toggle('header__logo-overlay--is-active');
-      document.body.classList.toggle('page__body--menu-open', isOpen);
-    }
-  });
-  document.addEventListener('click', handleClickOutside);
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      closeMenu();
-    }
-  });
-  openSubMenu();
-  anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
-};
+//       btnBurger.classList.toggle('button--menu-opened');
+//       const isOpen = mainMenu.classList.toggle('header__menu--is-open');
+//       mainMenu.classList.toggle(hiddenClass, !isOpen);
+//       headerLogoOverlay.classList.toggle('header__logo-overlay--is-active');
+//       document.body.classList.toggle('page__body--menu-open', isOpen);
+//     }
+//   });
+//   document.addEventListener('click', handleClickOutside);
+//   document.addEventListener('keydown', (evt) => {
+//     if (evt.key === 'Escape') {
+//       closeMenu();
+//     }
+//   });
+//   openSubMenu();
+//   anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
+// };
 
-toggleMenu();
+// toggleMenu();

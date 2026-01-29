@@ -31,7 +31,7 @@
   box-shadow: inset 0 0 0 1px color-mix(in sRGB, var(--white, #ffffff) 30%, transparent);
 }
 
-@mixin pseudoelement {
+@mixin pseudo-element {
   content: "";
   display: block;
 }

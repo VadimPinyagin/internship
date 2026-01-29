@@ -1,4 +1,4 @@
-.button {
+.btn {
   --size: 46px;
   --f-size: 14px;
   --color1: var(--brand, #0000ff);
@@ -29,7 +29,7 @@
   background: var(--color2);
 
   &::after {
-    @include pseudoelement;
+    @include pseudo-element;
     border-radius: 50%;
     background: var(--color1);
     width: var(--size);
@@ -38,7 +38,7 @@
   }
 
   &::before {
-    @include pseudoelement;
+    @include pseudo-element;
     width: var(--icon-size);
     aspect-ratio: 1;
     background: var(--color2);
@@ -47,7 +47,7 @@
   }
 }
 
-.button:hover {
+.btn:hover {
   background: var(--color1);
   color: var(--color2);
 
@@ -60,7 +60,7 @@
   }
 }
 
-.button:active {
+.btn:active {
   background: var(--color1);
   color: color-mix(in sRGB, var(--color2) 70%, transparent);
 
@@ -69,7 +69,7 @@
   }
 }
 
-.button:disabled {
+.btn:disabled {
   color: var(--color3);
   background: transparent;
   border-color: var(--color3);
@@ -80,7 +80,7 @@
   }
 }
 
-.button--header {
+.btn--burger {
   justify-self: end;
 
   &::before {
@@ -91,7 +91,7 @@
   }
 }
 
-.button--menu-opened {
+.btn--menu-opened {
   --icon: url("/__spritemap#sprite-cross-view");
 
   width: 100%;
