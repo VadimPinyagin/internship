@@ -1,11 +1,12 @@
 // import {findAnElement, processElements} from './utils.js';
 
 // const headerLogoOverlay = document.querySelector('.header__logo-overlay');
-// const navContainer = document.querySelector('.header__nav');
-// const hiddenClass = 'header__nav--is-close';
-// const subMenuHiddenClass = 'header__nav-list--submenu-is-hidden';
-// const btnBurger = 'btn-burger';
-// const mainMenu = btnBurger.nextElementSibling;
+const nav = document.querySelector('.header__nav');
+const btnBurger = document.querySelector('header__nav-btn');
+const isHidden = HTMLElement.hidden;
+
+nav.addEventListener('click', (event) => {});
+
 // const allMenuButtons = document.querySelectorAll('.header__nav-button');
 // const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
 
