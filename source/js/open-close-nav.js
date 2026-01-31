@@ -1,12 +1,15 @@
 // import {findAnElement, processElements} from './utils.js';
 
 // const headerLogoOverlay = document.querySelector('.header__logo-overlay');
+
 const nav = document.querySelector('.header__nav');
-const btnBurger = document.querySelector('header__nav-btn');
-const isHidden = HTMLElement.hidden;
+const btnBurger = document.querySelector('.header__nav-btn');
 
-nav.addEventListener('click', (event) => {});
-
+nav.addEventListener('click', (event) => {
+  if(event.target === btnBurger) {
+    btnBurger.nextElementSibling.style.visibility = "visible";
+  }
+});
 // const allMenuButtons = document.querySelectorAll('.header__nav-button');
 // const anchorLinks = mainMenu.querySelectorAll('a[href^="#"]');
 

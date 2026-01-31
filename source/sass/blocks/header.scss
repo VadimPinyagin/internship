@@ -31,11 +31,10 @@
   }
 }
 
-
 .header__nav-list {
   @include list-reset;
-  margin-block-start: 4px;
   display: flex;
+  visibility: hidden;
   width: 290px;
   padding-inline: 25px;
   padding-block: 32px 28px;
