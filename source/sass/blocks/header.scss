@@ -31,67 +31,46 @@
   }
 }
 
-.header__nav--is-close {
 
-  .header__nav-list {
-    display: none;
-  }
+.header__nav-list {
+  @include list-reset;
+  margin-block-start: 4px;
+  display: flex;
+  width: 290px;
+  padding-inline: 25px;
+  padding-block: 32px 28px;
+  flex-direction: column;
+  background-color: var(--brand, #316dc2);
+  border-radius: 16px;
+  gap: 21px;
 }
 
-.header__menu--is-open {
+.header__nav-list--submenu {
+  padding-inline: 16px;
+  padding-block: 14px 0;
+  width: 100%;
+  gap: 8px;
+}
 
-  .header__nav-list {
-    @include list-reset;
-    display: flex;
-    width: 290px;
-    padding-inline: 25px;
-    padding-block: 32px 28px;
-    flex-direction: column;
-    background-color: var(--brand, #316dc2);
-    border-radius: 16px;
-    gap: 21px;
+
+
+.header__nav-link,
+.header__nav-button--submenu {
+
+  letter-spacing: 0.02em;
+  color: var(--white, #ffffff);
+  opacity: 0.7;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
   }
 
-  .header__nav-link,
-  .header__nav-button--submenu {
-
-    letter-spacing: 0.02em;
-    color: var(--white, #ffffff);
-    opacity: 0.7;
-    text-decoration: none;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:hover,
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      opacity: 1;
-    }
-  }
-
-  .header__nav-list--submenu {
-    padding-inline: 16px;
-    padding-block: 14px 0;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .header__nav-link--submenu {
-    text-transform: none;
-    font-weight: 400;
-    opacity: 0.6;
-
-    &:hover,
-    &:focus,
-    &:focus-visible {
-      opacity: 0.9;
-    }
-  }
-
-  .header__nav-list--submenu-is-hidden {
-    display: none;
-  }
 }
 
 .header__nav-link,
@@ -110,6 +89,18 @@
   &:focus-visible {
     outline: none;
     opacity: 1;
+  }
+}
+
+.header__nav-link--submenu {
+  text-transform: none;
+  font-weight: 400;
+  opacity: 0.6;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    opacity: 0.9;
   }
 }
 
@@ -137,8 +128,4 @@
 
 .header__nav--submenu-open-button::after {
   transform: rotate(180deg);
-}
-
-.header__nav-list--is-hidden {
-  display: none;
 }
