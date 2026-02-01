@@ -33,7 +33,7 @@
 
 .header__nav-list {
   @include list-reset;
-  display: none;
+  display: flex;
   width: 290px;
   padding-inline: 25px;
   padding-block: 32px 28px;
@@ -41,6 +41,12 @@
   background-color: var(--brand, #316dc2);
   border-radius: 16px;
   gap: 21px;
+}
+
+.is-hidden {
+  .header__nav-list {
+    display: none;
+  }
 }
 
 .header__nav-list--submenu {
@@ -106,6 +112,6 @@
   }
 }
 
-.header__nav--submenu-open-button::after {
+.header__nav--btn-submenu-open::after {
   transform: rotate(180deg);
 }
