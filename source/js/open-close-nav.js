@@ -3,11 +3,18 @@
 // const headerLogoOverlay = document.querySelector('.header__logo-overlay');
 
 const nav = document.querySelector('.header__nav');
-const btnBurger = document.querySelector('.header__nav-btn');
 
-nav.addEventListener('click', (event) => {
-  if(event.target === btnBurger) {
-    btnBurger.nextElementSibling.style.visibility = "visible";
+nav.addEventListener('click', (e) => {
+  if(e.target === nav.firstElementChild) {
+    const btnBurger = nav.firstElementChild;
+    const mainMenu = btnBurger.nextElementSibling;
+    btnBurger.classList.toggle('btn--menu-opened');
+    mainMenu.style.display = mainMenu.style.display === 'flex' ? 'none' : 'flex';
+  } else if (e.target.tagName === 'BUTTON') {
+    const subButton = e.target;
+    subButton.classList.toggle('header__nav--submenu-open-button');
+    const subMenu = subButton.nextElementSibling;
+    subMenu.style.display = subMenu.style.display === 'flex' ? 'none' : 'flex';
   }
 });
 // const allMenuButtons = document.querySelectorAll('.header__nav-button');
