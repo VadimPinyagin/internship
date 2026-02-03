@@ -8,48 +8,16 @@ const isClose = nav.classList.contains(hiddenClass);
 const closeMenu = () => {
   nav.classList.toggle(hiddenClass);
   btnBurger.classList.remove('btn--menu-opened');
+  document.body.classList.remove('page__body--overlay');
 };
 
-const toggleMenu = () => {
-  nav.addEventListener('click', (e) => {
-  if (e.target === btnBurger) {
-    nav.classList.toggle(hiddenClass);
-    btnBurger.classList.toggle('btn--menu-opened');
+anchorLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
-    if (isClose) {
-      subButtons.forEach((button) => {
-        const subMenuContainer = button.parentElement;
-        subMenuContainer.classList.add(hiddenClass);
-        button.classList.remove('header__nav--btn-submenu-open');
-      });
-    }
-  }
-
-  if (e.target.classList.contains('header__nav-btn--submenu')) {
-    const subButton = e.target;
-    const subMenuContainer = subButton.parentElement;
-
-    if (!isClose) {
-      subMenuContainer.classList.add(hiddenClass);
-      subButton.classList.remove('header__nav--btn-submenu-open');
-    } else {
-      subMenuContainer.classList.toggle(hiddenClass);
-      subButton.classList.toggle('header__nav--btn-submenu-open');
-    }
-  }
-});
-}
-
-const handleClickOutside = (e) => {
-  const isClickInside = nav.contains(e.target) || btnBurger.contains(e.target);
-  if (!isClickInside && !nav.classList.contains(hiddenClass)) {
+document.addEventListener('click', (e) => {
+  if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
     closeMenu();
   }
-};
-
-const handleAnchorClick = () => {
-  closeMenu();
-};
+});
 
 document.addEventListener('keydown', (evt) => {
   if (evt.key === 'Escape') {
@@ -57,7 +25,34 @@ document.addEventListener('keydown', (evt) => {
   }
 });
 
-anchorLinks.forEach((link) => link.addEventListener('click', handleAnchorClick));
-document.addEventListener('click', handleClickOutside);
+const toggleMenu = () => {
+  nav.addEventListener('click', (e) => {
+    if (e.target === btnBurger) {
+      nav.classList.toggle(hiddenClass);
+      btnBurger.classList.toggle('btn--menu-opened');
+      document.body.classList.toggle('page__body--overlay');
+      if (isClose) {
+        subButtons.forEach((button) => {
+          const subMenuContainer = button.parentElement;
+          subMenuContainer.classList.add(hiddenClass);
+          button.classList.remove('header__nav--btn-submenu-open');
+        });
+      }
+    }
+
+    if (e.target.classList.contains('header__nav-btn--submenu')) {
+      const subButton = e.target;
+      const subMenuContainer = subButton.parentElement;
+
+      if (!isClose) {
+        subMenuContainer.classList.add(hiddenClass);
+        subButton.classList.remove('header__nav--btn-submenu-open');
+      } else {
+        subMenuContainer.classList.toggle(hiddenClass);
+        subButton.classList.toggle('header__nav--btn-submenu-open');
+      }
+    }
+  });
+};
 
 toggleMenu();
