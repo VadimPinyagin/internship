@@ -8,7 +8,7 @@ const isClose = nav.classList.contains(hiddenClass);
 const closeMenu = () => {
   nav.classList.toggle(hiddenClass);
   btnBurger.classList.remove('btn--menu-opened');
-  document.body.classList.remove('page__body--overlay');
+  nav.classList.remove('header__nav--overlay');
 };
 
 anchorLinks.forEach((link) => link.addEventListener('click', closeMenu));
@@ -30,7 +30,7 @@ const toggleMenu = () => {
     if (e.target === btnBurger) {
       nav.classList.toggle(hiddenClass);
       btnBurger.classList.toggle('btn--menu-opened');
-      document.body.classList.toggle('page__body--overlay');
+      nav.classList.toggle('header__nav--overlay');
       if (isClose) {
         subButtons.forEach((button) => {
           const subMenuContainer = button.parentElement;
