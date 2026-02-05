@@ -1,6 +1,6 @@
-.nav--overlay::before {
-  content: "";
-  display: block;
+.nav:not(.is-hidden):before {
+  @include pseudo-element;
+
   position: fixed;
   inset: 0;
   width: 100%;
@@ -10,6 +10,7 @@
 
 .nav__list {
   @include list-reset;
+
   position: relative;
   display: flex;
   width: 290px;
