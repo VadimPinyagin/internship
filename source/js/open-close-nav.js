@@ -1,6 +1,6 @@
 const nav = document.querySelector('.nav');
 const btnBurger = nav.querySelector('.btn--burger');
-const subButtons = nav.querySelectorAll('.nav__btn--submenu');
+const subButtons = nav.querySelectorAll('.nav__toggle');
 const anchorLinks = nav.querySelectorAll('a[href^="#"]');
 const hiddenClass = 'is-hidden';
 const isClose = nav.classList.contains(hiddenClass);
@@ -35,21 +35,21 @@ const toggleMenu = () => {
         subButtons.forEach((button) => {
           const subMenuContainer = button.parentElement;
           subMenuContainer.classList.add(hiddenClass);
-          button.classList.remove('nav__btn--active');
+          button.classList.remove('nav__toggle--active');
         });
       }
     }
 
-    if (e.target.classList.contains('nav__btn--submenu')) {
+    if (e.target.classList.contains('nav__toggle')) {
       const subButton = e.target;
       const subMenuContainer = subButton.parentElement;
 
       if (!isClose) {
         subMenuContainer.classList.add(hiddenClass);
-        subButton.classList.remove('nav__btn--active');
+        subButton.classList.remove('nav__toggle--active');
       } else {
         subMenuContainer.classList.toggle(hiddenClass);
-        subButton.classList.toggle('nav__btn--active');
+        subButton.classList.toggle('nav__toggle--active');
       }
     }
   });
