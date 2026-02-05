@@ -89,6 +89,6 @@
   }
 }
 
-.nav--btn-submenu-open::after {
+.nav__btn--active::after {
   transform: rotate(180deg);
 }
