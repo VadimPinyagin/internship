@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 
-.nav-list {
+.nav__list {
   @include list-reset;
   position: relative;
   display: flex;
@@ -22,12 +22,12 @@
 }
 
 .is-hidden {
-  .nav-list {
+  .nav__list {
     display: none;
   }
 }
 
-.nav-list--submenu {
+.nav__list--submenu {
   padding-inline: 16px;
   padding-block: 14px 0;
   width: 100%;
@@ -35,8 +35,8 @@
 }
 
 
-.nav-link,
-.nav-btn--submenu {
+.nav__link,
+.nav__btn--submenu {
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -55,7 +55,7 @@
   }
 }
 
-.nav-link--submenu {
+.nav__link--submenu {
   text-transform: none;
   font-weight: 400;
   opacity: 0.6;
@@ -67,7 +67,7 @@
   }
 }
 
-.nav-btn--submenu {
+.nav__btn--submenu {
   display: flex;
   gap: 10px;
   border: none;
