@@ -81,3 +81,34 @@
     background: var(--color3);
   }
 }
+
+.btn--burger {
+  --icon: url("/__spritemap#sprite-burger-view");
+  justify-self: end;
+
+  &::before {
+    mask: var(--icon);
+    mask-repeat: no-repeat;
+    mask-size: auto;
+    mask-position: center;
+  }
+}
+
+.btn--menu-active {
+  --icon: url("/__spritemap#sprite-cross-view");
+
+  width: 100%;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  background: var(--color1);
+  color: var(--color2);
+  margin-block-end: 4px;
+
+  &::before {
+    background: var(--color1);
+  }
+
+  &::after {
+    background: var(--color2);
+  }
+}
