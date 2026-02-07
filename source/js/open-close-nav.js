@@ -1,6 +1,6 @@
 const nav = document.querySelector('.nav');
-const btnBurger = nav.querySelector('.nav__btn');
-const subButtons = nav.querySelectorAll('.nav__toggle');
+const btnBurger = nav.querySelector('.nav__toggle');
+const subButtons = nav.querySelectorAll('.nav__btn');
 const anchorLinks = nav.querySelectorAll('a[href^="#"]');
 const hiddenClass = 'is-hidden';
 const isClose = nav.classList.contains(hiddenClass);
@@ -37,7 +37,7 @@ const toggleMenu = () => {
       }
     }
 
-    if (e.target.classList.contains('nav__toggle')) {
+    if (e.target.classList.contains('nav__btn')) {
       const subButton = e.target;
       const subMenuContainer = subButton.parentElement;
 
