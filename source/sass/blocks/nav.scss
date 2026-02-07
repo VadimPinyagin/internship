@@ -22,12 +22,6 @@
   gap: 21px;
 }
 
-.is-hidden {
-  .nav__list {
-    display: none;
-  }
-}
-
 .nav__list--submenu {
   padding-inline: 16px;
   padding-block: 14px 0;
@@ -90,6 +84,12 @@
   }
 }
 
-.nav__toggle--active::after {
-  transform: rotate(180deg);
+.is-hidden {
+  .nav__list {
+    display: none;
+  }
+
+  .nav__toggle::after {
+    transform: rotate(180deg);
+  }
 }
