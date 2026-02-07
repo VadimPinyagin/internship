@@ -26,9 +26,11 @@ document.addEventListener('keydown', (evt) => {
 
 const toggleMenu = () => {
   nav.addEventListener('click', (e) => {
-    if (e.target === btnBurger) {
+    const target = e.target;
+    if (btnBurger.contains(target)) {
       nav.classList.toggle(hiddenClass);
       btnBurger.classList.toggle('btn--cross');
+
       if (isClose) {
         subButtons.forEach((button) => {
           const subMenuContainer = button.parentElement;
@@ -36,16 +38,10 @@ const toggleMenu = () => {
         });
       }
     }
-
-    if (e.target.classList.contains('nav__btn')) {
-      const subButton = e.target;
-      const subMenuContainer = subButton.parentElement;
-
-      if (!isClose) {
-        subMenuContainer.classList.add(hiddenClass);
-      } else {
-        subMenuContainer.classList.toggle(hiddenClass);
-      }
+    const targetElement = target.closest('.nav__btn');
+    if (targetElement) {
+      const subMenuContainer = targetElement.parentElement;
+      subMenuContainer.classList.toggle(hiddenClass);
     }
   });
 };
