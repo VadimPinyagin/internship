@@ -10,18 +10,6 @@ const closeMenu = () => {
   btnBurger.classList.remove('btn--menu-active');
 };
 
-document.addEventListener('click', (e) => {
-  if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
-    closeMenu();
-  }
-});
-
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Escape') {
-    closeMenu();
-  }
-});
-
 const toggleMenu = () => {
   nav.addEventListener('click', (e) => {
     const target = e.target;
@@ -46,6 +34,18 @@ const toggleMenu = () => {
         closeMenu();
       }
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closeMenu();
+    }
   });
 };
 
