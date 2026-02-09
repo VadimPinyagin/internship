@@ -11,7 +11,7 @@ const closeMenu = () => {
   btnBurger.classList.remove(btnCloseClass);
 };
 
-const toggleMenu = () => {
+const toggleNav = () => {
   nav.addEventListener('click', (e) => {
     const target = e.target;
     if (btnBurger.contains(target)) {
@@ -50,4 +50,4 @@ const toggleMenu = () => {
   });
 };
 
-toggleMenu();
+toggleNav();

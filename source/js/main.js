@@ -1,4 +1,4 @@
-import './toggle-menu.js';
+import './toggle-nav.js';
 import './open-close-accordion.js';
 import './generate-list-cities.js';
 import './open-close-select.js';
