@@ -10,8 +10,6 @@ const closeMenu = () => {
   btnBurger.classList.remove('btn--menu-active');
 };
 
-anchorLinks.forEach((link) => link.addEventListener('click', closeMenu));
-
 document.addEventListener('click', (e) => {
   if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
     closeMenu();
@@ -43,6 +41,11 @@ const toggleMenu = () => {
       const subMenuContainer = targetElement.parentElement;
       subMenuContainer.classList.toggle(hiddenClass);
     }
+    anchorLinks.forEach((link) => {
+      if (link === target) {
+        closeMenu();
+      }
+    });
   });
 };
 
