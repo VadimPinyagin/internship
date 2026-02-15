@@ -9,6 +9,24 @@ const isClose = nav.classList.contains(hiddenClass);
 const closeMenu = () => {
   nav.classList.toggle(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
+  removeEvent();
+};
+
+const isEscape = (e) => {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
+};
+
+const clickOutsideMenu = (e) => {
+    if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
+    closeMenu();
+  }
+}
+
+const removeEvent = function() {
+  document.removeEventListener('keydown', isEscape);
+  document.removeEventListener('click', clickOutsideMenu);
 };
 
 const toggleNav = () => {
@@ -19,6 +37,9 @@ const toggleNav = () => {
       btnBurger.classList.toggle(btnCloseClass);
 
       if (isClose) {
+        document.addEventListener('keydown', isEscape);
+        document.addEventListener('click', clickOutsideMenu);
+
         subButtons.forEach((button) => {
           const subMenuContainer = button.parentElement;
           subMenuContainer.classList.add(hiddenClass);
@@ -35,18 +56,6 @@ const toggleNav = () => {
         closeMenu();
       }
     });
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      closeMenu();
-    }
   });
 };
 
