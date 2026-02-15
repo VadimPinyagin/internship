@@ -12,22 +12,23 @@ const closeMenu = () => {
   removeEvent();
 };
 
-const isEscape = (e) => {
+function isEscape(e) {
   if (e.key === 'Escape') {
-    closeMenu();
-  }
-};
-
-const clickOutsideMenu = (e) => {
-    if (!(nav.contains(e.target) || btnBurger.contains(e.target) || nav.classList.contains(hiddenClass))) {
     closeMenu();
   }
 }
 
-const removeEvent = function() {
+function clickOutsideMenu(e) {
+  const isOutsideClick = !nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass);
+  if (isOutsideClick) {
+    closeMenu();
+  }
+}
+
+function removeEvent() {
   document.removeEventListener('keydown', isEscape);
   document.removeEventListener('click', clickOutsideMenu);
-};
+}
 
 const toggleNav = () => {
   nav.addEventListener('click', (e) => {
