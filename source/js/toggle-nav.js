@@ -3,7 +3,6 @@ const btnBurger = nav.querySelector('.nav__toggle');
 const subButtons = nav.querySelectorAll('.nav__btn');
 const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
-const isClose = nav.classList.contains(hiddenClass);
 
 const closeMenu = () => {
   nav.classList.toggle(hiddenClass);
@@ -24,6 +23,11 @@ function onOutsideMenuClick(e) {
   }
 }
 
+function addEvents() {
+  document.addEventListener('keydown', onEscKeydown);
+  document.addEventListener('click', onOutsideMenuClick);
+}
+
 function removeEvent() {
   document.removeEventListener('keydown', onEscKeydown);
   document.removeEventListener('click', onOutsideMenuClick);
@@ -36,16 +40,18 @@ const toggleNav = () => {
       nav.classList.toggle(hiddenClass);
       btnBurger.classList.toggle(btnCloseClass);
 
-      if (isClose) {
-        document.addEventListener('keydown', onEscKeydown);
-        document.addEventListener('click', onOutsideMenuClick);
+      subButtons.forEach((button) => {
+        const subMenuContainer = button.parentElement;
+        subMenuContainer.classList.add(hiddenClass);
+      });
 
-        subButtons.forEach((button) => {
-          const subMenuContainer = button.parentElement;
-          subMenuContainer.classList.add(hiddenClass);
-        });
+      if (nav.classList.contains(hiddenClass)) {
+        removeEvent();
+      } else {
+        addEvents();
       }
     }
+
     if (target.closest('.nav__btn')) {
       const subMenuContainer = target.closest('.nav__btn').parentElement;
       subMenuContainer.classList.toggle(hiddenClass);
