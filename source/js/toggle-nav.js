@@ -22,7 +22,11 @@ const toggleNav = () => {
         subMenuContainer.classList.add(hiddenClass);
       });
 
-      nav.classList.contains(hiddenClass) ? removeEvents() : addEvents();
+      if (nav.classList.contains(hiddenClass)) {
+        removeEvents();
+      } else {
+        addEvents();
+      }
     }
 
     if (target.closest('.nav__btn')) {
