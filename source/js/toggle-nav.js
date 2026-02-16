@@ -10,29 +10,6 @@ const closeMenu = () => {
   removeEvents();
 };
 
-function onEscKeydown(e) {
-  if (e.key === 'Escape') {
-    closeMenu();
-  }
-}
-
-function onOutsideMenuClick(e) {
-  const isOutsideClick = !nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass);
-  if (isOutsideClick) {
-    closeMenu();
-  }
-}
-
-function addEvents() {
-  document.addEventListener('keydown', onEscKeydown);
-  document.addEventListener('click', onOutsideMenuClick);
-}
-
-function removeEvents() {
-  document.removeEventListener('keydown', onEscKeydown);
-  document.removeEventListener('click', onOutsideMenuClick);
-}
-
 const toggleNav = () => {
   nav.addEventListener('click', (e) => {
     const target = e.target;
@@ -57,5 +34,28 @@ const toggleNav = () => {
     }
   });
 };
+
+function onEscKeydown(e) {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
+}
+
+function onOutsideMenuClick(e) {
+  const isOutsideClick = !nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass);
+  if (isOutsideClick) {
+    closeMenu();
+  }
+}
+
+function addEvents() {
+  document.addEventListener('keydown', onEscKeydown);
+  document.addEventListener('click', onOutsideMenuClick);
+}
+
+function removeEvents() {
+  document.removeEventListener('keydown', onEscKeydown);
+  document.removeEventListener('click', onOutsideMenuClick);
+}
 
 toggleNav();
