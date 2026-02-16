@@ -12,13 +12,13 @@ const closeMenu = () => {
   removeEvent();
 };
 
-function isEscape(e) {
+function onEscKeydown(e) {
   if (e.key === 'Escape') {
     closeMenu();
   }
 }
 
-function clickOutsideMenu(e) {
+function onOutsideMenuClick(e) {
   const isOutsideClick = !nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass);
   if (isOutsideClick) {
     closeMenu();
@@ -26,8 +26,8 @@ function clickOutsideMenu(e) {
 }
 
 function removeEvent() {
-  document.removeEventListener('keydown', isEscape);
-  document.removeEventListener('click', clickOutsideMenu);
+  document.removeEventListener('keydown', onEscapeKeydown);
+  document.removeEventListener('click', onOutsideMenuClick);
 }
 
 const toggleNav = () => {
@@ -38,8 +38,8 @@ const toggleNav = () => {
       btnBurger.classList.toggle(btnCloseClass);
 
       if (isClose) {
-        document.addEventListener('keydown', isEscape);
-        document.addEventListener('click', clickOutsideMenu);
+        document.addEventListener('keydown', onEscKeydown);
+        document.addEventListener('click', onOutsideMenuClick);
 
         subButtons.forEach((button) => {
           const subMenuContainer = button.parentElement;
