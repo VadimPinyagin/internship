@@ -1,7 +1,6 @@
 const nav = document.querySelector('.nav');
 const btnBurger = nav.querySelector('.nav__toggle');
 const subButtons = nav.querySelectorAll('.nav__btn');
-const anchorLinks = nav.querySelectorAll('a[href^="#"]');
 const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
 const isClose = nav.classList.contains(hiddenClass);
@@ -26,7 +25,7 @@ function onOutsideMenuClick(e) {
 }
 
 function removeEvent() {
-  document.removeEventListener('keydown', onEscapeKeydown);
+  document.removeEventListener('keydown', onEscKeydown);
   document.removeEventListener('click', onOutsideMenuClick);
 }
 
@@ -47,16 +46,13 @@ const toggleNav = () => {
         });
       }
     }
-    const targetElement = target.closest('.nav__btn');
-    if (targetElement) {
-      const subMenuContainer = targetElement.parentElement;
+    if (target.closest('.nav__btn')) {
+      const subMenuContainer = target.closest('.nav__btn').parentElement;
       subMenuContainer.classList.toggle(hiddenClass);
     }
-    anchorLinks.forEach((link) => {
-      if (link === target) {
-        closeMenu();
-      }
-    });
+    if (target.closest('.nav__link')) {
+      closeMenu();
+    }
   });
 };
 
