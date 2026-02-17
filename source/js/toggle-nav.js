@@ -4,7 +4,7 @@ const subButtons = nav.querySelectorAll('.nav__btn');
 const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
 
-const closeMenu = () => {
+const closeNav = () => {
   nav.classList.toggle(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
   removeEvents();
@@ -17,10 +17,10 @@ const toggleNav = () => {
       nav.classList.toggle(hiddenClass);
       btnBurger.classList.toggle(btnCloseClass);
 
-      subButtons.forEach((button) => {
-        const subMenuContainer = button.parentElement;
-        subMenuContainer.classList.add(hiddenClass);
-      });
+      // subButtons.forEach((button) => {
+      //   const subMenuContainer = button.parentElement;
+      //   subMenuContainer.classList.add(hiddenClass);
+      // });
 
       if (nav.classList.contains(hiddenClass)) {
         removeEvents();
@@ -34,21 +34,21 @@ const toggleNav = () => {
       subMenuContainer.classList.toggle(hiddenClass);
     }
     if (target.closest('.nav__link')) {
-      closeMenu();
+      closeNav();
     }
   });
 };
 
 function onEscKeydown(e) {
   if (e.key === 'Escape') {
-    closeMenu();
+    closeNav();
   }
 }
 
 function onOutsideMenuClick(e) {
   const isOutsideClick = !nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass);
   if (isOutsideClick) {
-    closeMenu();
+    closeNav();
   }
 }
 
