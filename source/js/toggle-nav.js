@@ -17,12 +17,11 @@ const toggleNav = () => {
       nav.classList.toggle(hiddenClass);
       btnBurger.classList.toggle(btnCloseClass);
 
-      // subButtons.forEach((button) => {
-      //   const subMenuContainer = button.parentElement;
-      //   subMenuContainer.classList.add(hiddenClass);
-      // });
-
       if (nav.classList.contains(hiddenClass)) {
+        subButtons.forEach((button) => {
+          const subMenuContainer = button.parentElement;
+          subMenuContainer.classList.add(hiddenClass);
+        });
         removeEvents();
       } else {
         addEvents();
