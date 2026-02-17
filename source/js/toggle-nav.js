@@ -5,8 +5,12 @@ const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
 
 const closeNav = () => {
-  nav.classList.toggle(hiddenClass);
+  nav.classList.add(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
+  subButtons.forEach((button) => {
+    const subMenuContainer = button.parentElement;
+    subMenuContainer.classList.add(hiddenClass);
+  });
   removeEvents();
 };
 
@@ -18,11 +22,7 @@ const toggleNav = () => {
       btnBurger.classList.toggle(btnCloseClass);
 
       if (nav.classList.contains(hiddenClass)) {
-        subButtons.forEach((button) => {
-          const subMenuContainer = button.parentElement;
-          subMenuContainer.classList.add(hiddenClass);
-        });
-        removeEvents();
+        closeNav();
       } else {
         addEvents();
       }
