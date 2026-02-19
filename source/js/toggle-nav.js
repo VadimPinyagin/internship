@@ -7,11 +7,11 @@ const btnCloseClass = 'btn--cross';
 const closeNav = () => {
   nav.classList.add(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
+  removeEvents();
   subButtons.forEach((button) => {
     const subMenuContainer = button.parentElement;
     subMenuContainer.classList.add(hiddenClass);
   });
-  removeEvents();
 };
 
 const toggleNav = () => {
