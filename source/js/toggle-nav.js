@@ -18,13 +18,13 @@ const toggleNav = () => {
   nav.addEventListener('click', (e) => {
     const target = e.target;
     if (btnBurger.contains(target)) {
-      nav.classList.toggle(hiddenClass);
-      btnBurger.classList.toggle(btnCloseClass);
 
       if (nav.classList.contains(hiddenClass)) {
-        closeNav();
-      } else {
+        nav.classList.remove(hiddenClass);
+        btnBurger.classList.add(btnCloseClass);
         addEvents();
+      } else{
+        closeNav();
       }
     }
 
