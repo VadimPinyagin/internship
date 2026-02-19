@@ -7,7 +7,8 @@ const btnCloseClass = 'btn--cross';
 const closeNav = () => {
   nav.classList.add(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
-  removeEvents();
+  document.removeEventListener('keydown', onEscKeydown);
+  document.removeEventListener('click', onOutsideMenuClick);
   subButtons.forEach((button) => {
     const subMenuContainer = button.parentElement;
     subMenuContainer.classList.add(hiddenClass);
@@ -22,7 +23,8 @@ const toggleNav = () => {
       if (nav.classList.contains(hiddenClass)) {
         nav.classList.remove(hiddenClass);
         btnBurger.classList.add(btnCloseClass);
-        addEvents();
+        document.addEventListener('keydown', onEscKeydown);
+        document.addEventListener('click', onOutsideMenuClick);
       } else{
         closeNav();
       }
@@ -49,16 +51,6 @@ function onOutsideMenuClick(e) {
   if (isOutsideClick) {
     closeNav();
   }
-}
-
-function addEvents() {
-  document.addEventListener('keydown', onEscKeydown);
-  document.addEventListener('click', onOutsideMenuClick);
-}
-
-function removeEvents() {
-  document.removeEventListener('keydown', onEscKeydown);
-  document.removeEventListener('click', onOutsideMenuClick);
 }
 
 toggleNav();
