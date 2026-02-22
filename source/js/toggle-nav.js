@@ -4,7 +4,7 @@ const subMenus = nav.querySelectorAll('.nav__item:has(.nav__btn)');
 const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
 const anchorLinksSelector = '.nav__link';
-const subButtonSelector = '.nav__btn';
+const subButtonsSelector = '.nav__btn';
 const subMenusSelector = '.nav__item';
 
 const closeNav = () => {
@@ -25,7 +25,7 @@ function onEscKeydown(e) {
 }
 
 function onOutsideMenuClick(e) {
-  if (!nav.contains(e.target) && !btnBurger.contains(e.target) && !nav.classList.contains(hiddenClass)) {
+  if (!nav.contains(e.target)) {
     closeNav();
   }
 }
@@ -45,7 +45,7 @@ const toggleNav = () => {
       }
     }
 
-    if (target.closest(subButtonSelector)) {
+    if (target.closest(subButtonsSelector)) {
       const subMenuContainer = target.closest(subMenusSelector);
       subMenuContainer.classList.toggle(hiddenClass);
     }
