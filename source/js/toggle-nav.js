@@ -10,12 +10,12 @@ const subMenusSelector = '.nav__item';
 const closeNav = () => {
   nav.classList.add(hiddenClass);
   btnBurger.classList.remove(btnCloseClass);
-  document.removeEventListener('keydown', onEscKeydown);
-  document.removeEventListener('click', onOutsideMenuClick);
-
   subMenus.forEach((subMenu) => {
     subMenu.classList.add(hiddenClass);
   });
+
+  document.removeEventListener('keydown', onEscKeydown);
+  document.removeEventListener('click', onOutsideMenuClick);
 };
 
 function onEscKeydown(e) {
