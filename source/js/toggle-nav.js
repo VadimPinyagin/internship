@@ -18,18 +18,6 @@ const closeNav = () => {
   document.removeEventListener('click', onOutsideMenuClick);
 };
 
-function onEscKeydown(e) {
-  if (e.key === 'Escape') {
-    closeNav();
-  }
-}
-
-function onOutsideMenuClick(e) {
-  if (!nav.contains(e.target)) {
-    closeNav();
-  }
-}
-
 const toggleNav = () => {
   nav.addEventListener('click', (e) => {
     const target = e.target;
@@ -55,5 +43,17 @@ const toggleNav = () => {
     }
   });
 };
+
+function onEscKeydown(e) {
+  if (e.key === 'Escape') {
+    closeNav();
+  }
+}
+
+function onOutsideMenuClick(e) {
+  if (!nav.contains(e.target)) {
+    closeNav();
+  }
+}
 
 toggleNav();
