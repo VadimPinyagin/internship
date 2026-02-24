@@ -1,4 +1,4 @@
-.nav:not(.is-hidden):before {
+.nav:not(.is-hidden)::before {
   content: "";
   display: block;
   position: fixed;
@@ -27,6 +27,18 @@
   gap: 8px;
 }
 
+.nav__link--submenu {
+  text-transform: none;
+  font-weight: 400;
+  opacity: 0.6;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    opacity: 0.9;
+  }
+}
+
 .nav__link,
 .nav__btn {
   font-size: 16px;
@@ -44,18 +56,6 @@
   &:focus-visible {
     outline: none;
     opacity: 1;
-  }
-}
-
-.nav__link--submenu {
-  text-transform: none;
-  font-weight: 400;
-  opacity: 0.6;
-
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    opacity: 0.9;
   }
 }
 
