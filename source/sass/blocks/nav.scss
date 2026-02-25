@@ -11,9 +11,9 @@
 .nav__list {
   list-style: none;
   position: relative;
+  padding: 30px 23px;
   width: 290px;
   margin: 0;
-  padding: 30px 23px;
   display: flex;
   flex-direction: column;
   gap: 21px;
@@ -25,18 +25,6 @@
   padding: 14px 16px 0;
   width: 100%;
   gap: 8px;
-}
-
-.nav__link--submenu {
-  text-transform: none;
-  font-weight: 400;
-  opacity: 0.6;
-
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    opacity: 0.9;
-  }
 }
 
 .nav__link,
@@ -59,6 +47,18 @@
   }
 }
 
+.nav__link--submenu {
+  text-transform: none;
+  font-weight: 400;
+  opacity: 0.6;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    opacity: 0.9;
+  }
+}
+
 .nav__btn {
   display: flex;
   gap: 10px;
@@ -71,7 +71,7 @@
     display: block;
     width: 12px;
     height: 16px;
-    mask: url("/__spritemap#sprite-check-mark-view") no-repeat center;
+    mask: url("/__spritemap#sprite-check-mark-view") no-repeat center / contain;
     background-color: var(--white, #ffffff);
   }
 }
