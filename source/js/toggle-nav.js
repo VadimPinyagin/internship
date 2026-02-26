@@ -1,10 +1,10 @@
 const nav = document.querySelector('.nav');
 const btnBurger = nav.querySelector('.nav__toggle');
-const subMenus = nav.querySelectorAll('.nav__item:has(.nav__btn)');
+const subMenus = nav.querySelectorAll('.nav__item:has(.nav__link--btn)');
 const hiddenClass = 'is-hidden';
 const btnCloseClass = 'btn--cross';
-const anchorLinksSelector = '.nav__link';
-const subButtonsSelector = '.nav__btn';
+const anchorLinksSelector = '.nav__link:not(.nav__link--btn)';
+const subButtonsSelector = '.nav__link--btn';
 const subMenusSelector = '.nav__item';
 
 const closeNav = () => {
