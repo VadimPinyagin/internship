@@ -22,14 +22,15 @@
 }
 
 .nav__list--submenu {
-  padding: 14px 16px 0;
+  padding: 0 16px 0;
+  margin-block-start: 13px;
   width: 100%;
   gap: 8px;
 }
 
 .nav__link {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 18px;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
