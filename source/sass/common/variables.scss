@@ -2,22 +2,3 @@ $mobile-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1440px;
 
-:root {
-  --brand: #316dc2;
-  --active: #275699;
-  --white: #ffffff;
-  --light-accent: #f0efe9;
-  --gray: #484848;
-  --light-gray: #a9afb7;
-  --accent: #ff5e66;
-  --bg: var(--light-accent);
-  --text: var(--gray);
-  --attention: var(--accent);
-  --disabled: var(--light-gray);
-  --color-overlay: color-mix(in sRGB, var(--brand) 20%, transparent);
-  --swiper-navigation-sides-offset: auto;
-  --swiper-navigation-top-offset: 100%;
-  --swiper-scrollbar-size: 2px;
-  --swiper-navigation-color: var(--brand);
-  --swiper-scrollbar-drag-bg-color: var(--brand);
-}
