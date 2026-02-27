@@ -21,6 +21,12 @@
   border-radius: 16px;
 }
 
+.nav__item:not(.is-hidden) {
+  .nav__link--btn {
+    opacity: 1;
+  }
+}
+
 .nav__list--submenu {
   padding: 0 16px 0;
   margin-block-start: 13px;
@@ -86,12 +92,6 @@
 
   .nav__link--btn::after {
     transform: rotate(180deg);
-    opacity: 1;
-  }
-}
-
-.nav__item:not(.is-hidden) {
-  .nav__link--btn {
     opacity: 1;
   }
 }
