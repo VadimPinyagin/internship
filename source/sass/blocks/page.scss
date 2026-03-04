@@ -13,4 +13,8 @@
   line-height: 20px;
   color: var(--text, #333333);
   background-color: var(--bg, #ffffff);
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
 }

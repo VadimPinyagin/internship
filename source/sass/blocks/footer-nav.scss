@@ -38,10 +38,6 @@
     color: var(--active, #275699);
   }
 
-  @media (min-width: $tablet-width) {
-    font-size: 16px;
-  }
-
   @media (min-width: $desktop-width) {
     line-height: 17px;
   }

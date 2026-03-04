@@ -45,7 +45,6 @@
   margin-block: 15px 0;
 
   @media (min-width: $tablet-width) {
-    font-size: 16px;
     line-height: 26px;
   }
 }
@@ -96,11 +95,6 @@
 
   &:active {
     color: var(--white, #ffffff);
-  }
-
-
-  @media (min-width: $tablet-width) {
-    font-size: 16px;
   }
 }
 
