@@ -51,7 +51,6 @@
   cursor: pointer;
 
   &:hover,
-  &:focus,
   &:focus-visible {
     opacity: 1;
   }
@@ -86,8 +85,7 @@
   opacity: 0.6;
 
   &:hover,
-  &:focus,
-  &:focus-visible {
+  &:focus {
     opacity: 0.9;
   }
 }
