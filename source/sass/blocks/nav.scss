@@ -33,6 +33,7 @@
 }
 
 .nav__link {
+  --link-opacity: 0.7;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
@@ -41,8 +42,13 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--white, #ffffff);
-  opacity: 0.7;
+  opacity: var(--link-opacity);
   cursor: pointer;
+
+  &::after {
+    mask: var(--icon) no-repeat center / contain;
+    background-color: var(--white, #ffffff);
+  }
 
   &:hover,
   &:focus-visible {
@@ -50,10 +56,19 @@
   }
 }
 
-.nav__item:not(.is-hidden) {
-  .nav__link--btn {
-    opacity: 1;
+.nav__item {
+
+  &.is-hidden {
+    --transform-arrow: 0deg;
   }
+
+  &:not(.is-hidden) {
+    --transform-arrow: 180deg;
+  }
+}
+
+.nav__item:not(.is-hidden) .nav__link--btn {
+  --link-opacity: 1;
 }
 
 .nav__link--btn {
@@ -68,14 +83,10 @@
     display: block;
     width: 12px;
     height: 16px;
-    mask: url("/__spritemap#sprite-check-mark-view") no-repeat center / contain;
-    background-color: var(--white, #ffffff);
+    --icon: url("/__spritemap#sprite-check-mark-view");
     flex-shrink: 0;
     align-self: center;
-
-    .is-hidden & {
-      transform: rotate(180deg);
-    }
+    transform: rotate(var(--transform-arrow));
   }
 }
 
