@@ -58,17 +58,13 @@
 
 .nav__item {
 
-  &.is-hidden {
-    --transform-arrow: 0deg;
-  }
-
   &:not(.is-hidden) {
     --transform-arrow: 180deg;
   }
-}
 
-.nav__item:not(.is-hidden) .nav__link--btn {
+  &:not(.is-hidden) .nav__link--btn {
   --link-opacity: 1;
+  }
 }
 
 .nav__link--btn {
@@ -86,7 +82,7 @@
     --icon: url("/__spritemap#sprite-check-mark-view");
     flex-shrink: 0;
     align-self: center;
-    transform: rotate(var(--transform-arrow));
+    transform: rotate(var(--transform-arrow, 0));
   }
 }
 
