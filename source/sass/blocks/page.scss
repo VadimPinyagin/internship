@@ -17,4 +17,8 @@
   @media (min-width: $tablet-width) {
     font-size: 16px;
   }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+  }
 }
