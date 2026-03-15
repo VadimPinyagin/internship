@@ -25,6 +25,17 @@
   }
 }
 
+.nav__item {
+
+  &:not(.is-hidden) {
+    --transform-arrow: 180deg;
+  }
+
+  &:not(.is-hidden) .nav__link--btn {
+  --link-opacity: 1;
+  }
+}
+
 .nav__list--submenu {
   padding: 0 16px 0;
   margin-block-start: 13px;
@@ -53,17 +64,6 @@
   &:hover,
   &:focus-visible {
     opacity: 1;
-  }
-}
-
-.nav__item {
-
-  &:not(.is-hidden) {
-    --transform-arrow: 180deg;
-  }
-
-  &:not(.is-hidden) .nav__link--btn {
-  --link-opacity: 1;
   }
 }
 
