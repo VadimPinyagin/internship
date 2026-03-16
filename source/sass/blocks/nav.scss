@@ -34,7 +34,6 @@
 
 .nav__item:not(.is-hidden) {
   --transform-arrow: 180deg;
-  --link-opacity: 1;
 
   .nav__link--btn {
     --link-opacity: 1;
@@ -55,7 +54,7 @@
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus-visible{
     opacity: 1;
   }
 }
@@ -86,7 +85,7 @@
   opacity: 0.6;
 
   &:hover,
-  &:focus {
+  &:focus-visible{
     opacity: 0.9;
   }
 }
