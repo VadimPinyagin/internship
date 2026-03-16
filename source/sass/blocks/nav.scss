@@ -11,7 +11,7 @@
 .nav__list {
   list-style: none;
   position: relative;
-  padding: 30px 23px;
+  padding: 30px 24px;
   width: 290px;
   margin: 0;
   display: flex;
@@ -27,17 +27,19 @@
 
 .nav__list--submenu {
   padding: 0 16px 0;
-  margin-block-start: 13px;
+  margin-block-start: 17px;
   width: auto;
   gap: 8px;
 }
 
 .nav__item {
-  --arrow: url("/__spritemap#sprite-check-mark-view");
-
   &:not(.is-hidden) {
     --transform-arrow: 180deg;
     --link-opacity: 1;
+  }
+
+  &:not(.is-hidden) .nav__link--btn {
+  --link-opacity: 1;
   }
 }
 
@@ -62,7 +64,7 @@
 
 .nav__link--btn {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   border: none;
   padding: 0;
   background: transparent;
@@ -71,8 +73,8 @@
     content: "";
     display: block;
     width: 12px;
-    height: 16px;
-    mask: var(--arrow) no-repeat center / contain;
+    aspect-ratio: 1;
+    mask: url("/__spritemap#sprite-check-mark-view") no-repeat center / contain;
     background-color: var(--white, #ffffff);
     align-self: center;
     flex-shrink: 0;
