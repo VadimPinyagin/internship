@@ -32,14 +32,12 @@
   gap: 8px;
 }
 
-.nav__item {
-  &:not(.is-hidden) {
-    --transform-arrow: 180deg;
-    --link-opacity: 1;
-  }
-
-  &:not(.is-hidden) .nav__link--btn {
+.nav__item:not(.is-hidden) {
+  --transform-arrow: 180deg;
   --link-opacity: 1;
+
+  .nav__link--btn {
+    --link-opacity: 1;
   }
 }
 
