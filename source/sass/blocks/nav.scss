@@ -1,11 +1,14 @@
-.nav:not(.is-hidden)::before {
-  content: "";
-  display: block;
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  pointer-events: none;
-  background-color: rgb(0, 0, 0, 0.5);
+.nav {
+
+  &:not(.is-hidden)::before {
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
 }
 
 .nav__list {
@@ -32,16 +35,15 @@
   gap: 8px;
 }
 
-.nav__item:not(.is-hidden) {
-  --transform-arrow: 180deg;
+.nav__item {
 
-  .nav__link--btn {
-    --link-opacity: 1;
+  &.is-hidden {
+    --transform-arrow: 0;
+    --link-opacity: 0.7;
   }
 }
 
 .nav__link {
-  --link-opacity: 0.7;
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -50,7 +52,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--white, #ffffff);
-  opacity: var(--link-opacity);
+  opacity: 0.7;
   cursor: pointer;
 
   &:hover,
@@ -65,6 +67,7 @@
   border: none;
   padding: 0;
   background: transparent;
+  opacity: var(--link-opacity, 1);
 
   &::after {
     content: "";
@@ -75,7 +78,7 @@
     background-color: var(--white, #ffffff);
     align-self: center;
     flex-shrink: 0;
-    transform: rotate(var(--transform-arrow, 0));
+    transform: rotate(var(--transform-arrow, 180deg));
   }
 }
 
