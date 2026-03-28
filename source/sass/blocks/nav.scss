@@ -1,5 +1,4 @@
 .nav {
-
   &:not(.is-hidden)::before {
     content: "";
     display: block;
@@ -29,18 +28,15 @@
 }
 
 .nav__list--submenu {
-  padding: 0 16px 0;
+  padding: 0 16px;
   margin-block-start: 17px;
   width: auto;
   gap: 8px;
 }
 
-.nav__item {
-
-  &.is-hidden {
-    --transform-arrow: 0;
-    --link-opacity: 0.7;
-  }
+.nav__item.is-hidden {
+  --transform-arrow: 0;
+  --link-opacity: 0.7;
 }
 
 .nav__link {
@@ -56,7 +52,7 @@
   cursor: pointer;
 
   &:hover,
-  &:focus-visible{
+  &:focus-visible {
     --link-opacity: 1;
   }
 }
@@ -88,7 +84,7 @@
   opacity: 0.6;
 
   &:hover,
-  &:focus-visible{
+  &:focus-visible {
     opacity: 0.9;
   }
 }
