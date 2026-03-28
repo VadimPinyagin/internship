@@ -58,7 +58,6 @@
   &:hover,
   &:focus-visible{
     --link-opacity: 1;
-    opacity: var(--link-opacity, 1);
   }
 }
 
