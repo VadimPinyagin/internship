@@ -27,8 +27,8 @@
   cursor: pointer;
 
   &::after {
-    @include pseudo-element;
-
+    content: "";
+    display: block;
     border-radius: 50%;
     background: var(--color1);
     width: var(--size);
@@ -37,8 +37,8 @@
   }
 
   &::before {
-    @include pseudo-element;
-
+    content: "";
+    display: block;
     width: var(--icon-size);
     aspect-ratio: 1;
     background: var(--color2);
