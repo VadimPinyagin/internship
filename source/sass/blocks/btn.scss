@@ -1,82 +1,70 @@
 .btn {
-  --size: 46px;
-  --f-size: 14px;
-  --color1: var(--brand, #0000ff);
-  --color2: var(--white, #ffffff);
-  --color3: var(--disabled, #484848);
-  --border: 1px solid var(--color1);
-  --gap: 20px;
-  --icon-size: 20px;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  justify-content: end;
-  align-items: center;
-  gap: var(--gap);
   position: relative;
-
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  font-size: inherit;
+  line-height: 1;
   font-weight: 500;
-  font-size: var(--f-size);
-  line-height: var(--f-size);
-  color: var(--color1);
+  color: var(--brand, #0000ff);
   text-transform: uppercase;
-  border: var(--border);
+  border: 1px solid var(--brand, #0000ff);
   border-radius: 99em;
   padding: 3px 3px 3px 19px;
-  background: var(--color2);
+  background: var(--white, #ffffff);
   cursor: pointer;
 
   &::after {
     content: "";
     display: block;
+    width: 46px;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background: var(--color1);
-    width: var(--size);
-    height: var(--size);
+    background: var(--brand, #0000ff);
     grid-area: 1/2;
   }
 
   &::before {
     content: "";
     display: block;
-    width: var(--icon-size);
+    width: 20px;
     aspect-ratio: 1;
-    background: var(--color2);
+    background: var(--white, #ffffff);
     grid-area: 1/2;
     justify-self: center;
   }
 }
 
 .btn:hover {
-  background: var(--color1);
-  color: var(--color2);
+  background: var(--brand, #0000ff);
+  color: var(--white, #ffffff);
 
   &::before {
-    background: var(--color1);
+    background: var(--brand, #0000ff);
   }
 
   &::after {
-    background: var(--color2);
+    background: var(--white, #ffffff);
   }
 }
 
 .btn:active {
-  background: var(--color1);
-  color: color-mix(in sRGB, var(--color2) 70%, transparent);
+  background: var(--brand, #0000ff);
+  color: color-mix(in sRGB, var(--white, #ffffff) 70%, transparent);
 
   &::after {
-    background: var(--color2);
+    background: var(--white, #ffffff);
   }
 }
 
 .btn:disabled {
-  color: var(--color3);
+  color: var(--disabled, #484848);
   background: transparent;
-  border-color: var(--color3);
+  border-color: var(--disabled, #484848);
   cursor: not-allowed;
 
   &::after {
-    background: var(--color3);
+    background: var(--disabled, #484848);
   }
 }
 
@@ -99,15 +87,15 @@
   width: 100%;
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
-  background: var(--color1);
-  color: var(--color2);
+  background: var(--brand, #0000ff);
+  color: var(--white, #ffffff);
   margin-block-end: 4px;
 
   &::before {
-    background: var(--color1);
+    background: var(--brand, #0000ff);
   }
 
   &::after {
-    background: var(--color2);
+    background: var(--white, #ffffff);
   }
 }
